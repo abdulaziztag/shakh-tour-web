@@ -1,0 +1,18 @@
+workflow:
+  rules:
+    - if: $CI_COMMIT_BRANCH == "dev"
+
+stages:
+  - dev
+
+deploy:development:
+  stage: dev
+  rules:
+    - if: $CI_COMMIT_BRANCH == "dev"
+  tags:
+    - adamsweb
+  script:
+    # - "docker compose up -d --build"
+    - "docker compose up -d --build"
+  environment:
+    name: development 

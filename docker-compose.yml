@@ -1,0 +1,10 @@
+version: "3.8"
+
+services:
+  app-frontend:
+    build: .
+    restart: unless-stopped
+    ports:
+      - ${SERVER_PORT}:3000
+    environment:
+      - TZ=Asia/Tashkent

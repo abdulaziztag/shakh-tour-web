@@ -1,0 +1,119 @@
+.sidebarBoxWrapper {
+	width: auto;
+	height: auto;
+	padding: 0 1rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+}
+
+.sidebarBoxWrapperItems {
+	position: absolute;
+	right: -5%;
+	transform: translateX(0);
+	transition: all 0.25s linear;
+	width: 100px;
+	overflow: hidden;
+	opacity: 0;
+	z-index: -1;
+
+	&.active {
+		right: 10%;
+		transform: translateX(100%);
+		opacity: 1;
+	}
+}
+
+.sidebarBox {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+}
+
+.sidebarBoxDropdown {
+	border-radius: 0.5rem;
+	border: 1px solid #475467;
+	background: #344054;
+	padding: 0.75rem;
+	height: 3rem;
+}
+
+.sidebarLangContainer {
+	width: 100%;
+	height: 3rem;
+	border-radius: 0.5rem;
+	border: 1px solid #475467;
+	background: #344054;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	transition: all 0.25s linear;
+	position: relative;
+
+	&:hover {
+		border: 1px solid #98a2b3;
+		background: #667085;
+	}
+}
+.sidebarBoxRowLang {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	color: #000;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: normal;
+	&:hover {
+		color: #44d3e1;
+		svg {
+			path {
+				fill: #44d3e1;
+			}
+		}
+	}
+}
+
+.sidebarBoxRowDropdown {
+	border-radius: 0.5rem;
+	border: 1px solid #000;
+	background: #fff;
+	backdrop-filter: blur(12px);
+	padding: 0;
+	width: 7vw !important;
+}
+
+.sidebarBoxRowDropdownItem {
+	height: 3rem;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	transition: all 0.25s linear;
+	position: relative;
+
+	&:not(:last-child) {
+		&:after {
+			content: "";
+			position: absolute;
+			width: 70%;
+			height: 1px;
+			bottom: 0;
+			background: #000;
+		}
+	}
+}
+
+.sidebarBoxText {
+	color: #000;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: normal;
+	&:hover {
+		color: #44d3e1;
+	}
+}
