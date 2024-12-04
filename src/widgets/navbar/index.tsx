@@ -5,6 +5,7 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import React from "react"
 
+import { LanguageSwitcher } from "@/shared/ui"
 import { FilledButton } from "@/shared/ui/buttons"
 
 import s from "./navbar.module.scss"
@@ -55,7 +56,10 @@ export const Navbar = () => {
 							</Link>
 						))}
 					</Flex>
-					<FilledButton className={s.navbarLoginButton}>Login</FilledButton>
+					<Flex gap={"1.5rem"}>
+						<LanguageSwitcher direction={"column"} />
+						<FilledButton className={s.navbarLoginButton}>Login</FilledButton>
+					</Flex>
 				</Box>
 			</Container>
 		</>

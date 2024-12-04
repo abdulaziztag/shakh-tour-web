@@ -15,3 +15,32 @@ body {
   background-color: #fff;
   color: #fff;
 }
+
+.swiper-pagination{
+  margin-bottom: 1.25rem ;
+}
+
+.swiper-pagination-bullet {
+  background: transparent !important;
+}
+.swiper-pagination-bullet-active .path{
+  display: inline-block !important;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 0;
+  animation: dash linear 120s;
+  animation-iteration-count: unset;
+
+}
+.path {
+  display: none;
+}
+
+@keyframes dash {
+  from {
+    stroke-dashoffset: 1000;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}

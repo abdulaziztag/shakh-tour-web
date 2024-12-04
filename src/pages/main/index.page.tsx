@@ -1,7 +1,8 @@
+import { Container } from "@mantine/core"
 import Head from "next/head"
 import React from "react"
 
-import { Layout } from "@/widgets"
+import { Layout, Swiper } from "@/widgets"
 
 const HomePage = () => {
 	return (
@@ -39,7 +40,11 @@ const HomePage = () => {
 				<meta name="roboto" content="index" />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			<Layout>ss</Layout>
+			<Layout>
+				<Container size={"1440px"}>
+					<Swiper />
+				</Container>
+			</Layout>
 		</>
 	)
 }

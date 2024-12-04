@@ -1,4 +1,5 @@
 import IconArrow from "@//shared/assets/images/lang-arrow.svg"
+import IconEng from "@//shared/assets/images/united-kingdom.svg"
 import { Box, Flex, Popover, Text } from "@mantine/core"
 import setLanguage from "next-translate/setLanguage"
 import React, { FC, useEffect, useState } from "react"
@@ -56,6 +57,7 @@ export const LanguageSwitcher: FC<LanguageSwitcherProps> = ({
 				<Popover.Target>
 					<Box className={s.sidebarBoxWrapper}>
 						<Text component={"p"} className={s.sidebarBoxRowLang}>
+							<IconEng />
 							{mobileLang.find((item) => item.value === selectedLang)?.label}
 							<IconArrow />
 						</Text>
