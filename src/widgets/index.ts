@@ -1,3 +1,4 @@
 export * from "./layout"
 export * from "./navbar"
 export * from "./swiper"
+export * from "./popular-packages"
