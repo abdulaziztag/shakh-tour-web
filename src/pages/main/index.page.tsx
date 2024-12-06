@@ -3,6 +3,7 @@ import Head from "next/head"
 import React from "react"
 
 import {
+	Banner,
 	GroupTours,
 	Layout,
 	OurServices,
@@ -56,6 +57,7 @@ const HomePage = () => {
 					<GroupTours />
 					<SendInquiry />
 					<RecommendedHotels />
+					<Banner />
 				</Container>
 			</Layout>
 		</>
