@@ -1,4 +1,4 @@
-import { Container } from "@mantine/core"
+import { Box, Container } from "@mantine/core"
 import cx from "clsx"
 import React, { FC, PropsWithChildren } from "react"
 
@@ -17,7 +17,7 @@ export const Layout: FC<PropsWithChildren> = ({ children }) => {
 	return (
 		<Container className={cx(s.wrapper)} size={"100%"} p={"0"}>
 			<Navbar />
-			{children}
+			<Box className={s.content}>{children}</Box>
 			<FooterSection />
 		</Container>
 	)

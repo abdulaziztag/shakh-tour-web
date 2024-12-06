@@ -4,8 +4,6 @@ import IconRight from "@//shared/assets/images/swiper/chevron-right.svg"
 import { Box, Text } from "@mantine/core"
 import cx from "clsx"
 import React, { useEffect, useState } from "react"
-// Import Swiper styles
-import "swiper/css"
 import "swiper/css/navigation"
 import "swiper/css/pagination"
 import {

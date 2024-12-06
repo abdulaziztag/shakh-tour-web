@@ -1,14 +1,19 @@
 .button {
-	background-color: transparent;
-	border-radius: 0.75rem;
-	border: 1px solid #044949;
+  background-color: transparent;
+  border-radius: 0.75rem;
+  border: 1px solid #044949;
+  color: #044949;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5rem;
 
-	&:hover {
-		background-color: transparent;
-	}
+  &:hover {
+    background-color: transparent;
+    color: #044949;
+  }
 
-	&:disabled {
-		color: #d0d5dd;
-		border-color: #e4e7ec;
-	}
+  &:disabled {
+    color: #d0d5dd;
+    border-color: #e4e7ec;
+  }
 }

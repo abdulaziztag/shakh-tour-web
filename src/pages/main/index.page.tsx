@@ -2,7 +2,15 @@ import { Container } from "@mantine/core"
 import Head from "next/head"
 import React from "react"
 
-import { Layout, PopularPackages, Swiper } from "@/widgets"
+import {
+	GroupTours,
+	Layout,
+	OurServices,
+	PopularPackages,
+	RecommendedHotels,
+	SendInquiry,
+	Swiper,
+} from "@/widgets"
 
 const HomePage = () => {
 	return (
@@ -44,6 +52,10 @@ const HomePage = () => {
 				<Container size={"1440px"}>
 					<Swiper />
 					<PopularPackages />
+					<OurServices />
+					<GroupTours />
+					<SendInquiry />
+					<RecommendedHotels />
 				</Container>
 			</Layout>
 		</>
