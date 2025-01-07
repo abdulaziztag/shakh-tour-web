@@ -1,7 +1,7 @@
 import { ActionIcon, Box, Flex, Text } from "@mantine/core"
 import cx from "clsx"
 import Image from "next/image"
-import React from "react"
+import React, { FC } from "react"
 
 import Icon1 from "@/shared/assets/images/recommended-hotels/1.svg"
 import Icon2 from "@/shared/assets/images/recommended-hotels/2.svg"
@@ -13,20 +13,41 @@ import { FilledButton, OutlineButton } from "@/shared/ui/buttons"
 
 import s from "./recommended-hotels.module.scss"
 
-export const RecommendedHotels = () => {
+interface IRecommendedHotelsIProps {
+	seeButton?: boolean
+	title?: boolean
+	like?: boolean
+	viewButton?: boolean
+	titleButton?: string
+}
+
+export const RecommendedHotels: FC<IRecommendedHotelsIProps> = ({
+	seeButton,
+	title,
+	like,
+	viewButton,
+	titleButton,
+}) => {
 	return (
 		<Box className={s.recommendedHotels}>
-			<Text component={"h2"} className={cx(s.recommendedHotelsTitle, "title")}>
-				Recommended Hotels
-			</Text>
+			{title && (
+				<Text
+					component={"h2"}
+					className={cx(s.recommendedHotelsTitle, "title")}
+				>
+					Recommended Hotels
+				</Text>
+			)}
 			<Box className={s.recommendedHotelsBox}>
 				{[1, 2, 3, 4].map((_, index) => (
 					<Box key={index} className={s.recommendedHotelsBoxItem}>
 						<Box className={s.recommendedHotelsBoxItemImage}>
 							<Image src={Image1} alt={""} width={366} height={215} />
-							<ActionIcon className={s.recommendedHotelsBoxItemImageLike}>
-								<IconLike />
-							</ActionIcon>
+							{like && (
+								<ActionIcon className={s.recommendedHotelsBoxItemImageLike}>
+									<IconLike />
+								</ActionIcon>
+							)}
 						</Box>
 						<Box className={s.recommendedHotelsBoxItemBody}>
 							<Flex direction={"column"}>
@@ -83,11 +104,13 @@ export const RecommendedHotels = () => {
 									</Text>
 								</Box>
 								<Box className={s.recommendedHotelsBoxItemBodyPriceRight}>
-									<OutlineButton fullWidth className={s.button}>
-										View on the map
-									</OutlineButton>
+									{viewButton && (
+										<OutlineButton fullWidth className={s.button}>
+											View on the map
+										</OutlineButton>
+									)}
 									<FilledButton fullWidth className={s.button}>
-										See details
+										{titleButton}
 									</FilledButton>
 								</Box>
 							</Flex>
@@ -95,11 +118,13 @@ export const RecommendedHotels = () => {
 					</Box>
 				))}
 			</Box>
-			<Flex justify={"center"} mt={"2rem"}>
-				<FilledButton className={s.recommendedHotelsBottomButton}>
-					See
-				</FilledButton>
-			</Flex>
+			{seeButton && (
+				<Flex justify={"center"} mt={"2rem"}>
+					<FilledButton className={s.recommendedHotelsBottomButton}>
+						See
+					</FilledButton>
+				</Flex>
+			)}
 		</Box>
 	)
 }

@@ -2,23 +2,15 @@ import { Container } from "@mantine/core"
 import Head from "next/head"
 import React from "react"
 
-import {
-	Banner,
-	GroupTours,
-	Layout,
-	OurServices,
-	PopularPackages,
-	SendInquiry,
-	Swiper,
-} from "@/widgets"
+import { AllHotels, Layout } from "@/widgets"
 
-import { RecommendedHotels } from "@/shared/ui"
+import { PageHeader } from "@/shared/ui"
 
-const HomePage = () => {
+const Tours = () => {
 	return (
 		<>
 			<Head>
-				<title>Shakh tours</title>
+				<title>Shakh tours - Hotels</title>
 				<meta name="description" content="" />
 				<meta
 					name="keywords"
@@ -44,23 +36,12 @@ const HomePage = () => {
 			</Head>
 			<Layout>
 				<Container size={"1440px"}>
-					<Swiper />
-					<PopularPackages />
-					<OurServices />
-					<GroupTours />
-					<SendInquiry />
-					<RecommendedHotels
-						seeButton
-						title
-						like
-						viewButton
-						titleButton={"See details"}
-					/>
-					<Banner />
+					<PageHeader title={"All Hotels"} />
+					<AllHotels />
 				</Container>
 			</Layout>
 		</>
 	)
 }
 
-export default HomePage
+export default Tours

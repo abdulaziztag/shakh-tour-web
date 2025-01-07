@@ -19,7 +19,7 @@ export const Navbar = () => {
 	const menuLinks = [
 		{
 			name: "Home",
-			path: "/",
+			path: "/main",
 		},
 		{
 			name: "Tours",

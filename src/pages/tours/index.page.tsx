@@ -2,7 +2,7 @@ import { Container } from "@mantine/core"
 import Head from "next/head"
 import React from "react"
 
-import { Layout } from "@/widgets"
+import { AllTours, Layout } from "@/widgets"
 
 import { PageHeader } from "@/shared/ui"
 
@@ -10,7 +10,7 @@ const Tours = () => {
 	return (
 		<>
 			<Head>
-				<title>Shakh tours - Tours</title>
+				<title>Shakh tours - All Tours</title>
 				<meta name="description" content="" />
 				<meta
 					name="keywords"
@@ -36,7 +36,8 @@ const Tours = () => {
 			</Head>
 			<Layout>
 				<Container size={"1440px"}>
-					<PageHeader />
+					<PageHeader title={"All Tours"} />
+					<AllTours />
 				</Container>
 			</Layout>
 		</>

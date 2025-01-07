@@ -1,0 +1,27 @@
+.radioRoot {
+  input {
+    width: 1.25rem;
+    height: 1.25rem;
+    background-color: transparent;
+    border: 2px solid rgba(176, 186, 191, 0.50);
+    &:active{
+        border: 2px solid #044949;
+    }
+    &:checked:not(:disabled) {
+      border-color: #044949;
+    }
+  }
+}
+
+.radioIcon{
+  circle {
+    fill: #044949;
+  }
+}
+
+.radioLabel {
+  color: #020A15;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: normal;
+}

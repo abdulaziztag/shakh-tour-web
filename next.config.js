@@ -45,23 +45,23 @@ const nextConfig = {
 		]
 	},
 	pageExtensions: ["page.tsx", "page.ts", "page.jsx", "page.js"],
-	images: {
-		domains: ["10.200.200.187", "admin.adams.uz"],
-		remotePatterns: [
-			{
-				protocol: "https",
-				hostname: "10.200.200.187",
-				port: "",
-				pathname: "/**",
-			},
-			{
-				protocol: "https",
-				hostname: "admin.adams.uz",
-				port: "",
-				pathname: "/**",
-			},
-		],
-	},
+	// images: {
+	// 	domains: ["10.200.200.187", "admin.adams.uz"],
+	// 	remotePatterns: [
+	// 		{
+	// 			protocol: "https",
+	// 			hostname: "10.200.200.187",
+	// 			port: "",
+	// 			pathname: "/**",
+	// 		},
+	// 		{
+	// 			protocol: "https",
+	// 			hostname: "admin.adams.uz",
+	// 			port: "",
+	// 			pathname: "/**",
+	// 		},
+	// 	],
+	// },
 }
 
 module.exports = nextTranslate(nextConfig)

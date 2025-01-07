@@ -1,6 +1,6 @@
-import { Box, Flex, Input, RangeSlider, Text } from "@mantine/core"
+import { Box, Flex, Input, Text } from "@mantine/core"
 import cx from "clsx"
-import React, { useState } from "react"
+import React, { FC } from "react"
 
 import IconLeft from "@/shared/assets/images/chevron-left.svg"
 import IconLayoutAlt from "@/shared/assets/images/layout-alt.svg"
@@ -9,8 +9,11 @@ import IconSearch from "@/shared/assets/images/search-lg.svg"
 
 import s from "./page-header.module.scss"
 
-export const PageHeader = () => {
-	const [priceRange, setPriceRange] = useState<[number, number]>([0, 50])
+interface IPageHeaderProps {
+	title: string
+}
+
+export const PageHeader: FC<IPageHeaderProps> = ({ title }) => {
 	return (
 		<Box className={s.pageHeader}>
 			<Text component={"p"} className={s.pageHeaderBack}>
@@ -19,7 +22,7 @@ export const PageHeader = () => {
 			</Text>
 			<Flex justify={"space-between"}>
 				<Text component={"h1"} className={s.pageHeaderTitle}>
-					All Tours
+					{title}
 				</Text>
 				<Flex align={"center"} gap={"1.5rem"}>
 					<Input
@@ -37,22 +40,6 @@ export const PageHeader = () => {
 					</Flex>
 				</Flex>
 			</Flex>
-			<Text size="sm">Tour Price</Text>
-			<Text size="xs" color="dimmed">
-				Total: {priceRange[0]} million UZS - {priceRange[1]} million UZS
-			</Text>
-			<RangeSlider
-				value={priceRange}
-				onChange={setPriceRange}
-				min={0}
-				max={50}
-				step={1}
-				marks={[
-					{ value: 0, label: "0 UZS" },
-					{ value: 50, label: "50 UZS" },
-				]}
-				mt="sm"
-			/>
 		</Box>
 	)
 }
