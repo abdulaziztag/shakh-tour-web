@@ -18,10 +18,7 @@ const HomePage = () => {
 		<>
 			<Head>
 				<title>Shakh tours</title>
-				<meta
-					name="description"
-					content="Добро пожаловать в Adams, вашу платформу для инновационных решений."
-				/>
+				<meta name="description" content="" />
 				<meta
 					name="keywords"
 					content="innovative solutions, technology, Adams platform"
@@ -34,12 +31,7 @@ const HomePage = () => {
 				<meta property="og:type" content="website" />
 				<meta property="og:url" content="https://adams.uz/" />
 				<meta property="og:title" content="Adams" />
-				<meta
-					property="og:description"
-					content={
-						"Добро пожаловать в Adams, вашу платформу для инновационных решений."
-					}
-				/>
+				<meta property="og:description" content={""} />
 				<meta property="og:image" content="" />
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<meta

@@ -1,17 +1,17 @@
+import { Container } from "@mantine/core"
 import Head from "next/head"
 import React from "react"
 
 import { Layout } from "@/widgets"
+
+import { PageHeader } from "@/shared/ui"
 
 const Tours = () => {
 	return (
 		<>
 			<Head>
 				<title>Shakh tours - Tours</title>
-				<meta
-					name="description"
-					content="Добро пожаловать в Adams, вашу платформу для инновационных решений."
-				/>
+				<meta name="description" content="" />
 				<meta
 					name="keywords"
 					content="innovative solutions, technology, Adams platform"
@@ -24,12 +24,7 @@ const Tours = () => {
 				<meta property="og:type" content="website" />
 				<meta property="og:url" content="https://adams.uz/" />
 				<meta property="og:title" content="Adams" />
-				<meta
-					property="og:description"
-					content={
-						"Добро пожаловать в Adams, вашу платформу для инновационных решений."
-					}
-				/>
+				<meta property="og:description" content={""} />
 				<meta property="og:image" content="" />
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<meta
@@ -39,7 +34,11 @@ const Tours = () => {
 				<meta name="roboto" content="index" />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			<Layout>Tours</Layout>
+			<Layout>
+				<Container size={"1440px"}>
+					<PageHeader />
+				</Container>
+			</Layout>
 		</>
 	)
 }
