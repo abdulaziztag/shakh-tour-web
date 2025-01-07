@@ -1,5 +1,3 @@
-import React from "react"
-
 export const Form = () => {
-	return <></>
+	return <div>ss</div>
 }
