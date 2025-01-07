@@ -45,8 +45,9 @@ export const Navbar = () => {
 				<Box className={s.navbar}>
 					<IconLogo />
 					<Flex className={s.navbarMenu}>
-						{menuLinks.map((link) => (
+						{menuLinks.map((link, index) => (
 							<Link
+								key={index}
 								href={link.path}
 								className={cx(s.navbarMenuLink, {
 									[s.active]: path === link.path,
