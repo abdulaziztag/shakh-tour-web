@@ -92,7 +92,7 @@ export const AllHotels = () => {
 						</Box>
 					</Grid.Col>
 					<Grid.Col span={8}>
-						<RecommendedHotels titleButton={"View details"} />
+						<RecommendedHotels titleButton={"View details"} m={"0"} p={"0"} />
 					</Grid.Col>
 				</Grid>
 			</Box>

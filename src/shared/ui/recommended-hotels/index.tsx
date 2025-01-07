@@ -19,6 +19,8 @@ interface IRecommendedHotelsIProps {
 	like?: boolean
 	viewButton?: boolean
 	titleButton?: string
+	m?: string
+	p?: string
 }
 
 export const RecommendedHotels: FC<IRecommendedHotelsIProps> = ({
@@ -27,9 +29,11 @@ export const RecommendedHotels: FC<IRecommendedHotelsIProps> = ({
 	like,
 	viewButton,
 	titleButton,
+	m,
+	p,
 }) => {
 	return (
-		<Box className={s.recommendedHotels}>
+		<Box className={s.recommendedHotels} p={p}>
 			{title && (
 				<Text
 					component={"h2"}
@@ -38,7 +42,7 @@ export const RecommendedHotels: FC<IRecommendedHotelsIProps> = ({
 					Recommended Hotels
 				</Text>
 			)}
-			<Box className={s.recommendedHotelsBox}>
+			<Box className={s.recommendedHotelsBox} m={m}>
 				{[1, 2, 3, 4].map((_, index) => (
 					<Box key={index} className={s.recommendedHotelsBoxItem}>
 						<Box className={s.recommendedHotelsBoxItemImage}>
