@@ -1,41 +1,39 @@
-
 .checkbox {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
-
 .checkboxRoot {
-  input {
-    width: 1.25rem;
-    height: 1.25rem;
-    background-color: #FFF;
-    border: 1.5px solid rgba(176, 186, 191, 0.50);
-    border-radius: 0.25rem;
+	input {
+		width: 1.25rem;
+		height: 1.25rem;
+		background-color: #fff;
+		border: 1.5px solid rgba(176, 186, 191, 0.5);
+		border-radius: 0.25rem;
 
-    &:active {
-      border: 2px solid #044949;
-    }
+		&:active {
+			border: 2px solid #044949;
+		}
 
-    &:checked:not(:disabled) {
-      border-color: #044949;
-      background-color: #044949;
-    }
-  }
+		&:checked:not(:disabled) {
+			border-color: #044949;
+			background-color: #044949;
+		}
+	}
 }
 
 .checkboxLabel {
-  color: #020A15;
-  font-size: 0.875rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 1.25rem;
+	color: #020a15;
+	font-size: 0.875rem;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 1.25rem;
 }
 
 .checkboxInfo {
-  color: #020A15;
-  font-size: 0.875rem;
-  font-weight: 600;
-  line-height: 1.25rem;
+	color: #020a15;
+	font-size: 0.875rem;
+	font-weight: 600;
+	line-height: 1.25rem;
 }

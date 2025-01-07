@@ -1,103 +1,103 @@
 .groupTours {
-  padding: 3rem 0;
+	padding: 3rem 0;
 }
 
 .groupToursTitle {
-  color: #020A15;
+	color: #020a15;
 }
 
 .groupToursRightTitle {
-  color: #044949;
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.75rem;
-  display: flex;
-  align-items: center;
-  gap: 0.12rem;
-  cursor: pointer;
+	color: #044949;
+	font-size: 1.125rem;
+	font-weight: 400;
+	line-height: 1.75rem;
+	display: flex;
+	align-items: center;
+	gap: 0.12rem;
+	cursor: pointer;
 }
 
 .groupToursGrid {
-  margin-top: 2rem;
+	margin-top: 2rem;
 }
 
 .groupToursBox {
-  border-radius: 1rem;
-  background: #FFF;
-  box-shadow: 0 2px 50px 0 rgba(0, 0, 0, 0.06);
-  overflow: hidden;
+	border-radius: 1rem;
+	background: #fff;
+	box-shadow: 0 2px 50px 0 rgba(0, 0, 0, 0.06);
+	overflow: hidden;
 }
 
 .groupToursBoxImage {
-  min-height: 16.25rem;
+	min-height: 16.25rem;
 
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
 }
 
 .groupToursBoxBody {
-  padding: 1rem 1.5rem 1.5rem 1.5rem;
+	padding: 1rem 1.5rem 1.5rem 1.5rem;
 }
 
 .groupToursBoxBodyTitle {
-  color: #111126;
-  font-family: 'Outfit Regular', sans-serif;
-  font-size: 1.75rem;
-  font-weight: 500;
-  line-height: normal;
+	color: #111126;
+	font-family: "Outfit Regular", sans-serif;
+	font-size: 1.75rem;
+	font-weight: 500;
+	line-height: normal;
 }
 
 .groupToursBoxBodyDescription {
-  color: #475467;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5rem;
-  margin: 0.5rem 0 1rem 0;
-  max-width: 33.25rem;
+	color: #475467;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5rem;
+	margin: 0.5rem 0 1rem 0;
+	max-width: 33.25rem;
 }
 
 .groupToursBoxBodyBadge {
-  gap: 0.75rem;
-  margin-bottom: 1.25rem;
+	gap: 0.75rem;
+	margin-bottom: 1.25rem;
 }
 
 .groupToursBoxBadge {
-  padding: 0.5rem 0.75rem;
-  border-radius: 0.75rem;
-  background: rgba(4, 73, 73, 0.08);
-  height: 2.5rem;
-  color: #111126;
-  font-family: 'Outfit Regular', sans-serif;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5rem;
+	padding: 0.5rem 0.75rem;
+	border-radius: 0.75rem;
+	background: rgba(4, 73, 73, 0.08);
+	height: 2.5rem;
+	color: #111126;
+	font-family: "Outfit Regular", sans-serif;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5rem;
 }
 
 .groupToursBoxBodyInfoItem {
-  flex: 1;
+	flex: 1;
 }
 
 .groupToursBoxBodyPrice {
-  color: #044949;
-  font-family: 'Outfit Medium', sans-serif;
-  font-size: 1.75rem;
-  font-weight: 500;
-  line-height: 2.25rem;
+	color: #044949;
+	font-family: "Outfit Medium", sans-serif;
+	font-size: 1.75rem;
+	font-weight: 500;
+	line-height: 2.25rem;
 }
 
 .groupToursBoxBodyPriceSubTitle {
-  color: #475467;
-  font-family: 'Outfit Regular', sans-serif;
-  font-size: 0.875rem;
-  font-weight: 400;
-  line-height: normal;
+	color: #475467;
+	font-family: "Outfit Regular", sans-serif;
+	font-size: 0.875rem;
+	font-weight: 400;
+	line-height: normal;
 }
 
 .groupToursBoxBodyButton {
-  padding: 0.625rem 2.25rem;
-  height: 3.375rem;
-  width: 100%;
+	padding: 0.625rem 2.25rem;
+	height: 3.375rem;
+	width: 100%;
 }

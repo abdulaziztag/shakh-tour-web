@@ -1,113 +1,113 @@
 .recommendedHotels {
-  padding: 3rem 0;
+	padding: 3rem 0;
 }
 
 .recommendedHotelsTitle {
-  color: #171717;
+	color: #171717;
 }
 
 .recommendedHotelsBox {
-  margin-top: 2.12rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+	margin-top: 2.12rem;
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
 }
 
 .recommendedHotelsBoxItem {
-  border-radius: 1.5rem;
-  background: rgba(4, 73, 73, 0.08);
-  overflow: hidden;
-  display: flex;
+	border-radius: 1.5rem;
+	background: rgba(4, 73, 73, 0.08);
+	overflow: hidden;
+	display: flex;
 }
 
 .recommendedHotelsBoxItemImage {
-  width: 30%;
-  height: 13.4375rem;
-  position: relative;
+	width: 30%;
+	height: 13.4375rem;
+	position: relative;
 
-  .recommendedHotelsBoxItemImageLike {
-    position: absolute;
-    top: 1rem;
-    left: 1rem;
-    background: rgba(0, 0, 0, 0.30);
-    border-radius: 50%;
-  }
+	.recommendedHotelsBoxItemImageLike {
+		position: absolute;
+		top: 1rem;
+		left: 1rem;
+		background: rgba(0, 0, 0, 0.3);
+		border-radius: 50%;
+	}
 
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
 }
 
 .recommendedHotelsBoxItemBody {
-  width: 70%;
-  padding: 1rem 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+	width: 70%;
+	padding: 1rem 2rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 }
 
 .recommendedHotelsBoxItemBodyTitle {
-  color: #111126;
-  font-size: 1.75rem;
-  font-weight: 600;
-  line-height: normal;
-  margin: 0 0 0.5rem;
+	color: #111126;
+	font-size: 1.75rem;
+	font-weight: 600;
+	line-height: normal;
+	margin: 0 0 0.5rem;
 }
 
 .recommendedHotelsBoxItemBodySubTitle {
-  color: #475467;
-  font-size: 0.875rem;
-  font-weight: 400;
-  line-height: normal;
-  margin: 0 0 1rem 0;
+	color: #475467;
+	font-size: 0.875rem;
+	font-weight: 400;
+	line-height: normal;
+	margin: 0 0 1rem 0;
 }
 
 .recommendedHotelsBoxItemBodyInfo {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: #171717;
-  font-size: 0.875rem;
-  font-weight: 400;
-  line-height: normal;
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	color: #171717;
+	font-size: 0.875rem;
+	font-weight: 400;
+	line-height: normal;
 }
 
 .recommendedHotelsBoxItemBodyPriceLeft {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  gap: 0.25rem;
+	flex: 1;
+	display: flex;
+	align-items: center;
+	gap: 0.25rem;
 }
 
 .recommendedHotelsBoxItemBodyPrice {
-  color: #111126;
-  font-size: 1.75rem;
-  font-weight: 600;
-  line-height: normal;
+	color: #111126;
+	font-size: 1.75rem;
+	font-weight: 600;
+	line-height: normal;
 }
 
 .recommendedHotelsBoxItemBodyPriceInfo {
-  color: #475467;
-  font-family: 'Outfit Regular', sans-serif;
-  font-size: 0.875rem;
-  font-weight: 400;
-  line-height: normal;
+	color: #475467;
+	font-family: "Outfit Regular", sans-serif;
+	font-size: 0.875rem;
+	font-weight: 400;
+	line-height: normal;
 }
 
 .recommendedHotelsBoxItemBodyPriceRight {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
+	flex: 1;
+	display: flex;
+	align-items: center;
+	gap: 1rem;
 
-  .button {
-    height: 3rem;
-  }
+	.button {
+		height: 3rem;
+	}
 }
 
 .recommendedHotelsBottomButton {
-  height: 3.25rem;
-  padding: 0.75rem 3rem;
+	height: 3.25rem;
+	padding: 0.75rem 3rem;
 }

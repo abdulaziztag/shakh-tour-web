@@ -1,19 +1,18 @@
 .button {
-  height: 2.5rem;
-  border-radius: 0.5rem;
-  background: #F4F6F9;
-  color: #fff;
-  transition: all 0.3s ease;
+	height: 2.5rem;
+	border-radius: 0.5rem;
+	background: #f4f6f9;
+	color: #fff;
+	transition: all 0.3s ease;
 
+	&:hover {
+		border-radius: 0.5rem;
+		background-color: #f4f6f9 !important;
+		color: #fff;
+	}
 
-  &:hover {
-    border-radius: 0.5rem;
-    background-color: #F4F6F9 !important;
-    color: #fff;
-  }
-
-  &:disabled {
-    color: #d0d5dd;
-    background-color: #f2f4f7;
-  }
+	&:disabled {
+		color: #d0d5dd;
+		background-color: #f2f4f7;
+	}
 }

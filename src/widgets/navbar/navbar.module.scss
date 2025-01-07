@@ -1,32 +1,32 @@
 .navbar {
-  padding: 1.12rem 0 1.12rem 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+	padding: 1.12rem 0 1.12rem 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
 .navbarMenu {
-  gap: 2rem 1.25rem;
+	gap: 2rem 1.25rem;
 }
 
 .navbarMenuLink {
-  color: #475467;
-  font-size: 1rem;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 1.5rem;
-  cursor: pointer;
-  text-decoration: none;
-  padding: 0.25rem 0.75rem;
+	color: #475467;
+	font-size: 1rem;
+	font-style: normal;
+	font-weight: 600;
+	line-height: 1.5rem;
+	cursor: pointer;
+	text-decoration: none;
+	padding: 0.25rem 0.75rem;
 
-  &.active {
-    padding: 0.25rem 0.75rem;
-    border-radius: 0.5rem;
-    background: #044949;
-    color: #FFF;
-  }
+	&.active {
+		padding: 0.25rem 0.75rem;
+		border-radius: 0.5rem;
+		background: #044949;
+		color: #fff;
+	}
 }
 
-.navbarLoginButton{
-  height: 2.75rem;
+.navbarLoginButton {
+	height: 2.75rem;
 }

@@ -1,54 +1,51 @@
-.rangeSliderTop{
-  align-items: center;
-  margin-bottom: 0.5rem;
+.rangeSliderTop {
+	align-items: center;
+	margin-bottom: 0.5rem;
 }
 
 .rangeSliderInfoPrice {
-  color: #020A15;
-  font-size: 0.875rem;
-  font-weight: 400;
-  line-height: 1.125rem;
-  letter-spacing: -0.00525rem;
+	color: #020a15;
+	font-size: 0.875rem;
+	font-weight: 400;
+	line-height: 1.125rem;
+	letter-spacing: -0.00525rem;
 }
 
-
 .rangeSliderPrice {
-  color: #020A15;
-  font-size: 0.875rem;
-  font-weight: 500;
-  line-height: 1.25rem;
-  border-radius: 0.75rem;
-  background: #F4F6F9;
-  padding: 0.25rem 0.5rem;
-
+	color: #020a15;
+	font-size: 0.875rem;
+	font-weight: 500;
+	line-height: 1.25rem;
+	border-radius: 0.75rem;
+	background: #f4f6f9;
+	padding: 0.25rem 0.5rem;
 }
 
 .rangeSliderTrack {
-  background: #F4F6F9;
-  height: 0.375rem;
-  border-radius: 0.625rem;
-  &:before {
-    background: #F4F6F9;
-    height: 0.375rem;
-    border-radius: 0.625rem;
-  }
+	background: #f4f6f9;
+	height: 0.375rem;
+	border-radius: 0.625rem;
+	&:before {
+		background: #f4f6f9;
+		height: 0.375rem;
+		border-radius: 0.625rem;
+	}
 }
 
 .rangesliderThumb {
-  background: #044949;
-  width: 1.25rem;
-  height: 1.25rem;
-  border-radius: 3.125rem;
-  border: 2px solid #FFF;
-
+	background: #044949;
+	width: 1.25rem;
+	height: 1.25rem;
+	border-radius: 3.125rem;
+	border: 2px solid #fff;
 }
 
-.rangeSliderBar{
-    background: #044949;
-    height: 0.375rem;
-    border-radius: 0.625rem;
+.rangeSliderBar {
+	background: #044949;
+	height: 0.375rem;
+	border-radius: 0.625rem;
 }
 
-.rangeSliderMark{
-  display: none;
+.rangeSliderMark {
+	display: none;
 }
