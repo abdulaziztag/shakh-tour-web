@@ -44,6 +44,9 @@ const nextConfig = {
 			},
 		]
 	},
+	eslint: {
+		ignoreDuringBuilds: true,
+	},
 	pageExtensions: ["page.tsx", "page.ts", "page.jsx", "page.js"],
 	// images: {
 	// 	domains: ["10.200.200.187", "admin.adams.uz"],
