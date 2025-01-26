@@ -1,0 +1,58 @@
+.aboutServices {
+  padding: 3rem 0;
+  background: #F9FAFB;
+  width: 100%;
+  @media screen and (max-width: 845px) {
+    padding: 1.5rem 0.75rem;
+  }
+}
+
+.aboutServicesBody {
+  width: 100%;
+  background-color: #12b76a;
+}
+
+.aboutServicesTitle {
+  color: #101828;
+  margin-bottom: 2rem;
+}
+
+.segmentedControlRoot {
+  margin-bottom: 2rem;
+  @media screen and (max-width: 845px) {
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
+.segmentedControlLabel {
+  padding: 0.56rem 3.06rem;
+}
+
+.segmentedControlIndicator {
+  background: #044949;
+}
+
+.segmentedControlInnerLabel {
+  text-align: center;
+  font-family: "Outfit Regular", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.75rem;
+  color: #97A0AD;
+}
+
+.segmentedControl {
+  &[data-active="true"] {
+    border-radius: 3.125rem;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.07);
+
+    .segmentedControlInnerLabel {
+      color: #fff;
+    }
+  }
+
+  &:before {
+    display: none;
+  }
+}

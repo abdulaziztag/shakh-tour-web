@@ -1,0 +1,43 @@
+.aboutAddress {
+  border-radius: 2rem;
+  background: #044949;
+  padding: 3rem;
+  margin: 2.5rem 0 5rem 0;
+  @media screen and (max-width: 845px) {
+    padding: 1.5rem;
+  }
+}
+
+.aboutAddressTitle {
+  color: #FFF;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 2rem;
+  margin-bottom: 1rem;
+}
+
+.aboutAddressDescription {
+  color: rgba(255, 255, 255, 0.60);
+  font-size: clamp(0.875rem, 0.804rem + 0.36vw, 1.125rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.75rem;
+  margin-bottom: 2rem;
+  @media screen and (max-width: 845px) {
+    line-height: 1.25rem;
+  }
+}
+
+.aboutAddressSubtitle {
+  color: #FFF;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.875rem;
+}
+
+.aboutAddressText {
+  color: rgba(255, 255, 255, 0.60);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5rem;
+}
