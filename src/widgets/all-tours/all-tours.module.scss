@@ -1,69 +1,17 @@
 .allTours {
-	padding: 0 0 3rem 0;
+  padding: 0 0 3rem 0;
 }
 
 .allTourLeft {
-	padding: 0 0 3rem 0;
+  padding: 0 0 3rem 0;
 }
 
-.accordionRoot {
-	border-radius: 1rem;
-	background: #ebf1f1;
-	border: none;
-	box-shadow: 0 4px 120px 0 rgba(43, 47, 57, 0.06);
-}
-
-.accordionItem {
-	border: none;
-
-	button {
-		padding: 0.75rem 1.5rem 1rem 1.5rem;
-
-		&:hover {
-			background: transparent;
-		}
-	}
-
-	&[data-active="true"] {
-		background: transparent;
-	}
-
-	&:not(:last-child) {
-		border-bottom: 1px solid #eaebeb;
-	}
-}
-
-.accordionPanel {
-	background: transparent;
-}
-
-.accordionContent {
-	padding: 0 1.5rem 1.5rem 1.5rem;
-}
-
-.accordionControlTitle {
-	color: #020a15;
-	font-size: 1.125rem;
-	font-weight: 600;
-	line-height: normal;
-}
-
-.accordionItemFilterWrapper {
-	margin-top: 1rem;
-	border-top: 1px solid #eaebeb;
-	padding: 0.75rem 0 0 0;
-
-	.filterButton {
-		width: 100%;
-		color: #044949;
-		font-size: 1rem;
-		font-weight: 600;
-		line-height: normal;
-		height: 3.5rem;
-	}
-}
 
 .allToursCard {
-	border-bottom: 1px solid #eaecf0;
-	padding-bottom: 1.5rem;
+  border-bottom: 1px solid #eaecf0;
+  padding-bottom: 1.5rem;
+  flex-direction: column;
+  @media screen and (max-width: 992px) {
+    padding-bottom: 1rem;
+  }
 }

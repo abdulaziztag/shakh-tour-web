@@ -1,3 +1,6 @@
 .swiper {
-	margin-top: 1.5rem;
+  margin-top: 1.5rem;
+  @media screen and (max-width: 845px) {
+    margin-top: 1rem;
+  }
 }

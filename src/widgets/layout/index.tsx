@@ -15,7 +15,7 @@ export const Layout: FC<PropsWithChildren> = ({ children }) => {
 	// 	if (!token) router.push(AppPages.LoginPage)
 	// }, [])
 	return (
-		<Container className={cx(s.wrapper)} size={"100%"} p={"0"}>
+		<Container className={cx(s.wrapper)} size={"100%"}>
 			<Navbar />
 			<Box className={s.content}>{children}</Box>
 			<FooterSection />

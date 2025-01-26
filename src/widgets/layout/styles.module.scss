@@ -1,8 +1,16 @@
 .wrapper {
 	height: 100%;
 	min-height: 100vh;
+	padding: 0;
+	overflow: hidden;
 	@media screen and (max-width: 1550px) {
-		padding: 0 5rem;
+		padding: 0 4rem;
+	}
+	@media screen and (max-width: 1336px) {
+		padding: 0 2rem;
+	}
+	@media screen and (max-width: 1024px){
+		padding: 0;
 	}
 }
 

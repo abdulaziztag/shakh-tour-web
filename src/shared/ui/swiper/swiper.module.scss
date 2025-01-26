@@ -1,104 +1,142 @@
 .tourSlider {
-	position: relative;
-	width: 100%;
-	height: 100vh;
-	max-height: 39rem;
-	border-radius: 2.5rem;
-	background: #fff;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  max-height: 39rem;
+  border-radius: 2.5rem;
+  background: #fff;
+  @media screen and (max-width: 845px) {
+    height: auto;
+  }
 }
 
 .tourSwiper {
-	width: 100%;
-	height: 100%;
+  width: 100%;
+  height: 100%;
+  @media screen and (max-width: 845px) {
+    height: 20rem;
+  }
+  @media screen and (max-width: 576px){
+    height: 12.5rem;
+  }
 }
 
 .slideContent {
-	position: relative;
-	width: 100%;
-	height: 100%;
-	display: flex;
-	align-items: flex-end;
-	justify-content: flex-start;
-	padding: 0 0 3.87rem 3rem;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 0 0 3.87rem 3rem;
 }
 
 .slideBackground {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
-	border-radius: 2.5rem;
-	&::before {
-		content: "";
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		background: linear-gradient(
-			0deg,
-			rgba(0, 0, 0, 0.4) 0%,
-			rgba(0, 0, 0, 0.4) 100%
-		);
-		border-radius: 2.5rem;
-	}
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 2.5rem;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 0.4) 0%,
+            rgba(0, 0, 0, 0.4) 100%
+    );
+    border-radius: 2.5rem;
+  }
 }
 
 .slideOverlay {
-	position: relative;
-	max-width: 56.75rem;
-	padding: 0 20px;
-	text-align: left;
-	z-index: 2;
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
-	gap: 1rem;
+  position: relative;
+  max-width: 56.75rem;
+  padding: 0 20px;
+  text-align: left;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  @media screen and (max-width: 845px) {
+    display: none;
+  }
+}
+
+.slideOverlayMobile {
+  display: none;
+  @media screen and (max-width: 845px) {
+    display: block;
+    margin: 0.75rem 0 0 0;
+    padding: 0;
+  }
 }
 
 .slideOverlayTitle {
-	color: #fff;
-	font-size: 3rem;
-	font-weight: 600;
-	line-height: 3.89419rem;
+  color: #fff;
+  font-size: clamp(1.125rem, 0.589rem + 2.68vw, 3rem);
+  font-weight: 600;
+  line-height: 3.89419rem;
+  @media screen and (max-width: 845px) {
+    line-height: 1.75rem;
+    color: #121212;
+    margin-bottom: 0.5rem;
+  }
 }
 
 .slideOverlayDescription {
-	color: #fff;
-	font-size: 1.125rem;
-	font-weight: 500;
-	line-height: 2rem;
+  color: #fff;
+  font-size: clamp(0.875rem, 0.804rem + 0.36vw, 1.125rem);
+  font-weight: 500;
+  line-height: 2rem;
+  @media screen and (max-width: 845px) {
+    line-height: 1.125rem;
+    margin-bottom: 0.75rem;
+    color: #121212;
+  }
 }
 
 .detailsButton {
-	height: 2.75rem;
-	padding: 0 4.5rem;
+  height: 2.75rem;
+  padding: 0 4.5rem;
 }
 
 .swiperButton {
-	border-radius: 62.5rem;
-	background: #f9fafb;
-	box-shadow: 4px 0 50px 0 rgba(0, 0, 0, 0.25);
-	width: 2.5rem;
-	height: 2.5rem;
+  border-radius: 62.5rem;
+  background: #f9fafb;
+  box-shadow: 4px 0 50px 0 rgba(0, 0, 0, 0.25);
+  width: 2.5rem;
+  height: 2.5rem;
 
-	svg {
-		width: 1.5rem;
-		height: 1.5rem;
-	}
-	&:after {
-		content: none;
-	}
+  svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  &:after {
+    content: none;
+  }
+
+  @media screen and (max-width: 845px) {
+    display: none;
+    height: 2.72rem;
+  }
 }
 
 .swiperButtonLeft {
-	left: -1.5%;
+  left: -1.5%;
 }
 
 .swiperButtonRight {
-	right: -1.5%;
+  right: -1.5%;
 }

@@ -1,46 +1,72 @@
 .banner {
-	margin: 3rem 0;
-	border-radius: 1.875rem;
-	background-color: #044949;
-	background-image: url("../../shared/assets/images/banner/1.png");
-	background-repeat: no-repeat;
-	background-position: bottom right;
-	background-size: 572.545px 336.011px;
-	min-height: 25.375rem;
+  margin: 3rem 0;
+  border-radius: 1.875rem;
+  background-color: #044949;
+  background-image: url("../../shared/assets/images/banner/1.png");
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  background-size: 572.545px 336.011px;
+  min-height: 25.375rem;
+  @media screen and (max-width: 845px) {
+    background-image: none;
+    margin: 0 0 2rem 0;
+  }
+}
+
+.bannerImage {
+  display: none;
+  @media screen and (max-width: 845px) {
+    display: block;
+  }
 }
 
 .bannerBody {
-	padding: 4.94rem 2.12rem;
-	max-width: 42.8125rem;
-	flex-direction: column;
-	align-items: flex-start;
-	gap: 1.5rem;
+  padding: 4.94rem 2.12rem;
+  max-width: 42.8125rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+  @media screen and (max-width: 845px) {
+    padding: 0.75rem 0.93rem 1.49rem 0.93rem;
+    gap: 0.5rem;
+  }
 }
 
 .bannerTitle {
-	color: #fff;
+  color: #fff;
+  @media screen and (max-width: 845px) {
+    line-height: 1.875rem;
+  }
 }
 
 .bannerSubTitle {
-	color: #fff;
-	font-size: 1.125rem;
-	font-weight: 400;
-	line-height: 1.75rem;
+  color: #fff;
+  font-size: clamp(0.875rem, 0.804rem + 0.36vw, 1.125rem);
+  font-weight: 400;
+  line-height: 1.75rem;
+  @media screen and (max-width: 845px) {
+    line-height: 1.25rem;
+  }
 }
 
 .bannerButton {
-	border-radius: 0.75rem;
-	background: #fff;
-	box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
-	color: #044949;
-	font-size: 1rem;
-	font-weight: 500;
-	line-height: 1.5rem;
-	padding: 0.75rem 3rem;
-	height: 3rem;
+  border-radius: 0.75rem;
+  background: #fff;
+  box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
+  color: #044949;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5rem;
+  padding: 0.75rem 3rem;
+  height: 3rem;
 
-	&:hover {
-		background: #fff;
-		color: #044949;
-	}
+  &:hover {
+    background: #fff;
+    color: #044949;
+  }
+
+  @media screen and (max-width: 845px) {
+    margin-top: 0.5rem;
+    width: 100%;
+  }
 }

@@ -1,12 +1,24 @@
 import { Box, Button, Flex, Text } from "@mantine/core"
 import cx from "clsx"
+import Image from "next/image"
 import React from "react"
+
+import BannerMobile from "@/shared/assets/images/banner/1.png"
 
 import s from "./banner.module.scss"
 
 export const Banner = () => {
 	return (
 		<Box className={s.banner}>
+			<Flex justify={"center"} align={"center"}>
+				<Image
+					src={BannerMobile}
+					alt={""}
+					width={313}
+					height={185}
+					className={s.bannerImage}
+				/>
+			</Flex>
 			<Flex className={s.bannerBody}>
 				<Text component={"h3"} className={cx(s.bannerTitle, "title")}>
 					Your perfect adventure starts here! Get in touch with us!

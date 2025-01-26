@@ -1,4 +1,5 @@
 import { Container, Flex, Grid, Text } from "@mantine/core"
+import { useMediaQuery } from "@mantine/hooks"
 import Link from "next/link"
 import React from "react"
 
@@ -14,14 +15,16 @@ export const FooterSection = () => {
 	// const router = useRouter()
 	// const language = lang as "ru" | "uz"
 
+	const matches = useMediaQuery("(max-width: 992px)")
+
 	return (
 		<footer className={s.footerSection}>
 			<Container size={"1440px"}>
 				<Grid className={s.footerSectionTop}>
-					<Grid.Col span={3}>
+					<Grid.Col span={matches ? 12 : 3}>
 						<Logo />
 					</Grid.Col>
-					<Grid.Col span={3}>
+					<Grid.Col span={matches ? 6 : 3}>
 						<Text component={"p"} className={s.footerSectionTitle}>
 							Tours
 						</Text>
@@ -43,7 +46,7 @@ export const FooterSection = () => {
 							</Link>
 						</Flex>
 					</Grid.Col>
-					<Grid.Col span={3}>
+					<Grid.Col span={matches ? 6 : 3}>
 						<Text component={"p"} className={s.footerSectionTitle}>
 							Services
 						</Text>
@@ -62,7 +65,7 @@ export const FooterSection = () => {
 							</Link>
 						</Flex>
 					</Grid.Col>
-					<Grid.Col span={3}>
+					<Grid.Col span={matches ? 6 : 3}>
 						<Text component={"p"} className={s.footerSectionTitle}>
 							Company
 						</Text>
@@ -73,14 +76,36 @@ export const FooterSection = () => {
 							<Link href={"/"} className={s.footerSectionLink}>
 								Our Team
 							</Link>
-							<Link href={"/"} className={s.footerSectionLink}>
-								Privacy Policy
-							</Link>
-							<Link href={"/"} className={s.footerSectionLink}>
-								Contacts
-							</Link>
+							{!matches ? (
+								<>
+									<Link href={"/"} className={s.footerSectionLink}>
+										Privacy Policy
+									</Link>
+									<Link href={"/"} className={s.footerSectionLink}>
+										Contacts
+									</Link>
+								</>
+							) : null}
 						</Flex>
 					</Grid.Col>
+					{matches ? (
+						<>
+							<Grid.Col span={matches ? 6 : 3}>
+								<Flex
+									direction={"column"}
+									gap={"0.75rem"}
+									mt={matches ? "2rem" : "0"}
+								>
+									<Link href={"/"} className={s.footerSectionLink}>
+										Privacy Policy
+									</Link>
+									<Link href={"/"} className={s.footerSectionLink}>
+										Contacts
+									</Link>
+								</Flex>
+							</Grid.Col>
+						</>
+					) : null}
 				</Grid>
 				<Flex className={s.footerSectionBottom}>
 					<Text component={"p"} className={s.footerSectionBottomInfo}>

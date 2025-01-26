@@ -1,42 +1,50 @@
 .footerSection {
-	background: #082828;
-	padding: 4rem 0 3rem 0;
+  background: #082828;
+  padding: 4rem 0 3rem 0;
+  @media screen and (max-width: 992px) {
+    padding: 2rem 0;
+  }
 }
 
 .footerSectionTop {
-	padding-bottom: 3rem;
+  padding-bottom: 3rem;
 }
 
 .footerSectionTitle {
-	color: #d0d5dd;
-	font-size: 0.875rem;
-	font-weight: 600;
-	line-height: 1.25rem;
-	margin-bottom: 1rem;
+  color: #d0d5dd;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+  margin-bottom: 1rem;
 }
 
 .footerSectionLink {
-	color: #eaecf0;
-	font-size: 1rem;
-	font-style: normal;
-	font-weight: 600;
-	line-height: 1.5rem;
+  color: #eaecf0;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.5rem;
 }
 
 .footerSectionBottom {
-	border-top: 1px solid #475467;
-	padding-top: 2rem;
-	justify-content: space-between;
-	align-items: center;
+  border-top: 1px solid #475467;
+  padding-top: 2rem;
+  justify-content: space-between;
+  align-items: center;
+  @media screen and (max-width: 992px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
 }
 
 .footerSectionBottomInfo {
-	color: #d0d5dd;
-	font-size: 1rem;
-	font-weight: 400;
-	line-height: 1.5rem;
+  color: #d0d5dd;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5rem;
 
-	a {
-		color: #d0d5dd;
-	}
+  a {
+    color: #d0d5dd;
+  }
 }

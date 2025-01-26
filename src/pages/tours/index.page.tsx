@@ -1,12 +1,15 @@
-import { Container } from "@mantine/core"
+import { Container, Drawer } from "@mantine/core"
 import Head from "next/head"
 import React from "react"
 
 import { AllTours, Layout } from "@/widgets"
 
-import { PageHeader } from "@/shared/ui"
+import { AllTourFilter, PageHeader } from "@/shared/ui"
 
 const Tours = () => {
+	const [opened, setOpened] = React.useState(false)
+	const onClose = () => setOpened(false)
+
 	return (
 		<>
 			<Head>
@@ -36,9 +39,20 @@ const Tours = () => {
 			</Head>
 			<Layout>
 				<Container size={"1440px"}>
-					<PageHeader title={"All Tours"} />
+					<PageHeader
+						title={"All Tours"}
+						onClickFilter={() => setOpened(true)}
+					/>
 					<AllTours />
 				</Container>
+				<Drawer
+					opened={opened}
+					onClose={onClose}
+					size={"100%"}
+					withCloseButton={false}
+				>
+					<AllTourFilter onclickBack={() => setOpened(false)} />
+				</Drawer>
 			</Layout>
 		</>
 	)

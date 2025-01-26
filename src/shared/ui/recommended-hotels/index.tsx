@@ -3,6 +3,7 @@ import cx from "clsx"
 import Image from "next/image"
 import React, { FC } from "react"
 
+import IconArrow from "@/shared/assets/images/group-tours/chevron-right.svg"
 import Icon1 from "@/shared/assets/images/recommended-hotels/1.svg"
 import Icon2 from "@/shared/assets/images/recommended-hotels/2.svg"
 import Icon3 from "@/shared/assets/images/recommended-hotels/3.svg"
@@ -35,12 +36,17 @@ export const RecommendedHotels: FC<IRecommendedHotelsIProps> = ({
 	return (
 		<Box className={s.recommendedHotels} p={p}>
 			{title && (
-				<Text
-					component={"h2"}
-					className={cx(s.recommendedHotelsTitle, "title")}
-				>
-					Recommended Hotels
-				</Text>
+				<Flex justify={"space-between"} align={"center"}>
+					<Text
+						component={"h2"}
+						className={cx(s.recommendedHotelsTitle, "title")}
+					>
+						Recommended Hotels
+					</Text>
+					<Text component={"h2"} className={cx(s.recommendedHotelsRight)}>
+						<IconArrow />
+					</Text>
+				</Flex>
 			)}
 			<Box className={s.recommendedHotelsBox} m={m}>
 				{[1, 2, 3, 4].map((_, index) => (
@@ -67,34 +73,34 @@ export const RecommendedHotels: FC<IRecommendedHotelsIProps> = ({
 								>
 									2A Mirzakalona Ismaili Street, Tashkent
 								</Text>
-								<Flex gap={"1.5rem"}>
+								<Flex className={s.recommendedHotelsBoxItemBodyInfoWrapper}>
 									<Text
 										component={"p"}
 										className={s.recommendedHotelsBoxItemBodyInfo}
 									>
 										<Icon1 />
-										Air conditioning
+										<span>Air conditioning</span>
 									</Text>
 									<Text
 										component={"p"}
 										className={s.recommendedHotelsBoxItemBodyInfo}
 									>
 										<Icon2 />
-										Free wifi
+										<span>Free wifi</span>
 									</Text>
 									<Text
 										component={"p"}
 										className={s.recommendedHotelsBoxItemBodyInfo}
 									>
 										<Icon3 />
-										Private parking area
+										<span>Private parking area</span>
 									</Text>
 									<Text
 										component={"p"}
 										className={s.recommendedHotelsBoxItemBodyInfo}
 									>
 										<Icon4 />
-										Transfer
+										<span>Transfer</span>
 									</Text>
 								</Flex>
 							</Flex>

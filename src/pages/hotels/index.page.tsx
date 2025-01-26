@@ -1,12 +1,14 @@
-import { Container } from "@mantine/core"
+import { Container, Drawer } from "@mantine/core"
 import Head from "next/head"
 import React from "react"
 
 import { AllHotels, Layout } from "@/widgets"
 
-import { PageHeader } from "@/shared/ui"
+import { AllHotelFilter, PageHeader } from "@/shared/ui"
 
 const Tours = () => {
+	const [opened, setOpened] = React.useState(false)
+	const onClose = () => setOpened(false)
 	return (
 		<>
 			<Head>
@@ -36,9 +38,20 @@ const Tours = () => {
 			</Head>
 			<Layout>
 				<Container size={"1440px"}>
-					<PageHeader title={"All Hotels"} />
+					<PageHeader
+						title={"All Hotels"}
+						onClickFilter={() => setOpened(true)}
+					/>
 					<AllHotels />
 				</Container>
+				<Drawer
+					opened={opened}
+					onClose={onClose}
+					size={"100%"}
+					withCloseButton={false}
+				>
+					<AllHotelFilter onclickBack={() => setOpened(false)} />
+				</Drawer>
 			</Layout>
 		</>
 	)

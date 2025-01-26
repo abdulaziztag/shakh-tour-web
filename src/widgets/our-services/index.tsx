@@ -5,7 +5,7 @@ import IconBox4 from "@//shared/assets/images/our-services/4.svg"
 import IconBox5 from "@//shared/assets/images/our-services/5.svg"
 import IconArrowLeft from "@//shared/assets/images/our-services/chevron_left.svg"
 import IconArrowRight from "@//shared/assets/images/our-services/chevron_right.svg"
-import { ActionIcon, Box, Flex, Text } from "@mantine/core"
+import { ActionIcon, Box, Flex, Grid, Text } from "@mantine/core"
 import cx from "clsx"
 import React from "react"
 import "swiper/css/navigation"
@@ -80,7 +80,7 @@ export const OurServices = () => {
 				<Text component={"h2"} className={s.ourServicesTitle}>
 					Our Services
 				</Text>
-				<Flex>
+				<Flex className={s.ourServicesButton}>
 					<ActionIcon bg={"transparent"} className={cx("swiper-services-prev")}>
 						<IconArrowLeft />
 					</ActionIcon>
@@ -89,6 +89,7 @@ export const OurServices = () => {
 					</ActionIcon>
 				</Flex>
 			</Flex>
+			{/* Desktop da slider */}
 			<Swiper
 				modules={[Navigation]}
 				navigation={{
@@ -116,6 +117,24 @@ export const OurServices = () => {
 					</SwiperSlide>
 				))}
 			</Swiper>
+			{/* Mobile */}
+			<Grid className={s.ourServicesSwiperMobile}>
+				{ourServices.map((service, index) => (
+					<Grid.Col span={6}>
+						<Box key={index} className={s.ourServicesBox}>
+							<Text component={"h3"} className={s.ourServicesBoxTitle}>
+								{service.title}
+							</Text>
+							<Text component={"p"} className={s.ourServicesBoxDescription}>
+								{service.description}
+							</Text>
+							<Box className={s.ourServicesBoxBottom}>
+								<service.icon />
+							</Box>
+						</Box>
+					</Grid.Col>
+				))}
+			</Grid>
 		</Box>
 	)
 }
