@@ -1,3 +1,5 @@
+import "@mantine/carousel/styles.css"
+import "@mantine/core/styles.css"
 import { AppProps } from "next/app"
 import React from "react"
 

@@ -1,6 +1,7 @@
 import { ActionIcon, Box, Flex, Text } from "@mantine/core"
 import cx from "clsx"
 import Image from "next/image"
+import { useRouter } from "next/router"
 import React, { FC } from "react"
 
 import IconArrow from "@/shared/assets/images/group-tours/chevron-right.svg"
@@ -33,6 +34,8 @@ export const RecommendedHotels: FC<IRecommendedHotelsIProps> = ({
 	m,
 	p,
 }) => {
+	const router = useRouter()
+
 	return (
 		<Box className={s.recommendedHotels} p={p}>
 			{title && (
@@ -119,7 +122,11 @@ export const RecommendedHotels: FC<IRecommendedHotelsIProps> = ({
 											View on the map
 										</OutlineButton>
 									)}
-									<FilledButton fullWidth className={s.button}>
+									<FilledButton
+										onClick={() => router.push(`/hotels/${index}`)}
+										fullWidth
+										className={s.button}
+									>
 										{titleButton}
 									</FilledButton>
 								</Box>

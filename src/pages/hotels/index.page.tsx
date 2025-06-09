@@ -6,7 +6,7 @@ import { AllHotels, Layout } from "@/widgets"
 
 import { AllHotelFilter, PageHeader } from "@/shared/ui"
 
-const Tours = () => {
+const Hotels = () => {
 	const [opened, setOpened] = React.useState(false)
 	const onClose = () => setOpened(false)
 	return (
@@ -57,4 +57,4 @@ const Tours = () => {
 	)
 }
 
-export default Tours
+export default Hotels
