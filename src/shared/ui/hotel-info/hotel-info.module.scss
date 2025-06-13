@@ -1,0 +1,87 @@
+.titleCard {
+  background: white;
+  padding: 32px 0px 0px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 16px;
+    height: auto;
+  }
+}
+
+.pageTitle {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0;
+  line-height: 1.2;
+
+  @media (max-width: 768px) {
+    font-size: 18px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 16px;
+  }
+}
+
+.infoStack {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 24px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+.group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #475467;
+  font-size: 14px;
+  line-height: 1.4;
+
+  @media (max-width: 768px) {
+    font-size: 13px;
+  }
+}
+
+.icon {
+  color: #9ca3af;
+  flex-shrink: 0;
+
+  &:hover {
+    color: #475467;
+  }
+}
+
+.text {
+  color: #475467;
+  font-weight: 400;
+}
+
+.phoneLink {
+  color: #475467;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+
+  &:hover {
+    color: #475467;
+    text-decoration: underline;
+  }
+
+  &:focus {
+    outline: 2px solid #475467;
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+}
