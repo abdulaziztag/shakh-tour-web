@@ -1,0 +1,11 @@
+.backBtn {
+  display: inline-flex;
+  color: #044949;
+  font-weight: bold;
+  gap: .5rem;
+
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}

@@ -17,7 +17,7 @@ import { FilledButton, OutlineButton } from "@/shared/ui/buttons";
 
 
 import s from "./recommended-hotels.module.scss";
-
+import { useRouter } from 'next/navigation';
 
 
 
@@ -43,6 +43,8 @@ export const RecommendedHotels: FC<IRecommendedHotelsIProps> = ({
 	m,
 	p,
 }) => {
+	const router = useRouter()
+
 	return (
 		<Box className={s.recommendedHotels} p={p}>
 			{title && (
@@ -129,7 +131,12 @@ export const RecommendedHotels: FC<IRecommendedHotelsIProps> = ({
 											View on the map
 										</OutlineButton>
 									)}
-									<FilledButton fullWidth className={s.button} onClick={() => onViewDetail(1)}>
+									{/* <FilledButton fullWidth className={s.button} onClick={() => onViewDetail(1)}> */}
+									<FilledButton
+										onClick={() => router.push(`/hotels/${index}`)}
+										fullWidth
+										className={s.button}
+									>
 										{titleButton}
 									</FilledButton>
 								</Box>

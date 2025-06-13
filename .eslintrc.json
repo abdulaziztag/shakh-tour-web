@@ -8,7 +8,7 @@
 		"plugin:storybook/recommended",
 		"plugin:prettier/recommended"
 	],
-	"ignorePatterns": ["dist", ".eslintrc.cjs"],
+	"ignorePatterns": ["dist", ".eslintrc.cjs", "*/**/*.scss", "*/**/*.less", "*/**/*.css"],
 	"parser": "@typescript-eslint/parser",
 	"plugins": ["react", "react-hooks", "prettier", "import"],
 	"rules": {
