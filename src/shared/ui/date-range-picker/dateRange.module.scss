@@ -1,0 +1,254 @@
+
+.dateRangePicker {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 16px;
+  padding-bottom: 20px;
+  box-shadow: 0px 2px 50px 0px #00000014;
+  width: 100%;
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  @media (max-width: 768px) {
+    padding: 20px;
+    border-radius: 12px;
+  }
+}
+
+.priceSection {
+  margin-bottom: 16px;
+
+  .price {
+    font-size: 24px;
+    font-weight: 600;
+    color: #111126;
+    display: block;
+    font-family: Inter;
+    line-height: 32px;
+    letter-spacing: 0%;
+
+
+    @media (max-width: 768px) {
+      font-size: 20px;
+    }
+  }
+}
+
+.dateInputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 12px;
+  letter-spacing: 0.15%;
+  color: #475467;
+}
+
+.inputWrapper {
+  position: relative;
+  cursor: pointer;
+}
+
+.dateInput {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  border: none;
+  z-index: 2;
+
+  &::-webkit-calendar-picker-indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: auto;
+    height: auto;
+    background: transparent;
+    color: transparent;
+    cursor: pointer;
+  }
+}
+
+.displayDate {
+  background: #f8f9fa;
+  border: 1px solid #C4C4C4;
+  border-radius: 12px;
+  padding: 16px 48px 16px 16px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #1a1a1a;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+
+  &:hover {
+    border-color: #007c5c;
+    background: #f0fdf9;
+  }
+
+  .dateInput:focus + & {
+    border-color: #007c5c;
+    background: #f0fdf9;
+    box-shadow: 0 0 0 3px rgba(0, 124, 92, 0.1);
+  }
+
+  @media (max-width: 768px) {
+    padding: 14px 40px 14px 14px;
+    font-size: 15px;
+    min-height: 48px;
+  }
+}
+
+.calendarIcon {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #666666;
+  pointer-events: none;
+  z-index: 1;
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  @media (max-width: 768px) {
+    right: 12px;
+
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+}
+
+.inquirySection {
+  padding: 16px 0;
+}
+
+.inquiryInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  @media (min-width: 480px) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.inquiryLabel {
+  color: #000000;
+  font-family: Inter;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: 0%;
+}
+
+.phoneNumber {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #999999;
+  font-size: 14px;
+  font-weight: 500;
+
+  svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+  }
+
+  span {
+    letter-spacing: 0.02em;
+  }
+}
+
+.sendButton {
+  height: 3.25rem;
+  padding: 0.75rem 3rem;
+}
+
+.dateRangePicker * {
+  box-sizing: border-box;
+}
+
+@media (prefers-color-scheme: dark) {
+  .dateRangePicker {
+    background: #1a1a1a;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+
+  .price {
+    color: #ffffff;
+  }
+
+  .label {
+    color: #b3b3b3;
+  }
+
+  .displayDate {
+    background: #2a2a2a;
+    border-color: #404040;
+    color: #ffffff;
+
+    &:hover {
+      border-color: #00a86b;
+      background: #0f2a21;
+    }
+  }
+
+  .calendarIcon {
+    color: #b3b3b3;
+  }
+
+  .inquirySection {
+    border-color: #404040;
+  }
+
+  .inquiryLabel {
+    color: #000000;
+    font-family: Inter;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: 0%;
+  }
+
+  .phoneNumber {
+    color: #999999;
+  }
+
+  .sendButton {
+    background: #00a86b;
+
+    &:hover {
+      background: #008f5a;
+    }
+  }
+}

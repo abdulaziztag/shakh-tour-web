@@ -1,7 +1,9 @@
-@use "font-inter/stylesheet.css";
-@use "outfit/style.css";
+@import "font-inter/stylesheet.css";
+@import "outfit/style.css";
+// Import Swiper styles
+@import "swiper/css";
+@import "leaflet/dist/leaflet.css";
 
-@use "swiper/css";
 
 * {
   margin: 0;

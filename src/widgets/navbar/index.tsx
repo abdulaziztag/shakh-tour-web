@@ -60,7 +60,10 @@ export const Navbar = () => {
 								key={index}
 								href={link.path}
 								className={cx(s.navbarMenuLink, {
-									[s.active]: path === link.path,
+									[s.active]:
+										link.path === "/"
+											? path === "/"
+											: path?.startsWith(link.path),
 								})}
 							>
 								{link.name}
@@ -104,7 +107,10 @@ export const Navbar = () => {
 									key={index}
 									href={link.path}
 									className={cx(s.navbarDrawerLink, {
-										[s.active]: path === link.path,
+										[s.active]:
+											link.path === "/"
+												? path === "/"
+												: path?.startsWith(link.path),
 									})}
 								>
 									{link.name}
