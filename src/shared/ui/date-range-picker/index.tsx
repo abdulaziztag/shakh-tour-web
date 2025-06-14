@@ -1,10 +1,22 @@
-import React, { useState } from "react"
+import React, { useState } from "react";
 
-import CalendarIcon from "@/shared/assets/images/hotel-detail/calendar.svg"
-import PhoneIcon from "@/shared/assets/images/hotel-detail/phone_in_talk.svg"
 
-import styles from "./dateRange.module.scss"
-import { FilledButton } from '../buttons'
+
+import { HotelDetailsModal } from '@/widgets/send-request';
+
+
+
+import CalendarIcon from "@/shared/assets/images/hotel-detail/calendar.svg";
+import PhoneIcon from "@/shared/assets/images/hotel-detail/phone_in_talk.svg";
+
+
+
+import { FilledButton } from '../buttons';
+import styles from "./dateRange.module.scss";
+
+
+
+
 
 interface DateRangePickerProps {
 	checkInDate?: string
@@ -27,6 +39,7 @@ const DateRangePicker: React.FC<DateRangePickerProps> = ({
 	// onSendRequest,
 	className = "",
 }) => {
+	const [modalOpened, setModalOpened] = useState(false)
 	const [checkIn, setCheckIn] = useState<string>(checkInDate)
 	const [checkOut, setCheckOut] = useState<string>(checkOutDate)
 
@@ -127,9 +140,14 @@ const DateRangePicker: React.FC<DateRangePickerProps> = ({
 					</div>
 				</div>
 			</div>
-			<FilledButton fullWidth className={styles.sendButton}>
+			<FilledButton fullWidth className={styles.sendButton} onClick={() => setModalOpened(true)}>
 				Send request
 			</FilledButton>
+			<HotelDetailsModal
+				opened={modalOpened}
+				onClose={() => setModalOpened(false)}
+				onSubmit={() => {}}
+			/>
 		</div>
 	)
 }

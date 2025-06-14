@@ -1,88 +1,73 @@
-import { Box, Flex, TextInputProps } from "@mantine/core"
+import { Input as InputCustom } from "@mantine/core"
 import React, { FC, useRef } from "react"
 import { IMaskMixin, IMaskMixinProps } from "react-imask"
 
 import s from "./index.module.scss"
 
-type MaskProps = IMaskMixinProps<HTMLInputElement> & TextInputProps
+type MaskProps = IMaskMixinProps<HTMLInputElement> & {
+	id?: string
+	className?: string
+	placeholder?: string
+	onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void
+}
 
-interface ICardInputProps {
+interface IPhoneInputProps {
 	phoneNumber: {
 		label?: string
 		onChange: (e: string) => void
 		value?: string
 	}
-	error: React.ReactNode
+	error?: string
 	id?: string
 	onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void
 }
 
-export const PhoneInput = (props: ICardInputProps) => {
+export const PhoneInput: FC<IPhoneInputProps> = (props) => {
 	return (
-		<Flex gap={"0.5rem"} wrap={"wrap"} direction={"column"}>
-			<Box className={s.inputCard}>
-				<InputMask
-					label={props.phoneNumber.label}
-					id={props.id}
-					value={props.phoneNumber.value}
-					onAccept={(_, maskRef) => {
-						props.phoneNumber.onChange(maskRef.unmaskedValue)
-					}}
-					onBlur={props.onBlur}
-					mask={"+{998} (00) 000-00-00"}
-					placeholderChar={"•"}
-					lazy={false}
-					error={props.error}
-				/>
-			</Box>
-		</Flex>
-	)
-}
-export const InputMask: FC<MaskProps> = (props) => {
-	const ref = useRef(null)
-	return (
-		<MaskedStyledInput
-			ref={ref}
-			inputValue={props.value}
+		<InputCustom.Wrapper
+			label={props.phoneNumber.label}
 			error={props.error}
-			onBlur={props.onBlur}
-			{...props}
-		/>
+			classNames={{
+				label: s.inputLabel,
+				error: s.inputError,
+			}}
+		>
+			<InputMask
+				id={props.id}
+				value={props.phoneNumber.value}
+				onAccept={(_, maskRef) => {
+					props.phoneNumber.onChange(maskRef.unmaskedValue)
+				}}
+				onBlur={props.onBlur}
+				mask={"+{998} (00) 000-00-00"}
+				// placeholderChar={"•"}
+				lazy={false}
+				placeholder="+998 "
+				className={s.input}
+			/>
+		</InputCustom.Wrapper>
 	)
 }
 
+export const InputMask: FC<MaskProps> = (props) => {
+	const ref = useRef(null)
+	return <MaskedStyledInput ref={ref} inputValue={props.value} {...props} />
+}
+
 const MaskedStyledInput = IMaskMixin(
-	({ inputRef, label, id, inputValue, onBlur, error, ...props }) => {
+	({ inputRef, id, inputValue, onBlur, className, placeholder, ...props }) => {
 		return (
-			<>
-				<div className={s.formItem}>
-					<input
-						ref={inputRef as any}
-						type="text"
-						id={id}
-						autoComplete="off"
-						placeholder={props.placeholder}
-						value={inputValue as string}
-						aria-invalid={!!error}
-						onBlur={onBlur}
-						{...props}
-					/>
-					{/*<label*/}
-					{/*	htmlFor={id}*/}
-					{/*	className={cx(s.label, {*/}
-					{/*		[s.errorLabel]: error,*/}
-					{/*	})}*/}
-					{/*>*/}
-					{/*	{label}*/}
-					{/*</label>*/}
-					{(error as React.ReactNode) && (
-						<div className={s.errorIcon}>{/*<IconError />*/} Error Icon</div>
-					)}
-				</div>
-				{(error as React.ReactNode) && (
-					<div className={s.errorMessage}>{error as React.ReactNode}</div>
-				)}
-			</>
+			<input
+				ref={inputRef as any}
+				type="text"
+				id={id}
+				autoComplete="off"
+				placeholder={placeholder}
+				value={inputValue as string}
+				onBlur={onBlur}
+				className={className}
+				{...props}
+			/>
 		)
 	},
 )

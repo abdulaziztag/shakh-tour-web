@@ -1,103 +1,47 @@
-@mixin inputLabelAnimation {
-	top: 0;
-	transform: translateY(50%);
-	padding: 0;
+.inputLabel {
+  font-family: Inter;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 20px;
+	letter-spacing: 0%;
+	color: #344054;
+  margin-bottom: 8px;
+  display: block;
 }
 
-.formItem {
-	position: relative;
+.inputError {
+  font-size: 12px;
+  color: #fa5252;
+  margin-top: 5px;
 }
 
-.formItem {
-	position: relative;
-	input {
-		&[aria-invalid="true"] {
-			border: 1px solid red;
-		}
-	}
-}
+.input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #1E1E1E;
+  background-color: #fff;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 
-.errorIcon {
-	position: absolute;
-	right: 1.25rem;
-	top: 35%;
-}
+  &:focus {
+    border-color: #228be6;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(34, 139, 230, 0.2);
+  }
 
-.formItem input {
-	display: block;
-	width: 100%;
-	outline: none;
-	transition: all 0.3s ease;
-	padding: 0 1.25rem;
-	border: none;
-	height: 3.125rem;
-	border-radius: 0.625rem;
-	background: #fff;
-	color: #b3b3b3;
-	font-size: 1rem;
-	font-style: normal;
-	font-weight: 400;
-	line-height: normal;
-	//&:focus {
-	//	border: 1px solid #45e595;
-	//}
-	//@media screen and (max-width: 576px) {
-	//	height: 3.75rem;
-	//}
-}
+  &::placeholder {
+    color: #adb5bd;
+  }
 
-.formItem label {
-	position: absolute;
-	cursor: text;
-	top: 50%;
-	left: 1rem;
-	transform: translateY(-50%);
-	color: #000;
-	background-color: #fff;
-	font-size: 1.25rem;
-	font-weight: 400;
-	display: inline-block;
-	width: calc(100% - 2rem);
-	line-height: 2rem;
-	letter-spacing: -0.019rem;
-	transition: all 0.3s ease;
-	@media screen and (max-width: 576px) {
-		font-size: 1rem;
-	}
-}
-
-.errorLabel {
-	color: red !important;
-}
-.formItem input:focus {
-	color: #000;
-}
-
-.formItem input:focus,
-.formItem input:valid {
-	padding: 0 1.25rem;
-}
-
-.formItem input:focus + label,
-.formItem input:not([value=""]) + label {
-	font-size: 1rem;
-	font-weight: 400;
-	color: #000;
-	padding-left: 1.25rem;
-	line-height: normal;
-	background: transparent;
-	@include inputLabelAnimation;
-	@media screen and (max-width: 576px) {
-		font-size: 0.875rem;
-	}
-}
-
-.inputCard {
-	flex: auto;
-}
-
-.errorMessage {
-	color: #f44f5a;
-	font-size: 0.75rem;
-	font-weight: 400;
+  &[aria-invalid="true"] {
+    border-color: #fa5252;
+    
+    &:focus {
+      border-color: #fa5252;
+      box-shadow: 0 0 0 2px rgba(250, 82, 82, 0.2);
+    }
+  }
 }

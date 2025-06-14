@@ -1,0 +1,108 @@
+.title{
+  font-family: Inter;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 44px;
+  letter-spacing: -2%;
+  color:#101828;
+}
+
+.subtitle{
+  font-family: Inter;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #1E1E1E;
+}
+
+.contractInfo{
+  font-family: Inter;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #1E1E1E;
+}
+
+.inputLabel {
+  font-size: 14px;
+  font-weight: 500;
+  color: #212529;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.inputError {
+  font-size: 12px;
+  color: #fa5252;
+  margin-top: 5px;
+}
+
+.input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+  &:focus {
+    border-color: #228be6;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(34, 139, 230, 0.2);
+  }
+
+  &::placeholder {
+    color: #adb5bd;
+  }
+
+  &[aria-invalid="true"] {
+    border-color: #fa5252;
+    
+    &:focus {
+      border-color: #fa5252;
+      box-shadow: 0 0 0 2px rgba(250, 82, 82, 0.2);
+    }
+  }
+}
+
+.commentWrap{
+  font-family: Inter;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #344054;
+}
+
+.paymentMethod{
+  font-family: Inter;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #1E1E1E;
+}
+
+.payment_methods{
+  background: #fff;
+  border: 1px solid #ced4da;
+  padding: 16px;
+  border-radius: 12px;
+}
+
+.sendBtn{
+  margin-top: 32px;
+  padding-top: 12px;
+  padding-right: 42px;
+  padding-bottom: 12px;
+  padding-left: 42px;
+  border-radius: 8px;
+  border-width: 1px;
+  background-color: #044949;
+  border: 1px solid #044949;
+  box-shadow: 0px 1px 2px 0px #1018280D;
+}

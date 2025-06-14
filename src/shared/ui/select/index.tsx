@@ -11,6 +11,9 @@ interface SelectProps {
 	error?: string
 	description?: string
 	withAsterisk?: boolean
+	value?: string | null
+	onChange?: (value: string | null) => void
+	defaultValue?: string | null
 }
 
 export const Select: FC<SelectProps> = ({
@@ -20,6 +23,9 @@ export const Select: FC<SelectProps> = ({
 	error,
 	description,
 	withAsterisk = false,
+	value,
+	onChange,
+	defaultValue,
 }) => {
 	return (
 		<>
@@ -30,6 +36,9 @@ export const Select: FC<SelectProps> = ({
 				error={error}
 				description={description}
 				withAsterisk={withAsterisk}
+				value={value}
+				onChange={onChange}
+				defaultValue={defaultValue}
 				className={s.select}
 				classNames={{
 					label: s.selectLabel,
