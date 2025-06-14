@@ -10,9 +10,6 @@ const nextConfig = {
 	sassOptions: {
 		includePaths: [path.join(__dirname, "src")],
 	},
-	images: {
-		remotePatterns: [new URL("https://www.hilton.com/**")],
-	},
 
 	webpack: (config) => {
 		config.resolve.alias["@"] = path.join(__dirname, "src", "app")
