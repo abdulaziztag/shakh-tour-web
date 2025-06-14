@@ -1,6 +1,5 @@
 import { Container, Grid, Text, Title } from "@mantine/core"
 import dynamic from "next/dynamic"
-import { useRouter } from "next/navigation"
 import React, { FC, useState } from "react"
 
 import { Layout } from "@/widgets"
@@ -235,7 +234,7 @@ const LocationMap = dynamic(
 )
 
 const HotelDetail: FC = () => {
-	const router = useRouter()
+	// const router = useRouter()
 	const [selectedDates, setSelectedDates] = useState({
 		checkIn: "2024-04-14",
 		checkOut: "2024-04-17",
@@ -261,9 +260,10 @@ const HotelDetail: FC = () => {
 		console.log(`Room ${roomId} favorited: ${isFavorited}`)
 	}
 
-	const handleViewDetail = (hotelId: number) => {
-		router.push(`/hotels/${hotelId}`)
-	}
+	// const handleViewDetail = (hotelId: number) => {
+	// 	router.push(`/hotels/${hotelId}`)
+	// }
+
 	return (
 		<Layout>
 			<div className={styles.hotelPage}>
@@ -386,7 +386,7 @@ const HotelDetail: FC = () => {
 					<div className={styles.recommenedHotel}>
 						<h5 className={styles.recomendedHotelTitle}>Other hotels also</h5>
 						<RecommendedHotels
-							onViewDetail={handleViewDetail}
+							// onViewDetail={handleViewDetail}
 							titleButton={"See details"}
 							viewButton
 							m={"0"}
