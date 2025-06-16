@@ -1,0 +1,110 @@
+
+.modalTitle {
+	font-family: Inter;
+	font-weight: 600;
+	font-size: 30px;
+	line-height: 38px;
+	letter-spacing: 0%;
+	text-align: center;
+	color: #101828;
+	width: 100%;
+	display: block;
+  margin-top: 12px;
+}
+
+.modalHeader {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.modalHeader .modalTitle {
+	flex: 1;
+	text-align: center;
+}
+.modalContent {
+	padding: 0;
+	width: 842px;
+	min-height: 550px;
+	border-radius: 24px;
+}
+
+.modalBody {
+	padding: 0 32px 24px 32px;
+}
+
+.formContainer {
+	display: flex;
+	flex-direction: column;
+  gap: 0px !important
+}
+
+.buttonContainer {
+	margin-top: 2rem;
+	display: flex;
+	justify-content: center;
+}
+
+.commentWrap {
+	display: flex;
+	flex-direction: column;
+	gap: 0 !important;
+}
+
+.comments {
+	margin: 0 0 8px 0;
+	font-family: Inter;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 20px;
+	letter-spacing: 0%;
+	color: #344054;
+}
+
+.commentWrap :global(.mantine-Textarea-label) {
+	display: none !important;
+}
+
+.commentWrap :global([data-mantine-label]) {
+	display: none !important;
+}
+
+.commentWrap :global(.mantine-Textarea-wrapper) {
+	margin-top: 0 !important;
+}
+
+.submitButton {
+	background-color: #044949;
+	border: none;
+	border-radius: 8px;
+  font-family: Inter;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0%;
+  box-shadow: 0px 1px 2px 0px #1018280D;  
+  padding: 10px 60px;
+
+	&:hover {
+		background-color: #0d5951;
+	}
+
+	&:focus {
+		outline: 2px solid #0f766e;
+		outline-offset: 2px;
+	}
+}
+
+@media (max-width: 768px) {
+	.modalHeader {
+		padding: 1rem;
+	}
+
+	.modalBody {
+		padding: 1rem;
+	}
+
+	.buttonContainer {
+		margin-top: 1.5rem;
+	}
+}

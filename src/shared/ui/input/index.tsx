@@ -8,6 +8,10 @@ interface InputProps {
 	description?: string
 	error?: string
 	placeholder?: string
+	value?: string
+	onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void
+	defaultValue?: string
+	type?: React.HTMLInputTypeAttribute
 }
 
 export const Input: FC<InputProps> = ({
@@ -15,21 +19,30 @@ export const Input: FC<InputProps> = ({
 	description,
 	error,
 	placeholder,
+	value,
+	onChange,
+	defaultValue,
+	type = "text",
 }) => {
 	return (
-		<>
-			<InputCustom.Wrapper
-				label={label}
-				description={description}
-				error={error}
-				classNames={{
-					label: s.inputLabel,
-					description: s.inputDescription,
-					error: s.inputError,
-				}}
-			>
-				<InputCustom placeholder={placeholder} className={s.input} />
-			</InputCustom.Wrapper>
-		</>
+		<InputCustom.Wrapper
+			label={label}
+			description={description}
+			error={error}
+			classNames={{
+				label: s.inputLabel,
+				description: s.inputDescription,
+				error: s.inputError,
+			}}
+		>
+			<InputCustom
+				placeholder={placeholder}
+				className={s.input}
+				value={value}
+				onChange={onChange}
+				defaultValue={defaultValue}
+				type={type}
+			/>
+		</InputCustom.Wrapper>
 	)
 }

@@ -9,6 +9,9 @@ interface TextareaProps {
 	placeholder?: string
 	minRows?: number
 	maxRows?: number
+	value?: string
+	onChange?: (event: React.ChangeEvent<HTMLTextAreaElement>) => void
+	defaultValue?: string
 }
 
 export const Textarea: FC<TextareaProps> = ({
@@ -17,6 +20,9 @@ export const Textarea: FC<TextareaProps> = ({
 	placeholder,
 	minRows,
 	maxRows,
+	value,
+	onChange,
+	defaultValue,
 }) => {
 	return (
 		<>
@@ -27,6 +33,9 @@ export const Textarea: FC<TextareaProps> = ({
 				className={s.textarea}
 				minRows={minRows}
 				maxRows={maxRows}
+				value={value}
+				onChange={onChange}
+				defaultValue={defaultValue}
 			/>
 		</>
 	)
