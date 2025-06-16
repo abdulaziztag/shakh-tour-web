@@ -42,9 +42,9 @@ export const Navbar = () => {
 		console.log("Switch to forgot password modal")
 	}
 
-	const handleRegisterClick = () => {
-		setRegisterModalOpened(true)
-	}
+	// const handleRegisterClick = () => {
+	// 	setRegisterModalOpened(true)
+	// }
 
 	const handleRegisterClose = () => {
 		setRegisterModalOpened(false)
