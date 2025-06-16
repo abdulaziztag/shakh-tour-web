@@ -1,18 +1,20 @@
-import { Anchor, Box, Button, Group, Modal, Stack, Text, TextInput } from "@mantine/core";
-import React, { useState } from "react";
+import {
+	Anchor,
+	Box,
+	Button,
+	Group,
+	Modal,
+	Stack,
+	Text,
+	TextInput,
+} from "@mantine/core"
+import React, { useState } from "react"
 
-
-
-import IconChevronLeft from '@/shared/assets/images/chevron_right.svg';
+import IconChevronLeft from "@/shared/assets/images/chevron_right.svg"
 import IconX from "@/shared/assets/images/close.svg"
 import IconBrandGoogle from "@/shared/assets/images/google-icon.svg"
 
-
-import styles from "./auth.module.scss";
-
-
-
-
+import styles from "./auth.module.scss"
 
 interface RegisterModalProps {
 	opened: boolean
@@ -50,15 +52,15 @@ const RegisterModal: React.FC<RegisterModalProps> = ({
 			}}
 			overlayProps={{
 				backgroundOpacity: 0.5,
-				blur: 3,
+				// blur: 3,
 			}}
 		>
 			<Box className={styles.registerContainer}>
-      <Group  className={styles.header}>
+				<Group className={styles.header}>
 					<button onClick={onClose} className={styles.backButton}>
 						<IconChevronLeft size={20} />
 					</button>
-					<Text className={styles.title}>Sign in</Text>
+					<Text className={styles.title}>Registration</Text>
 					<button onClick={onClose} className={styles.closeButton}>
 						<IconX />
 					</button>
@@ -66,15 +68,14 @@ const RegisterModal: React.FC<RegisterModalProps> = ({
 
 				<form onSubmit={handleSubmit}>
 					<Stack gap={24} className={styles.registerForm}>
-						<Stack gap={8}>
+						<Stack gap={6}>
 							<Text className={styles.registerLabel}>Email*</Text>
 							<TextInput
 								value={email}
 								onChange={(e) => setEmail(e.currentTarget.value)}
 								placeholder="Enter Email"
-								className={styles.registerTextInput}
 								classNames={{
-									input: styles.registerInput,
+									input: styles.forgotPasswordEmailInput,
 								}}
 							/>
 						</Stack>

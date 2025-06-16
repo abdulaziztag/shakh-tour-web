@@ -12,9 +12,13 @@ import React, { useState } from "react"
 import { LanguageSwitcher } from "@/shared/ui"
 import { FilledButton } from "@/shared/ui/buttons"
 
+import ForgotPasswordModal from "../auth/forgot-password-modal"
 import LoginModal from "../auth/login-modal"
 import RegisterModal from "../auth/register-modal"
 import s from "./navbar.module.scss"
+import { RegistrationDetail } from '../auth/registration-detail-modal'
+
+// import { ResetPasswordModal } from '../auth/reset-password-modal'
 
 export const Navbar = () => {
 	// const { t } = useTranslation("common")
@@ -23,6 +27,8 @@ export const Navbar = () => {
 	const path = usePathname()
 	const [loginModalOpened, setLoginModalOpened] = useState(false)
 	const [registerModalOpened, setRegisterModalOpened] = useState(false)
+	const [forgotPasswordModalOpened, setForgotPasswordModalOpened] =
+		useState(false) // Yangi state
 
 	const handleLoginClick = () => {
 		setLoginModalOpened(true)
@@ -39,12 +45,21 @@ export const Navbar = () => {
 
 	const handleForgotPasswordClick = () => {
 		setLoginModalOpened(false)
-		console.log("Switch to forgot password modal")
+		setForgotPasswordModalOpened(true) // Login modal ni yopib, forgot password modal ni ochish
 	}
 
-	const handleRegisterClick = () => {
-		setRegisterModalOpened(true)
+	// const handleForgotPasswordClose = () => {
+	// 	setForgotPasswordModalOpened(false)
+	// }
+
+	const handleReturnToSignIn = () => {
+		setForgotPasswordModalOpened(false)
+		setLoginModalOpened(true) // Forgot password dan login modal ga qaytish
 	}
+
+	// const handleRegisterClick = () => {
+	// 	setRegisterModalOpened(true)
+	// }
 
 	const handleRegisterClose = () => {
 		setRegisterModalOpened(false)
@@ -113,16 +128,32 @@ export const Navbar = () => {
 						>
 							Login
 						</FilledButton>
-						<LoginModal
+						{/* <LoginModal
 							opened={loginModalOpened}
 							onClose={handleLoginClose}
 							onRegisterClick={handleRegisterClickFromLogin}
 							onForgotPasswordClick={handleForgotPasswordClick}
+						/> */}
+						{/* <ResetPasswordModal
+							opened={loginModalOpened}
+							onClose={handleLoginClose}
+							onSubmit={() => {}}
+							isRegistration={true}
+						/> */}
+						<RegistrationDetail
+							opened={loginModalOpened}
+							onClose={handleLoginClose}
+							onSubmit={() => {}}
 						/>
 						<RegisterModal
 							opened={registerModalOpened}
 							onClose={handleRegisterClose}
 							onSignInClick={handleSignInClickFromRegister}
+						/>
+						<ForgotPasswordModal
+							opened={forgotPasswordModalOpened}
+							onClose={() => setForgotPasswordModalOpened(false)}
+							onReturnToSignIn={handleReturnToSignIn}
 						/>
 					</Flex>
 					<Box className={s.navbarMenuBurger} onClick={() => setOpened(true)}>

@@ -4,8 +4,10 @@ import {
 	Group,
 	Modal,
 	PasswordInput,
+	Select,
 	Stack,
 	Text,
+	TextInput,
 } from "@mantine/core"
 import React, { useState } from "react"
 
@@ -14,28 +16,30 @@ import IconX from "@/shared/assets/images/close.svg"
 
 import styles from "./auth.module.scss"
 
-interface ResetPasswordModalProps {
+interface RegistrationDetailProps {
 	opened: boolean
 	onClose: () => void
-	onSubmit?: (newPassword: string, confirmPassword: string) => void
-	title?: string
-	isRegistration?: boolean
+	onSubmit?: (form: {
+		password: string
+		confirmPassword: string
+		country: string
+		name: string
+	}) => void
 }
 
-export const ResetPasswordModal: React.FC<ResetPasswordModalProps> = ({
+export const RegistrationDetail: React.FC<RegistrationDetailProps> = ({
 	opened,
 	onClose,
 	onSubmit,
 }) => {
-	const [newPassword, setNewPassword] = useState("")
+	const [password, setPassword] = useState("")
 	const [confirmPassword, setConfirmPassword] = useState("")
+	const [country, setCountry] = useState("")
+	const [name, setName] = useState("")
 
 	const handleSubmit = (e: React.FormEvent) => {
 		e.preventDefault()
-		onSubmit?.(newPassword, confirmPassword)
-		setNewPassword("")
-		setConfirmPassword("")
-		onClose()
+		onSubmit?.({ password, confirmPassword, country, name })
 	}
 
 	return (
@@ -53,8 +57,8 @@ export const ResetPasswordModal: React.FC<ResetPasswordModalProps> = ({
 				backgroundOpacity: 0.7,
 			}}
 		>
-			<Box className={styles.resetPasswordModalContent}>
-				<Group className={styles.header}>
+			<Box className={styles.registrationDetailContent}>
+				<Group className={styles.header} mb="32px">
 					<button onClick={onClose} className={styles.backButton}>
 						<IconChevronLeft />
 					</button>
@@ -64,8 +68,8 @@ export const ResetPasswordModal: React.FC<ResetPasswordModalProps> = ({
 					</button>
 				</Group>
 
-				<form onSubmit={handleSubmit} className={styles.resetPasswordModalForm}>
-					<Stack gap="16px" mt="24px">
+				<form onSubmit={handleSubmit}>
+					<Stack gap="md">
 						<Stack gap={6} className={styles.resetPasswordModalInputGroup}>
 							<Text
 								size="sm"
@@ -75,8 +79,8 @@ export const ResetPasswordModal: React.FC<ResetPasswordModalProps> = ({
 								New Password
 							</Text>
 							<PasswordInput
-								value={newPassword}
-								onChange={(e) => setNewPassword(e.currentTarget.value)}
+								value={password}
+								onChange={(e) => setPassword(e.currentTarget.value)}
 								placeholder="Enter password"
 								className={styles.textInput}
 								classNames={{
@@ -84,7 +88,8 @@ export const ResetPasswordModal: React.FC<ResetPasswordModalProps> = ({
 								}}
 							/>
 						</Stack>
-						<Stack gap={6} className={styles.resetPasswordModalInputGroup}>
+
+            <Stack gap={6} className={styles.resetPasswordModalInputGroup}>
 							<Text
 								size="sm"
 								fw={500}
@@ -102,12 +107,38 @@ export const ResetPasswordModal: React.FC<ResetPasswordModalProps> = ({
 								}}
 							/>
 						</Stack>
+						<Stack gap={6}>
+							<Text className={styles.label}>Country</Text>
+							<TextInput
+								value={name}
+								onChange={(e) => setName(e.currentTarget.value)}
+								placeholder="Enter name"
+								className={styles.textInput}
+								classNames={{
+									input: styles.input,
+								}}
+							/>
+						</Stack>
+
+            <Stack gap={6}>
+							<Text className={styles.label}>Name</Text>
+							<TextInput
+								value={name}
+								onChange={(e) => setName(e.currentTarget.value)}
+								placeholder="Enter name"
+								className={styles.textInput}
+								classNames={{
+									input: styles.input,
+								}}
+							/>
+						</Stack>
+
 						<Button
 							type="submit"
 							fullWidth
 							className={styles.forgotPasswordResetButton}
-              size="md"
-              mt='24px'
+							size="md"
+							mt="24px"
 						>
 							Continue
 						</Button>
