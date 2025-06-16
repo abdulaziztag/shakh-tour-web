@@ -227,7 +227,7 @@ const sampleHotels = [
 ]
 
 const LocationMap = dynamic(
-	() => import("@/shared/ui/location-map").then((mod) => mod.LocationMap),
+	() => import("@/widgets/location-map").then((mod) => mod.LocationMap),
 	{
 		ssr: false,
 	},

@@ -1,0 +1,530 @@
+.modal {
+  // width: 492px !important;
+  // height: 518px !important;
+  border-radius: 24px !important;
+  background-color: #ffffff !important;
+  box-shadow: 0px 24px 48px rgba(0, 0, 0, 0.15) !important;
+  border-radius: 24px !important;
+}
+
+.body {
+  padding: 0 !important;
+  // height: 518px;
+}
+
+.modal_header{
+  padding: 0px 48px !important;
+}
+
+.container {
+  padding: 32px 48px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  box-sizing: border-box;
+}
+
+.header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 32px !important;
+  line-height: 38px !important;
+  color: #1a1a1a !important;
+  margin: 0 !important;
+}
+
+.closeButton {
+  position: absolute;
+  transform: translateY(-50%);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #475467 !important;
+  background: none;
+  padding: 0px !important;
+  svg {
+    width: 30px;
+    height: 30px;
+  }
+  &:hover {
+    background: none !important; 
+  }
+}
+
+
+.form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.label {
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 500 !important;
+  font-size: 14px !important;
+  line-height: 20px !important;
+  color: #344054 !important;
+  margin: 0 !important;
+}
+
+
+.textInput {
+  .mantine-TextInput-input,
+  .mantine-PasswordInput-input {
+    border-radius: 12px !important;
+    background-color: #f9fafb !important;
+    border: 1px solid #e5e7eb !important;
+    font-family: 'Inter', sans-serif !important;
+    font-size: 16px !important;
+    line-height: 24px !important;
+    color: #1f2937 !important;
+    padding: 12px 16px !important;
+    height: 48px !important;
+
+    &::placeholder {
+      color: #9ca3af !important;
+    }
+
+    &:hover {
+      border-color: #d1d5db !important;
+    }
+
+    &:focus {
+      border-color: #047857 !important;
+      border-width: 2px !important;
+      box-shadow: none !important;
+    }
+  }
+
+  .mantine-PasswordInput-visibilityToggle {
+    color: #6b7280 !important;
+  }
+}
+
+.input {
+  border-radius: 12px !important;
+  background-color: #f9fafb !important;
+  border: 1px solid #e5e7eb !important;
+  font-family: 'Inter', sans-serif !important;
+  font-size: 16px !important;
+  line-height: 24px !important;
+  color: #1f2937 !important;
+  padding: 12px 16px !important;
+  height: 48px !important;
+
+  &::placeholder {
+    color: #9ca3af !important;
+  }
+
+  &:hover {
+    border-color: #d1d5db !important;
+  }
+
+  &:focus {
+    border-color: #047857 !important;
+    border-width: 2px !important;
+    box-shadow: none !important;
+  }
+}
+
+.forgotPassword {
+  margin-top: -8px;
+}
+
+.forgotPasswordLink {
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 500 !important;
+  font-size: 14px !important;
+  line-height: 20px !important;
+  color: #044949 !important;
+  text-decoration: none !important;
+
+  &:hover {
+    text-decoration: underline !important;
+  }
+}
+
+.signInButton {
+  background-color: #044949 !important;
+  color: #ffffff !important;
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 16px !important;
+  line-height: 24px !important;
+  border-radius: 12px !important;
+  padding: 12px 24px !important;
+  height: 48px !important;
+  border: none !important;
+
+  &:hover {
+    background-color: #044949 !important;
+  }
+
+  &:active {
+    background-color: #044949 !important;
+  }
+}
+
+.googleButton {
+  border: 1px solid #e5e7eb !important;
+  color: #374151 !important;
+  background-color: #ffffff !important;
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 500 !important;
+  font-size: 16px !important;
+  line-height: 24px !important;
+  border-radius: 12px !important;
+  padding: 12px 24px !important;
+  height: 48px !important;
+
+  &:hover {
+    background-color: #f9fafb !important;
+    border-color: #d1d5db !important;
+  }
+}
+@media (max-width: 768px) {
+  .googleButton {
+    font-size: 14px !important;
+    height: 44px !important;
+    padding: 10px 16px !important;
+    gap: 6px;
+
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+}
+
+.registerSection {
+  margin-top: auto;
+}
+
+.registerText {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 14px !important;
+  line-height: 20px !important;
+  color: #6b7280 !important;
+  margin: 0 !important;
+}
+
+.registerLink {
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 500 !important;
+  font-size: 14px !important;
+  line-height: 20px !important;
+  color: #047857 !important;
+  text-decoration: none !important;
+
+  &:hover {
+    text-decoration: underline !important;
+  }
+}
+.backButton {
+  display: none;
+
+  @media (max-width: 768px) {
+    display: block;
+    position: absolute;
+    left: -16px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    color: #1a1a1a;
+
+    &:hover {
+      background-color: #f0f0f0;
+      border-radius: 8px;
+    }
+  }
+}
+
+.closeButton {
+  display: block;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  color: #475467;
+
+  &:hover {
+    background-color: #f0f1f1;
+    border-radius: 4px;
+  }
+}
+
+
+/////register modal styles ///////
+.registerModal {
+  border-radius: 24px !important;
+  background-color: #ffffff !important;
+  box-shadow: 0px 24px 48px rgba(0, 0, 0, 0.15) !important;
+  border-radius: 24px !important;
+}
+
+.registerContent {
+  background-color: transparent !important;
+  border-radius: 24px !important;
+}
+
+.registerBody {
+  padding: 0 !important;
+  height: 400px;
+}
+
+.registerContainer {
+  padding: 32px 48px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  box-sizing: border-box;
+}
+
+.registerHeader {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.registerTitle {
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 32px !important;
+  line-height: 38px !important;
+  color: #1a1a1a !important;
+  margin: 0 !important;
+}
+
+.registerCloseButton {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+  
+  &:hover {
+    background-color: none;
+  }
+
+  svg {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.registerForm {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.registerLabel {
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 500 !important;
+  font-size: 14px !important;
+  line-height: 20px !important;
+  color: #374151 !important;
+  margin: 0 !important;
+}
+
+.registerTextInput {
+  .mantine-TextInput-input {
+    border-radius: 12px !important;
+    background-color: #f9fafb !important;
+    border: 1px solid #e5e7eb !important;
+    font-family: 'Inter', sans-serif !important;
+    font-size: 16px !important;
+    line-height: 24px !important;
+    color: #1f2937 !important;
+    padding: 12px 16px !important;
+    height: 48px !important;
+
+    &::placeholder {
+      color: #9ca3af !important;
+    }
+
+    &:hover {
+      border-color: #d1d5db !important;
+    }
+
+    &:focus {
+      border-color: #047857 !important;
+      border-width: 2px !important;
+      box-shadow: none !important;
+    }
+  }
+}
+
+.registerInput {
+  border-radius: 12px !important;
+  background-color: #f9fafb !important;
+  border: 1px solid #e5e7eb !important;
+  font-family: 'Inter', sans-serif !important;
+  font-size: 16px !important;
+  line-height: 24px !important;
+  color: #1f2937 !important;
+  padding: 12px 16px !important;
+  height: 48px !important;
+
+  &::placeholder {
+    color: #9ca3af !important;
+  }
+
+  &:hover {
+    border-color: #d1d5db !important;
+  }
+
+  &:focus {
+    border-color: #047857 !important;
+    border-width: 2px !important;
+    box-shadow: none !important;
+  }
+}
+
+.registerContinueButton {
+  background-color: #047857 !important;
+  color: #ffffff !important;
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 16px !important;
+  line-height: 24px !important;
+  border-radius: 12px !important;
+  padding: 12px 24px !important;
+  height: 48px !important;
+  border: none !important;
+
+  &:hover {
+    background-color: #065f46 !important;
+  }
+
+  &:active {
+    background-color: #064e3b !important;
+  }
+}
+
+.registerGoogleButton {
+  border: 1px solid #e5e7eb !important;
+  color: #374151 !important;
+  background-color: #ffffff !important;
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 500 !important;
+  font-size: 16px !important;
+  line-height: 24px !important;
+  border-radius: 12px !important;
+  padding: 12px 24px !important;
+  height: 48px !important;
+
+  &:hover {
+    background-color: #f9fafb !important;
+    border-color: #d1d5db !important;
+  }
+}
+
+.registerSignInSection {
+  margin-top: auto;
+}
+
+.registerSignInText {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 14px !important;
+  line-height: 20px !important;
+  color: #6b7280 !important;
+  margin: 0 !important;
+}
+
+.registerSignInLink {
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 500 !important;
+  font-size: 14px !important;
+  line-height: 20px !important;
+  color: #047857 !important;
+  text-decoration: none !important;
+
+  &:hover {
+    text-decoration: underline !important;
+  }
+}
+
+
+///// confirmation modal styles /////
+.confirmation {
+  text-align: center;
+  padding: 24px;
+
+  &__title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  &__subtitle {
+    margin-bottom: 16px;
+    color: #4b5563;
+  }
+
+  &__inputs {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin: 20px 0;
+  }
+
+  &__input {
+    width: 48px;
+    height: 60px;
+    font-size: 24px;
+    text-align: center;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    outline: none;
+
+    &:focus {
+      border-color: #2563eb;
+    }
+  }
+
+  &__retry-text {
+    font-size: 14px;
+    color: #6b7280;
+    margin-top: 8px;
+  }
+
+  &__button {
+    margin-top: 16px;
+    width: 100%;
+  }
+}

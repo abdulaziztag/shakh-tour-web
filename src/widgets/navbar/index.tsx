@@ -12,6 +12,8 @@ import React, { useState } from "react"
 import { LanguageSwitcher } from "@/shared/ui"
 import { FilledButton } from "@/shared/ui/buttons"
 
+import LoginModal from "../auth/login-modal"
+import RegisterModal from "../auth/register-modal"
 import s from "./navbar.module.scss"
 
 export const Navbar = () => {
@@ -19,6 +21,39 @@ export const Navbar = () => {
 	const [opened, setOpened] = useState(false)
 	const router = useRouter()
 	const path = usePathname()
+	const [loginModalOpened, setLoginModalOpened] = useState(false)
+	const [registerModalOpened, setRegisterModalOpened] = useState(false)
+
+	const handleLoginClick = () => {
+		setLoginModalOpened(true)
+	}
+
+	const handleLoginClose = () => {
+		setLoginModalOpened(false)
+	}
+
+	const handleRegisterClickFromLogin = () => {
+		setLoginModalOpened(false)
+		setRegisterModalOpened(true)
+	}
+
+	const handleForgotPasswordClick = () => {
+		setLoginModalOpened(false)
+		console.log("Switch to forgot password modal")
+	}
+
+	const handleRegisterClick = () => {
+		setRegisterModalOpened(true)
+	}
+
+	const handleRegisterClose = () => {
+		setRegisterModalOpened(false)
+	}
+
+	const handleSignInClickFromRegister = () => {
+		setRegisterModalOpened(false)
+		setLoginModalOpened(true)
+	}
 
 	const onClose = () => {
 		setOpened(false)
@@ -72,7 +107,23 @@ export const Navbar = () => {
 					</Flex>
 					<Flex gap={"1.5rem"} className={s.navbarMenuRight}>
 						<LanguageSwitcher direction={"column"} />
-						<FilledButton className={s.navbarLoginButton}>Login</FilledButton>
+						<FilledButton
+							className={s.navbarLoginButton}
+							onClick={handleLoginClick}
+						>
+							Login
+						</FilledButton>
+						<LoginModal
+							opened={loginModalOpened}
+							onClose={handleLoginClose}
+							onRegisterClick={handleRegisterClickFromLogin}
+							onForgotPasswordClick={handleForgotPasswordClick}
+						/>
+						<RegisterModal
+							opened={registerModalOpened}
+							onClose={handleRegisterClose}
+							onSignInClick={handleSignInClickFromRegister}
+						/>
 					</Flex>
 					<Box className={s.navbarMenuBurger} onClick={() => setOpened(true)}>
 						<IconMenu />
