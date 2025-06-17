@@ -1,22 +1,31 @@
-import IconMenu from "@//shared/assets/images/burger-menu.svg"
-import IconLogoMobile from "@//shared/assets/images/logo-mobile.svg"
-import IconLogo from "@//shared/assets/images/logo.svg"
-import IconClose from "@//shared/assets/images/x-close.svg"
-import { ActionIcon, Box, Container, Drawer, Flex, Text } from "@mantine/core"
-import cx from "clsx"
-import Link from "next/link"
-import { usePathname } from "next/navigation"
-import { useRouter } from "next/router"
-import React, { useState } from "react"
+import IconMenu from "@//shared/assets/images/burger-menu.svg";
+import IconLogoMobile from "@//shared/assets/images/logo-mobile.svg";
+import IconLogo from "@//shared/assets/images/logo.svg";
+import IconClose from "@//shared/assets/images/x-close.svg";
+import { ActionIcon, Box, Container, Drawer, Flex, Text } from "@mantine/core";
+import cx from "clsx";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useRouter } from "next/router";
+import React, { useState } from "react";
 
-import { LanguageSwitcher } from "@/shared/ui"
-import { FilledButton } from "@/shared/ui/buttons"
 
-import ForgotPasswordModal from "../auth/forgot-password-modal"
-import LoginModal from "../auth/login-modal"
-import RegisterModal from "../auth/register-modal"
-import s from "./navbar.module.scss"
-import { RegistrationDetail } from '../auth/registration-detail-modal'
+
+import { LanguageSwitcher } from "@/shared/ui";
+import { FilledButton } from "@/shared/ui/buttons";
+
+
+
+// import { ConfirmCodeModal } from '../auth/confirmation-modal';
+import ForgotPasswordModal from "../auth/forgot-password-modal";
+import LoginModal from "../auth/login-modal";
+import RegisterModal from "../auth/register-modal";
+// import { RegistrationDetail } from "../auth/registration-detail-modal";
+import s from "./navbar.module.scss";
+
+
+
+
 
 // import { ResetPasswordModal } from '../auth/reset-password-modal'
 
@@ -28,7 +37,8 @@ export const Navbar = () => {
 	const [loginModalOpened, setLoginModalOpened] = useState(false)
 	const [registerModalOpened, setRegisterModalOpened] = useState(false)
 	const [forgotPasswordModalOpened, setForgotPasswordModalOpened] =
-		useState(false) // Yangi state
+		useState(false)
+	// const [email, setEmail] = useState("madiyarovfaxriddin@gmail.com")
 
 	const handleLoginClick = () => {
 		setLoginModalOpened(true)
@@ -128,11 +138,17 @@ export const Navbar = () => {
 						>
 							Login
 						</FilledButton>
-						{/* <LoginModal
+						<LoginModal
 							opened={loginModalOpened}
 							onClose={handleLoginClose}
 							onRegisterClick={handleRegisterClickFromLogin}
 							onForgotPasswordClick={handleForgotPasswordClick}
+						/>
+						{/* <ConfirmCodeModal
+							opened={loginModalOpened}
+							onClose={handleLoginClose}
+							email={email}
+							onSubmit={() => {}}
 						/> */}
 						{/* <ResetPasswordModal
 							opened={loginModalOpened}
@@ -140,11 +156,11 @@ export const Navbar = () => {
 							onSubmit={() => {}}
 							isRegistration={true}
 						/> */}
-						<RegistrationDetail
+						{/* <RegistrationDetail
 							opened={loginModalOpened}
 							onClose={handleLoginClose}
 							onSubmit={() => {}}
-						/>
+						/> */}
 						<RegisterModal
 							opened={registerModalOpened}
 							onClose={handleRegisterClose}
