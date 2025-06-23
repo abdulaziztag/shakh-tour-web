@@ -1,5 +1,7 @@
-import { Title, Text } from "@mantine/core"
+import { Text, Title } from "@mantine/core"
 import { FC, useState } from "react"
+
+import { RecommendedHotels } from "@/shared/ui"
 
 import classes from "./profile.module.scss"
 
@@ -32,7 +34,7 @@ const MyHotels: FC = () => {
 			</Title>
 
 			<div className={classes.hotelsGrid}>
-				{hotels.map((hotel) => (
+				{/* {hotels.map((hotel) => (
 					<div key={hotel.id} className={classes.hotelCard}>
 						<div className={classes.hotelHeader}>
 							<Title order={4} className={classes.hotelName}>
@@ -60,7 +62,14 @@ const MyHotels: FC = () => {
 							)}
 						</div>
 					</div>
-				))}
+				))} */}
+				<RecommendedHotels
+					onViewDetail={() => {}}
+					titleButton={"See details"}
+					viewButton
+					m={"0"}
+					p={"0"}
+				/>
 			</div>
 		</div>
 	)
