@@ -67,7 +67,7 @@ const ProfileLayout: FC = () => {
 	return (
 		<Layout>
 			<Container size="1440px" mb='116px'>
-				<Title order={2} mb='16px' className={classes.sidebarTitle}>
+				<Title  mb='16px'>
 					Profile
 				</Title>
 				<div className={classes.layout}>
@@ -82,7 +82,7 @@ const ProfileLayout: FC = () => {
 									onClick={() => handleMenuClick(item.id)}
 								>
 									{item.icon}
-									<Text className={classes.label}>{item.label}</Text>
+									<Text className={classes.label} size='xl'>{item.label}</Text>
 								</Group>
 							))}
 						</Stack>

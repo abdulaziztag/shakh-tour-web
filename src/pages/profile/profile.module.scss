@@ -20,7 +20,7 @@
 }
 
 .sidebarTitle {
-  font-family: Roboto Flex;
+  font-family: Text xs/Display md/Semibold;
   font-weight: 600;
   font-size: 32px;
   line-height: 100%;
@@ -35,45 +35,47 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 9px 0px;
+  padding: 12px 16px;
   border-radius: 8px;
   cursor: pointer;
-  transition: all 0.2s ease;
-  
+  transition: background-color 0.2s ease;
+
+  svg {
+    width: 20px;
+    height: 20px;
+    color: #111126;
+  }
+
+  .label {
+    color: #111126;
+  }
+
   &:hover {
     background-color: none;
   }
+}
+
+.active {
+  color:#044949;
 
   svg {
-    color: #111126;
+    color: #044949 !important;
   }
 
-  span {
-    font-size: 0.95rem;
-    color: #111126;
-    font-weight: 500;
-  }
-
-  &.active {    
-    svg {
-      color: #044949;
-    }
-    
-    span {
-      color: #044949;
-      font-weight: 600;
-    }
+  .label {
+    color: #044949 !important;
   }
 }
 
 .label{
-  font-family: Roboto Flex;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 22px;
-  letter-spacing: 0%;
+  // font-family: Roboto Flex;
+  // font-weight: 400;
+  // font-size: 16px;
+  // line-height: 22px;
+  // letter-spacing: 0%;
   color: #111126;
 }
+
 .divider {
   margin: 1rem 0;
   border-color: #e2e8f0;
@@ -90,10 +92,7 @@
 }
 
 .mainContent {
-  padding: 2rem;
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  min-height: 600px;
 }
 
 

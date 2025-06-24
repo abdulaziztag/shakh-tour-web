@@ -1,7 +1,12 @@
+.pageContent{
+  padding: 16px;
+  border-radius: 12px;
+  background-color: #fff;
+  // min-height: 600px;
+}
 .profileHeader {
   margin-bottom: 2rem;
   padding-bottom: 1.5rem;
-  border-bottom: 1px solid #e2e8f0;
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -22,9 +27,12 @@
 }
 
 .userName {
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 30px;
   font-size: 1.25rem;
   font-weight: 600;
-  color: #2d3748;
+  color: #111126;
   margin: 0;
 }
 
@@ -71,34 +79,27 @@
 }
 
 .passwordSection {
-  margin-bottom: 2.5rem;
+  margin-bottom: 20px;
 }
 
 .sectionTitle {
-  font-size: 1.25rem;
+  font-family: Inter;
   font-weight: 600;
-  color: #2d3748;
+  font-size: 20px;
+  line-height: 24px;
+  color: #000;
   margin-bottom: 1.5rem;
 }
 
 .passwordGrid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
   margin-bottom: 1rem;
+  grid-template-columns: 1fr;
+  max-width: 48%;
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
     gap: 1rem;
-  }
-
-  &:first-of-type {
-    grid-template-columns: 1fr;
-    max-width: 48%;
-
-    @media (max-width: 768px) {
-      max-width: 100%;
-    }
+    max-width: 100%;
   }
 }
 
@@ -108,12 +109,16 @@
 }
 
 .forgotPassword {
-  margin: 1rem 0 1.5rem 0;
+  margin-bottom: 12px;
 }
 
 .forgotLink {
+  font-family: Inter;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 20px;
   font-size: 0.875rem;
-  color: #38b2ac;
+  color: #044949;
   text-decoration: none;
   
   &:hover {
@@ -122,10 +127,11 @@
 }
 
 .actionButtons {
-  justify-content: space-between;
-  padding-top: 1.5rem;
-  border-top: 1px solid #e2e8f0;
   display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 24px;
+  padding-top: 1.5rem;
 
   @media (max-width: 768px) {
     flex-direction: column-reverse;
@@ -138,7 +144,7 @@
   color: #e53e3e;
   border: 1px solid #fed7d7;
   background-color: transparent;
-  padding: 0.75rem 1.5rem;
+  padding: 12px 24px;
   border-radius: 8px;
   cursor: pointer;
   font-weight: 500;
@@ -150,17 +156,18 @@
 }
 
 .editButton {
-  background-color: #38b2ac;
-  border: none;
-  padding: 0.75rem 2rem;
+  padding: 12px 102px;
+  background-color: #044949;
+  color: #fff;
+  gap: 8px;
+  border-radius: 10px;
   font-weight: 500;
-  border-radius: 8px;
-  color: white;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  
-  &:hover {
-    background-color: #319795;
+  font-size: 16px;
+  line-height: 24px;
+  border: none;
+
+  &:hover{
+    cursor: pointer;
   }
 }
 
