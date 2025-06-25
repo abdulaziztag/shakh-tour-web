@@ -1,65 +1,51 @@
-import { Title, Text } from "@mantine/core"
-import { FC, useState } from "react"
+import { Title } from "@mantine/core";
+import { FC } from "react";
 
-import classes from "./profile.module.scss"
+import TourCardList from '../tour-list';
+import classes from "./profile.module.scss";
 
 const MyTours: FC = () => {
-	const [tours] = useState([
+	const staticTours: any[] = [
 		{
-			id: 1,
-			title: "Samarkand Historical Tour",
-			date: "2024-07-15",
-			status: "Completed",
-			price: "$150",
+			id: "4F5A100F",
+			title: "From Samarkand to Tashkent: Secrets and Adventures Tour",
+			description:
+				"The Charm of Uzbekistan in one big trip all around Uzbekistan at 10 days you can see the most popular places to go",
+			startDate: "2023-04-15",
+			endDate: "2023-04-15",
+			imageUrl: "/images/samarkand-tower.jpg",
+			imageAlt: "Historic minaret in Samarkand",
+			status: "under-review",
 		},
 		{
-			id: 2,
-			title: "Bukhara Adventure",
-			date: "2024-08-20",
-			status: "Upcoming",
-			price: "$200",
+			id: "4F5A100F",
+			title: "From Samarkand to Tashkent: Secrets and Adventures Tour",
+			description:
+				"The Charm of Uzbekistan in one big trip all around Uzbekistan at 10 days you can see the most popular places to go",
+			startDate: "2023-04-15",
+			endDate: "2023-04-15",
+			imageUrl: "/images/blue-dome.jpg",
+			imageAlt: "Beautiful blue dome architecture",
+			status: "awaiting-payment",
 		},
 		{
-			id: 3,
-			title: "Tashkent City Tour",
-			date: "2024-06-10",
-			status: "Completed",
-			price: "$100",
+			id: "4F5A100F",
+			title: "From Samarkand to Tashkent: Secrets and Adventures Tour",
+			description:
+				"The Charm of Uzbekistan in one big trip all around Uzbekistan at 10 days you can see the most popular places to go",
+			startDate: "2023-04-15",
+			endDate: "2023-04-15",
+			imageUrl: "/images/ornate-ceiling.jpg",
+			imageAlt: "Traditional ornate ceiling decoration",
+			status: "confirmed",
 		},
-	])
-
+	]
 	return (
-		<div className={classes.pageContent}>
+		<div className={classes.tourMain}>
 			<Title order={2} className={classes.pageTitle}>
 				My Tours
 			</Title>
-
-			<div className={classes.toursGrid}>
-				{tours.map((tour) => (
-					<div key={tour.id} className={classes.tourCard}>
-						<div className={classes.tourHeader}>
-							<Title order={4} className={classes.tourTitle}>
-								{tour.title}
-							</Title>
-							<span
-								className={`${classes.status} ${classes[tour.status.toLowerCase()]}`}
-							>
-								{tour.status}
-							</span>
-						</div>
-						<div className={classes.tourDetails}>
-							<Text className={classes.tourDate}>Date: {tour.date}</Text>
-							<Text className={classes.tourPrice}>Price: {tour.price}</Text>
-						</div>
-						<div className={classes.tourActions}>
-							<button className={classes.viewButton}>View Details</button>
-							{tour.status === "Upcoming" && (
-								<button className={classes.cancelButton}>Cancel</button>
-							)}
-						</div>
-					</div>
-				))}
-			</div>
+			<TourCardList tours={staticTours} />
 		</div>
 	)
 }

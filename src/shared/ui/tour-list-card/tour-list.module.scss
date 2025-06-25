@@ -1,0 +1,145 @@
+.tourCard {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 16px;
+  overflow: hidden;
+  height: 210px;
+}
+
+.imageSection {
+  flex-shrink: 0;
+}
+
+.cardImage {
+  width: 250px;
+  position: relative;
+  height: 210px;
+
+  img {
+    object-fit: cover;
+  }
+
+  @media screen and (max-width: 1200px) {
+    width: 100%;
+    height: 20rem;
+  }
+  @media screen and (max-width: 576px) {
+    height: 10rem;
+  }
+}
+
+.contentSection {
+  flex: 1;
+  min-width: 0;
+  padding: 16px 32px 16px 8px;
+  width: 647px;
+}
+
+.cardTitle {
+  font-family: Inter;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 100%;
+  color: #111126;
+}
+
+.statusBadge {
+  flex-shrink: 0;
+  font-family: Inter;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 24px;
+  padding: 4px 12px;
+  text-transform: none;
+}
+
+.cardDescription {
+  width: 558px;
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+  color: #475467;
+
+}
+
+.dateSection {
+  padding-top: 12px;
+  margin-top: auto;
+}
+
+.cardStartEnd{
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  color: #97A0AD;
+}
+
+.cardStartDate{
+  font-family: Inter;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  color: #111126;
+}
+.cardId {
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 22px;
+  letter-spacing: 0%;
+  color: #97A0AD;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .tourCard {
+    .mantine-Flex-root {
+      flex-direction: column;
+    }
+    
+    .imageSection {
+      .cardImage {
+        width: 100%;
+        height: 160px;
+      }
+    }
+    
+    .dateSection {
+      .mantine-Group-root {
+        flex-direction: column;
+        gap: 8px;
+        align-items: stretch;
+        
+        > .mantine-Group-root {
+          justify-content: space-between;
+        }
+      }
+    }
+    
+    .cardId {
+      align-self: flex-start;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .tourCard {
+    .mantine-Card-root {
+      padding: 16px;
+    }
+    
+    .imageSection {
+      .cardImage {
+        height: 140px;
+      }
+    }
+    
+    .cardTitle {
+      font-size: 1rem;
+    }
+  }
+}
