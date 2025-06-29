@@ -4,7 +4,6 @@ import {
 	Group,
 	Modal,
 	PasswordInput,
-	Select,
 	Stack,
 	Text,
 	TextInput,
@@ -34,7 +33,7 @@ export const RegistrationDetail: React.FC<RegistrationDetailProps> = ({
 }) => {
 	const [password, setPassword] = useState("")
 	const [confirmPassword, setConfirmPassword] = useState("")
-	const [country, setCountry] = useState("")
+	const [country, _setCountry] = useState("")
 	const [name, setName] = useState("")
 
 	const handleSubmit = (e: React.FormEvent) => {
@@ -89,7 +88,7 @@ export const RegistrationDetail: React.FC<RegistrationDetailProps> = ({
 							/>
 						</Stack>
 
-            <Stack gap={6} className={styles.resetPasswordModalInputGroup}>
+						<Stack gap={6} className={styles.resetPasswordModalInputGroup}>
 							<Text
 								size="sm"
 								fw={500}
@@ -120,7 +119,7 @@ export const RegistrationDetail: React.FC<RegistrationDetailProps> = ({
 							/>
 						</Stack>
 
-            <Stack gap={6}>
+						<Stack gap={6}>
 							<Text className={styles.label}>Name</Text>
 							<TextInput
 								value={name}

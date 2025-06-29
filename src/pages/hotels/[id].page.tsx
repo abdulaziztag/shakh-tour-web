@@ -1,5 +1,6 @@
 import { Container, Grid, Text, Title } from "@mantine/core"
 import dynamic from "next/dynamic"
+import { useRouter } from "next/router"
 import React, { FC, useState } from "react"
 
 import { Layout } from "@/widgets"
@@ -239,6 +240,7 @@ const HotelDetail: FC = () => {
 		checkIn: "2024-04-14",
 		checkOut: "2024-04-17",
 	})
+	const router = useRouter()
 
 	const handleDateChange = (checkIn: string, checkOut: string) => {
 		setSelectedDates({ checkIn, checkOut })
@@ -268,7 +270,11 @@ const HotelDetail: FC = () => {
 		<Layout>
 			<div className={styles.hotelPage}>
 				<Container size={"1440px"}>
-					<Text component={"p"} className={styles.pageHeaderBack} onClick={()=> router.push('/hotels')}>
+					<Text
+						component={"p"}
+						className={styles.pageHeaderBack}
+						onClick={() => router.push("/hotels")}
+					>
 						<IconLeft />
 						Back
 					</Text>
