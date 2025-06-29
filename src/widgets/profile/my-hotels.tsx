@@ -1,77 +1,77 @@
-import { Text, Title } from "@mantine/core"
-import { FC, useState } from "react"
+import { Title } from "@mantine/core";
+import { FC } from "react";
 
-import { RecommendedHotels } from "@/shared/ui"
+import HotelCardList from '../hotels-list';
+import classes from "./profile.module.scss";
 
-import classes from "./profile.module.scss"
-
-const MyHotels: FC = () => {
-	const [hotels] = useState([
+const MyTours: FC = () => {
+	const staticHotels: any[] = [
 		{
-			id: 1,
-			name: "Grand Plaza Hotel",
-			location: "Tashkent",
-			checkIn: "2024-07-15",
-			checkOut: "2024-07-17",
-			status: "Confirmed",
-			price: "$120/night",
+			id: "4F5A10OF",
+			title: "Luxury Plaza Guesthouse",
+			description: "2A, Mirzakalona Ismaili Street, Tashkent",
+			features: [
+				"Air conditioner",
+				"Free wifi",
+				"Private parking area",
+				"Check-in from 14:00",
+				"Check-out by 12:00",
+			],
+			startDate: "2023-04-15",
+			endDate: "2023-04-15",
+			imageUrl: "/images/samarkand-tower.jpg",
+			imageAlt: "Luxury Plaza Guesthouse - street view",
+			status: "under-review",
+			labelDateStart: "Check-in from 14:00",
+			labelDateEnd: "Check-out by 12:00",
 		},
 		{
-			id: 2,
-			name: "Silk Road Lodge",
-			location: "Samarkand",
-			checkIn: "2024-08-20",
-			checkOut: "2024-08-22",
-			status: "Pending",
-			price: "$85/night",
+			id: "4F5A10OF",
+			title: "Luxury Plaza Guesthouse",
+			description: "2A, Mirzakalona Ismaili Street, Tashkent",
+			features: [
+				"Air conditioner",
+				"Free wifi",
+				"Private parking area",
+				"Check-in from 14:00",
+				"Check-out by 12:00",
+			],
+			startDate: "2023-04-15",
+			endDate: "2023-04-15",
+			imageUrl: "/images/blue-dome.jpg",
+			imageAlt: "Luxury Plaza Guesthouse - exterior view",
+			status: "awaiting-payment",
+			labelDateStart: "Check-in from 14:00",
+			labelDateEnd: "Check-out by 12:00",
 		},
-	])
+		{
+			id: "4F5A10OF",
+			title: "Luxury Plaza Guesthouse",
+			description: "2A, Mirzakalona Ismaili Street, Tashkent",
+			features: [
+				"Air conditioner",
+				"Free wifi",
+				"Private parking area",
+				"Check-in from 14:00",
+				"Check-out by 12:00",
+			],
+			startDate: "2023-04-15",
+			endDate: "2023-04-15",
+			imageUrl: "/images/ornate-ceiling.jpg",
+			imageAlt: "Luxury Plaza Guesthouse - interior",
+			status: "confirmed",
+			labelDateStart: "Check-in from 14:00",
+			labelDateEnd: "Check-out by 12:00",
+		},
+	]
 
 	return (
-		<div className={classes.pageContent}>
+		<div className={classes.tourMain}>
 			<Title order={2} className={classes.pageTitle}>
 				My Hotels
 			</Title>
-
-			<div className={classes.hotelsGrid}>
-				{/* {hotels.map((hotel) => (
-					<div key={hotel.id} className={classes.hotelCard}>
-						<div className={classes.hotelHeader}>
-							<Title order={4} className={classes.hotelName}>
-								{hotel.name}
-							</Title>
-							<span
-								className={`${classes.status} ${classes[hotel.status.toLowerCase()]}`}
-							>
-								{hotel.status}
-							</span>
-						</div>
-						<div className={classes.hotelDetails}>
-							<Text className={classes.hotelLocation}>
-								Location: {hotel.location}
-							</Text>
-							<Text className={classes.hotelDates}>
-								Check-in: {hotel.checkIn} | Check-out: {hotel.checkOut}
-							</Text>
-							<Text className={classes.hotelPrice}>Price: {hotel.price}</Text>
-						</div>
-						<div className={classes.hotelActions}>
-							<button className={classes.viewButton}>View Booking</button>
-							{hotel.status === "Confirmed" && (
-								<button className={classes.modifyButton}>Modify</button>
-							)}
-						</div>
-					</div>
-				))} */}
-				<RecommendedHotels
-					onViewDetail={() => {}}
-					titleButton={"See details"}
-					viewButton
-					m={"0"}
-					p={"0"}
-				/>
-			</div>
+			<HotelCardList tours={staticHotels} />
 		</div>
 	)
 }
-export default MyHotels
+export default MyTours

@@ -1,4 +1,5 @@
 import { Container, Group, Paper, Stack, Text, Title } from "@mantine/core"
+import { useMediaQuery } from "@mantine/hooks"
 import { FC, ReactNode, useState } from "react"
 
 import { Layout } from "@/widgets"
@@ -23,6 +24,8 @@ interface MenuItem {
 
 const ProfileLayout: FC = () => {
 	const [activeTab, setActiveTab] = useState("personal-info")
+	const isMobile = useMediaQuery("(max-width: 768px)")
+	// const isTablet = useMediaQuery("(max-width: 1024px)")
 
 	const menuItems: MenuItem[] = [
 		{
@@ -54,7 +57,8 @@ const ProfileLayout: FC = () => {
 
 	const handleMenuClick = (itemId: string) => {
 		if (itemId === "logout") {
-			console.log("Logging out...")
+			// Handle logout logic here
+			console.log("Logout clicked")
 			return
 		}
 		setActiveTab(itemId)
@@ -66,13 +70,30 @@ const ProfileLayout: FC = () => {
 
 	return (
 		<Layout>
-			<Container size="1440px" mb='116px'>
-				<Title  mb='16px'>
+			<Container
+				size="1440px"
+				className={classes.profileContainer}
+				// px={isMobile ? "md" : "xl"}
+			>
+				<Title
+					order={1}
+					className={classes.profileHeader}
+					mb={isMobile ? "xs" : "md"}
+				>
 					Profile
 				</Title>
+
 				<div className={classes.layout}>
-					<Paper className={classes.sidebar}>
-						<Stack className={classes.sidebarMenu}>
+					<Paper
+						className={classes.sidebar}
+						shadow={isMobile ? "sm" : "xs"}
+						p={isMobile ? 0 : "xs"}
+					>
+						<Stack
+							className={classes.sidebarMenu}
+							gap={isMobile ? 0 : 4}
+							style={isMobile ? { flexDirection: "row" } : {}}
+						>
 							{menuItems.map((item) => (
 								<Group
 									key={item.id}
@@ -80,14 +101,39 @@ const ProfileLayout: FC = () => {
 										activeTab === item.id ? classes.active : ""
 									} ${item.isLogout ? classes.logoutItem : ""}`}
 									onClick={() => handleMenuClick(item.id)}
+									gap={isMobile ? "sm" : "sm"}
+									style={{ cursor: "pointer" }}
+									role="button"
+									tabIndex={0}
+									onKeyDown={(e) => {
+										if (e.key === "Enter" || e.key === " ") {
+											handleMenuClick(item.id)
+										}
+									}}
 								>
 									{item.icon}
-									<Text className={classes.label} size='xl'>{item.label}</Text>
+									<Text
+										className={classes.label}
+										size={isMobile ? "md" : "lg"}
+										fw={activeTab === item.id ? 500 : 400}
+									>
+										{item.label}
+									</Text>
 								</Group>
 							))}
 						</Stack>
 					</Paper>
-					<Paper className={classes.mainContent} >{currentComponent}</Paper>
+
+					<Paper
+						className={classes.mainContent}
+						// p={isMobile ? "md" : "xl"}
+					>
+						{currentComponent || (
+							<Text>
+								Please select a menu item
+							</Text>
+						)}
+					</Paper>
 				</div>
 			</Container>
 		</Layout>

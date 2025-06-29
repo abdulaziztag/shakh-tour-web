@@ -16,6 +16,8 @@ const MyTours: FC = () => {
 			imageUrl: "/images/samarkand-tower.jpg",
 			imageAlt: "Historic minaret in Samarkand",
 			status: "under-review",
+			labelDateStart: "Start",
+			labelDateEnd: "End",
 		},
 		{
 			id: "4F5A100F",
@@ -27,6 +29,8 @@ const MyTours: FC = () => {
 			imageUrl: "/images/blue-dome.jpg",
 			imageAlt: "Beautiful blue dome architecture",
 			status: "awaiting-payment",
+			labelDateStart: "Start",
+			labelDateEnd: "End",
 		},
 		{
 			id: "4F5A100F",
@@ -38,11 +42,13 @@ const MyTours: FC = () => {
 			imageUrl: "/images/ornate-ceiling.jpg",
 			imageAlt: "Traditional ornate ceiling decoration",
 			status: "confirmed",
+			labelDateStart: "Start",
+			labelDateEnd: "End",
 		},
 	]
 	return (
 		<div className={classes.tourMain}>
-			<Title order={2} className={classes.pageTitle}>
+			<Title order={2}  className={classes.pageTitle}>
 				My Tours
 			</Title>
 			<TourCardList tours={staticTours} />

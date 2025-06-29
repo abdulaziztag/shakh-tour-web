@@ -1,18 +1,17 @@
-import { Badge, Box, Card, Flex, Group, Stack, Text } from "@mantine/core";
-import Image from "next/image";
-import React from "react";
+import { Badge, Box, Card, Flex, Stack, Text } from "@mantine/core"
+import Image from "next/image"
+import React from "react"
 
+import Image1 from "@/shared/assets/images/all-tours/1.png"
+import Icon1 from "@/shared/assets/images/recommended-hotels/1.svg"
+import Icon2 from "@/shared/assets/images/recommended-hotels/2.svg"
+import Icon3 from "@/shared/assets/images/recommended-hotels/3.svg"
 
+// import Icon4 from "@/shared/assets/images/recommended-hotels/4.svg"
 
-import Image1 from "@/shared/assets/images/all-tours/1.png";
+import styles from "./tour-list.module.scss"
 
-
-
-import styles from "./tour-list.module.scss";
-
-
-
-
+// import VisaLabelIcon from '@/shared/assets/images/logos_visa.svg';
 
 export interface TourCardProps {
 	id: string
@@ -22,12 +21,15 @@ export interface TourCardProps {
 	endDate: string
 	imageUrl: string
 	imageAlt: string
+	features: boolean
+	labelDateStart: string
+	labelDateEnd: string
 	status: "under-review" | "awaiting-payment" | "confirmed"
 }
 
 export interface TourCardStatus {
 	label: string
-	color: "orange" | "blue" | "green" | string;
+	color: "orange" | "blue" | "green" | string
 	variant: "light" | "filled" | "outline"
 }
 
@@ -37,8 +39,11 @@ const TourCard: React.FC<TourCardProps> = ({
 	description,
 	startDate,
 	endDate,
-	imageUrl,
-	imageAlt,
+	// imageUrl,
+	// imageAlt,
+	labelDateEnd,
+	labelDateStart,
+	features,
 	status,
 }) => {
 	const getStatusConfig = (status: TourCardProps["status"]): TourCardStatus => {
@@ -76,76 +81,77 @@ const TourCard: React.FC<TourCardProps> = ({
 
 	return (
 		<Card padding="0px" className={styles.tourCard}>
-			<Flex gap="lg" align="stretch">
-				<Box className={styles.cardImage}>
-					<Image
-						src={Image1}
-						alt="Tour image"
-						fill
-						style={{ objectFit: "cover" }}
-					/>
-				</Box>
-				<Box className={styles.contentSection}>
-					<Stack gap="sm" h="100%">
-						<Group justify="space-between" align="flex-start">
+			<Box className={styles.cardImage}>
+				<Image
+					src={Image1}
+					alt="Tour image"
+					fill
+					style={{ objectFit: "cover" }}
+				/>
+			</Box>
+			<Box className={styles.contentSection}>
+				<Stack gap="sm" h="100%">
+					<Text className={styles.cardTitle}>{title}</Text>
+
+					<Text className={styles.cardDescription}>{description}</Text>
+
+					{features && (
+						<Flex className={styles.recommendedHotelsBoxItemBodyInfoWrapper}>
 							<Text
-								fw={600}
-								size="lg"
-								className={styles.cardTitle}
-								lineClamp={2}
+								component="p"
+								className={styles.recommendedHotelsBoxItemBodyInfo}
 							>
-								{title}
+								<Icon1 />
+								<span>Air conditioning</span>
 							</Text>
-						</Group>
+							<Text
+								component="p"
+								className={styles.recommendedHotelsBoxItemBodyInfo}
+							>
+								<Icon2 />
+								<span>Free wifi</span>
+							</Text>
+							<Text
+								component="p"
+								className={styles.recommendedHotelsBoxItemBodyInfo}
+							>
+								<Icon3 />
+								<span>Private parking area</span>
+							</Text>
+						</Flex>
+					)}
 
-						<Text
-							size="sm"
-							c="dimmed"
-							className={styles.cardDescription}
-							lineClamp={2}
-						>
-							{description}
-						</Text>
-
-						<Box className={styles.dateSection} mt="auto">
-							<Group justify="space-between" align="center">
-								<Group gap="xl">
-									<Stack gap={2}>
-										<Text className={styles.cardStartEnd}>
-											Start
-										</Text>
-										<Text className={styles.cardStartDate}>
-											{formatDate(startDate)}
-										</Text>
-									</Stack>
-
-									<Stack gap={2}>
-										<Text className={styles.cardStartEnd}>
-											End
-										</Text>
-										<Text className={styles.cardStartDate}>
-											{formatDate(endDate)}
-										</Text>
-									</Stack>
-								</Group>
-
-								<Group>
-									<Text size="xs" c="dimmed" className={styles.cardId}>
-										ID {id}
+					<Box className={styles.dateSection}>
+						<div className={styles.dateGroup}>
+							<div className={styles.datesContainer}>
+								<div className={styles.dateItem}>
+									<Text className={styles.cardStartEnd}>{labelDateStart}</Text>
+									<Text className={styles.cardStartDate}>
+										{formatDate(startDate)}
 									</Text>
-									<Badge
-										color={statusConfig.color}
-										variant={statusConfig.variant}
-										className={styles.statusBadge}
-									>
-										{statusConfig.label}
-									</Badge>
-								</Group>
-							</Group>
-						</Box>
-					</Stack>
-				</Box>
-			</Flex>
+								</div>
+								<div className={styles.dateItem}>
+									<Text className={styles.cardStartEnd}>{labelDateEnd}</Text>
+									<Text className={styles.cardStartDate}>
+										{formatDate(endDate)}
+									</Text>
+								</div>
+							</div>
+
+							<div className={styles.statusContainer}>
+								<Text className={styles.cardId}>ID {id}</Text>
+								<Badge
+									color={statusConfig.color}
+									variant={statusConfig.variant}
+									className={styles.statusBadge}
+								>
+									{statusConfig.label}
+								</Badge>
+							</div>
+						</div>
+					</Box>
+				</Stack>
+			</Box>
 		</Card>
 	)
 }

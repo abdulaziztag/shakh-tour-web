@@ -173,7 +173,7 @@
   gap: 24px;
   padding-top: 1.5rem;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1000px) {
     flex-direction: column-reverse;
     gap: 1rem;
     align-items: stretch;
@@ -209,18 +209,31 @@
   &:hover{
     cursor: pointer;
   }
+  @media (max-width: 768px) {
+    padding: 12px 80px; 
+  }
+  @media (max-width: 375px) {
+    padding: 12px 50px; 
+  }
 }
 
 ///// tours //////
+.pageTitle{
+  color: #111126;
+  font-family: Inter;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 32px;
+}
 .tourMain{
   padding: 0px !important;
 }
 
-.toursGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 1.5rem;
-}
+// .toursGrid {
+//   display: grid;
+//   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+//   gap: 1.5rem;
+// }
 
 .tourCard {
   background: none !important;

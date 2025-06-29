@@ -268,7 +268,7 @@ const HotelDetail: FC = () => {
 		<Layout>
 			<div className={styles.hotelPage}>
 				<Container size={"1440px"}>
-					<Text component={"p"} className={styles.pageHeaderBack}>
+					<Text component={"p"} className={styles.pageHeaderBack} onClick={()=> router.push('/hotels')}>
 						<IconLeft />
 						Back
 					</Text>

@@ -8,13 +8,13 @@ import { LightButton } from "@/shared/ui/buttons"
 import s from "./all-hotel-filter.module.scss"
 
 interface IAllHotelFilterProps {
-	onclickBack?: () => void
+	onClickBack?: () => void
 }
 
-export const AllHotelFilter: FC<IAllHotelFilterProps> = ({ onclickBack }) => {
+export const AllHotelFilter: FC<IAllHotelFilterProps> = ({ onClickBack }) => {
 	return (
 		<>
-			<Text component={"p"} className={s.pageHeaderBack} onClick={onclickBack}>
+			<Text component={"p"} className={s.pageHeaderBack} onClick={onClickBack}>
 				<IconLeft />
 				Back
 			</Text>

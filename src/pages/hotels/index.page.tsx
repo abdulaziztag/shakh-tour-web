@@ -1,14 +1,17 @@
 import { Container, Drawer } from "@mantine/core"
 import Head from "next/head"
+// import { useRouter } from "next/router"
 import React from "react"
 
 import { AllHotels, Layout } from "@/widgets"
 
 import { AllHotelFilter, PageHeader } from "@/shared/ui"
+import { useRouter } from 'next/router'
 
 const Hotels = () => {
 	const [opened, setOpened] = React.useState(false)
 	const onClose = () => setOpened(false)
+	const router = useRouter();
 	return (
 		<>
 			<Head>
@@ -50,7 +53,7 @@ const Hotels = () => {
 					size={"100%"}
 					withCloseButton={false}
 				>
-					<AllHotelFilter onclickBack={() => setOpened(false)} />
+					<AllHotelFilter onClickBack={() => router.push('/tours')} />
 				</Drawer>
 			</Layout>
 		</>

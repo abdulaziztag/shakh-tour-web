@@ -2,7 +2,6 @@ import { ActionIcon, Avatar, Group, Text, Title } from "@mantine/core"
 import { FC, useState } from "react"
 
 import EditIcon from "@/shared/assets/images/edit.svg"
-// import CalendarIcon from "@/shared/assets/images/hotel-detail/calendar.svg"
 import IconUser from "@/shared/assets/images/user_outline_28.svg"
 import { Input, Select } from "@/shared/ui"
 import { PhoneInput } from "@/shared/ui/mask-input"
@@ -10,7 +9,6 @@ import { PhoneInput } from "@/shared/ui/mask-input"
 import classes from "./profile.module.scss"
 
 const PersonalInformation: FC = () => {
-	// const [value, setValue] = useState<Date | null>(new Date("2000-09-12"))
 	const [errors, setErrors] = useState<Record<string, string>>({})
 
 	const [formData, setFormData] = useState({
@@ -36,10 +34,6 @@ const PersonalInformation: FC = () => {
 	}
 
 	const genderOptions = ["Male", "Female", "Other"]
-
-	const handleEditAvatar = () => {
-		console.log("Edit avatar clicked")
-	}
 	return (
 		<div className={classes.pageContent}>
 			<Title order={2} className={classes.pageTitle}>Personal Information</Title>
@@ -49,7 +43,6 @@ const PersonalInformation: FC = () => {
 						// src='../../shared/assets/images/Frame 1000001864.png'
 						alt="profile"
 						size="72px"
-						// radius="xl"
 						className={classes.avatar}
 					>
 						<IconUser size="1.5rem" />
@@ -58,7 +51,6 @@ const PersonalInformation: FC = () => {
 						variant="light"
 						size="32px"
 						className={classes.editIcon}
-						onClick={handleEditAvatar}
 						aria-label="Edit profile picture"
 					>
 						<EditIcon />

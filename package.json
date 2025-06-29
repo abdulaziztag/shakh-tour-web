@@ -19,6 +19,7 @@
   "dependencies": {
     "@babel/helper-environment-visitor": "^7.24.7",
     "@emotion/react": "11.14.0",
+    "@fontsource/roboto-flex": "^5.2.6",
     "@hookform/resolvers": "3.10.0",
     "@mantine/carousel": "^7.15.2",
     "@mantine/core": "^7.15.2",
