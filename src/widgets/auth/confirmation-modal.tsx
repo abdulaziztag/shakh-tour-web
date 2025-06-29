@@ -1,5 +1,8 @@
-import { Button, Modal, Text } from "@mantine/core"
+import { Button, Group, Modal, Text } from "@mantine/core"
 import React, { FC, useEffect, useRef, useState } from "react"
+
+import IconChevronLeft from "@/shared/assets/images/chevron_right.svg"
+import IconX from "@/shared/assets/images/close.svg"
 
 import s from "./auth.module.scss"
 
@@ -8,6 +11,7 @@ interface ConfirmCodeModalProps {
 	onClose: () => void
 	email: string
 	onSubmit: (code: string) => void
+	onResendCode?: () => void
 }
 
 export const ConfirmCodeModal: FC<ConfirmCodeModalProps> = ({
@@ -15,9 +19,11 @@ export const ConfirmCodeModal: FC<ConfirmCodeModalProps> = ({
 	onClose,
 	email,
 	onSubmit,
+	onResendCode,
 }) => {
 	const [code, setCode] = useState<string[]>(["", "", "", ""])
 	const [timer, setTimer] = useState(30)
+	const [canResend, setCanResend] = useState(false)
 	const inputRefs = useRef<(HTMLInputElement | null)[]>([])
 
 	const handleChange = (index: number, value: string) => {
@@ -41,43 +47,89 @@ export const ConfirmCodeModal: FC<ConfirmCodeModalProps> = ({
 		onSubmit(code.join(""))
 	}
 
+	const handleResendCode = () => {
+		if (canResend && onResendCode) {
+			onResendCode()
+			setTimer(30)
+			setCanResend(false)
+			setCode(["", "", "", ""])
+		}
+	}
+
 	useEffect(() => {
 		if (!opened) {
 			setCode(["", "", "", ""])
 			setTimer(30)
+			setCanResend(false)
+		} else {
+			setTimeout(() => {
+				inputRefs.current[0]?.focus()
+			}, 100)
 		}
 	}, [opened])
 
 	useEffect(() => {
-		const interval = setInterval(() => {
-			setTimer((prev) => (prev > 0 ? prev - 1 : 0))
-		}, 1000)
+		if (timer > 0) {
+			const interval = setInterval(() => {
+				setTimer((prev) => {
+					if (prev <= 1) {
+						setCanResend(true)
+						return 0
+					}
+					return prev - 1
+				})
+			}, 1000)
+			return () => clearInterval(interval)
+		}
+	}, [timer])
 
-		return () => clearInterval(interval)
-	}, [])
+	const isCodeComplete = code.every((c) => c !== "")
+	const hasAnyInput = code.some((c) => c !== "")
 
 	return (
 		<Modal
 			opened={opened}
 			onClose={onClose}
 			centered
-			withCloseButton={false}
-			radius="lg"
-			size="sm"
+			withCloseButton={hasAnyInput}
+			radius={24}
+			size={500}
+			styles={{
+				// modal: {
+				// 	width: 500,
+				// 	height: 418,
+				// },
+				body: {
+					padding: 0,
+				},
+			}}
 		>
 			<div className={s.confirmation}>
-				<div className={s["confirmation__title"]}>Confirmation code</div>
+				<Group className={s.header}>
+					<button onClick={onClose} className={s.backButton}>
+						<IconChevronLeft size={20} />
+					</button>
+					<Text className={s["confirmation__title"]}>Confirmation code</Text>
+					<button onClick={onClose} className={s.closeButton}>
+						<IconX />
+					</button>
+				</Group>
 				<Text className={s["confirmation__subtitle"]}>
-					We have sent a verification code to <strong>{email}</strong>, please
-					enter this code below
+					We have sent a verification code to{" "}
+					<span className={s["confirmation__email"]}>{email}</span>
+					{hasAnyInput
+						? ". Please enter this code in the fields below"
+						: ", please enter this code below"}
 				</Text>
 
 				<div className={s["confirmation__inputs"]}>
 					{code.map((digit, index) => (
 						<input
 							key={index}
-							// ref={(el) => (inputRefs.current[index] = el)}
-							className={s["confirmation__input"]}
+							ref={(el: any) => (inputRefs.current[index] = el)}
+							className={`${s["confirmation__input"]} ${
+								digit ? s["confirmation__input--filled"] : ""
+							}`}
 							type="text"
 							inputMode="numeric"
 							maxLength={1}
@@ -88,14 +140,37 @@ export const ConfirmCodeModal: FC<ConfirmCodeModalProps> = ({
 					))}
 				</div>
 
-				<Text className={s["confirmation__retry-text"]}>
-					Retry code request is available in {timer} seconds
-				</Text>
+				{!canResend && (
+					<Text className={s["confirmation__retry-text"]}>
+						Retry code request is available in {timer} seconds
+					</Text>
+				)}
 
-				<Button
-					className={s["confirmation__button"]}
-					disabled={code.some((c) => c === "")}
+				{canResend && (
+					<button
+						className={s["confirmation__resend-button"]}
+						onClick={handleResendCode}
+					>
+						Resend Code
+					</button>
+				)}
+
+				{/* <Button
+					className={`${s["confirmation__button"]} ${
+						isCodeComplete ? s["confirmation__button--active"] : ""
+					}`}
+					disabled={!isCodeComplete}
 					onClick={handleSubmit}
+				>
+					Continue
+				</Button> */}
+				<Button
+					type="submit"
+					fullWidth
+					disabled={!isCodeComplete}
+					onClick={handleSubmit}
+					className={s.registerContinueButton}
+					mt="24px"
 				>
 					Continue
 				</Button>

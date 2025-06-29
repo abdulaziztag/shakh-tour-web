@@ -1,0 +1,397 @@
+.pageContent{
+  padding: 16px;
+  border-radius: 12px;
+  background-color: #fff !important;
+  // min-height: 600px;
+}
+// components/ProfileHeader/ProfileHeader.module.scss
+.profileHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0;
+  
+  // Responsive breakpoints
+  @media (max-width: 480px) {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.75rem;
+  }
+}
+
+.avatarContainer {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.avatar {
+  border: 2px solid var(--mantine-color-gray-3);
+  transition: border-color 0.2s ease;
+  
+  &:hover {
+    border-color: var(--mantine-color-blue-5);
+  }
+  
+  // Dark theme support
+  [data-mantine-color-scheme="dark"] & {
+    border-color: var(--mantine-color-dark-4);
+    
+    &:hover {
+      border-color: var(--mantine-color-blue-4);
+    }
+  }
+}
+
+.editIcon {
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  border: 2px solid #fff;
+  transition: all 0.2s ease;
+  gap: 8px;
+  border-radius: 100px;
+  border-width: 2px;
+  background-color: #ECFAFC;
+}
+
+.userInfo {
+  flex: 1;
+  min-width: 0; 
+}
+
+.userName {
+  margin: 0;
+  font-weight: 600;
+  color: var(--mantine-color-text);
+  word-break: break-word;
+  
+  // Responsive font size
+  @media (max-width: 480px) {
+    font-size: 1.1rem;
+  }
+  
+  // Dark theme support
+  [data-mantine-color-scheme="dark"] & {
+    color: var(--mantine-color-gray-1);
+  }
+}
+
+.formSection {
+  margin-bottom: 2.5rem;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+.formColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.fieldLabel {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #4a5568;
+  margin-bottom: 0.5rem;
+}
+
+.input {
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease;
+  background-color: white;
+
+  &:focus {
+    outline: none;
+    border-color: #38b2ac;
+    box-shadow: 0 0 0 3px rgba(56, 178, 172, 0.1);
+  }
+}
+
+.passwordSection {
+  margin-bottom: 20px;
+}
+
+.sectionTitle {
+  font-family: Inter;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  color: #000;
+  margin-bottom: 1.5rem;
+}
+
+.passwordGrid {
+  margin-bottom: 1rem;
+  grid-template-columns: 1fr;
+  max-width: 48%;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    max-width: 100%;
+  }
+}
+
+.passwordColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.forgotPassword {
+  margin-bottom: 12px;
+}
+
+.forgotLink {
+  font-family: Inter;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 20px;
+  font-size: 0.875rem;
+  color: #044949;
+  text-decoration: none;
+  
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.actionButtons {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 24px;
+  padding-top: 1.5rem;
+
+  @media (max-width: 1000px) {
+    flex-direction: column-reverse;
+    gap: 1rem;
+    align-items: stretch;
+  }
+}
+
+.deleteButton {
+  color: #e53e3e;
+  border: 1px solid #fed7d7;
+  background-color: transparent;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    background-color: #fed7d7;
+  }
+}
+
+.editButton {
+  padding: 12px 102px;
+  background-color: #044949;
+  color: #fff;
+  gap: 8px;
+  border-radius: 10px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  border: none;
+
+  &:hover{
+    cursor: pointer;
+  }
+  @media (max-width: 768px) {
+    padding: 12px 80px; 
+  }
+  @media (max-width: 375px) {
+    padding: 12px 50px; 
+  }
+}
+
+///// tours //////
+.pageTitle{
+  color: #111126;
+  font-family: Inter;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 32px;
+}
+.tourMain{
+  padding: 0px !important;
+}
+
+// .toursGrid {
+//   display: grid;
+//   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+//   gap: 1.5rem;
+// }
+
+.tourCard {
+  background: none !important;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.tourHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.tourTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2d3748;
+  margin: 0;
+  flex: 1;
+}
+
+.status {
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+
+  &.completed {
+    background-color: #c6f6d5;
+    color: #22543d;
+  }
+
+  &.upcoming {
+    background-color: #bee3f8;
+    color: #2c5282;
+  }
+
+  &.confirmed {
+    background-color: #c6f6d5;
+    color: #22543d;
+  }
+
+  &.pending {
+    background-color: #feebc8;
+    color: #c05621;
+  }
+}
+
+.tourDetails {
+  margin-bottom: 1.5rem;
+}
+
+.tourDate, .tourPrice {
+  font-size: 0.9rem;
+  color: #4a5568;
+  margin-bottom: 0.5rem;
+}
+
+.tourActions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.viewButton {
+  background-color: #38b2ac;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: #319795;
+  }
+}
+
+.cancelButton {
+  background-color: transparent;
+  color: #e53e3e;
+  border: 1px solid #e53e3e;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: #e53e3e;
+    color: white;
+  }
+}
+
+///// hotels //////
+.hotelsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 1.5rem;
+}
+
+.hotelCard {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: box-shadow 0.2s ease;
+
+  &:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.hotelHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.hotelName {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2d3748;
+  margin: 0;
+  flex: 1;
+}
+
+.hotelDetails {
+  margin-bottom: 1.5rem;
+}
+
+.hotelLocation, .hotelDates, .hotelPrice {
+  font-size: 0.9rem;
+  color: #4a5568;
+  margin-bottom: 0.5rem;
+}
+
+.hotelActions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.modifyButton {
+  background-color: transparent;
+  color: #38b2ac;
+  border: 1px solid #38b2ac;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: #38b2ac;
+    color: white;
+  }
+}

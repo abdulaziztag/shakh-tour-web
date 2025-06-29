@@ -1,6 +1,7 @@
 import { Badge, Box, Flex, Text } from "@mantine/core"
 import cx from "clsx"
 import Image from "next/image"
+import { useRouter } from "next/router"
 import React from "react"
 
 import Image1 from "@/shared/assets/images/all-tours/1.png"
@@ -12,6 +13,7 @@ import { FilledButton } from "@/shared/ui/buttons"
 import s from "./tour-info.module.scss"
 
 export const TourInfo = () => {
+	const router = useRouter()
 	return (
 		<>
 			<Flex className={s.tourInfoMobileTopBox}>
@@ -72,7 +74,7 @@ export const TourInfo = () => {
 								s.groupToursBoxBodyInfoItemMobile,
 							)}
 						>
-							<FilledButton className={s.groupToursBoxBodyButton}>
+							<FilledButton className={s.groupToursBoxBodyButton} onClick={()=>  router.push('/hotels')}>
 								See details
 							</FilledButton>
 						</Flex>

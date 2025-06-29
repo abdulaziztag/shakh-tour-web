@@ -1,20 +1,33 @@
-import IconMenu from "@//shared/assets/images/burger-menu.svg"
-import IconLogoMobile from "@//shared/assets/images/logo-mobile.svg"
-import IconLogo from "@//shared/assets/images/logo.svg"
-import IconClose from "@//shared/assets/images/x-close.svg"
-import { ActionIcon, Box, Container, Drawer, Flex, Text } from "@mantine/core"
-import cx from "clsx"
-import Link from "next/link"
-import { usePathname } from "next/navigation"
-import { useRouter } from "next/router"
-import React, { useState } from "react"
+import IconMenu from "@//shared/assets/images/burger-menu.svg";
+import IconLogoMobile from "@//shared/assets/images/logo-mobile.svg";
+import IconLogo from "@//shared/assets/images/logo.svg";
+import IconClose from "@//shared/assets/images/x-close.svg";
+import { ActionIcon, Box, Container, Drawer, Flex, Text } from "@mantine/core";
+import cx from "clsx";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useRouter } from "next/router";
+import React, { useState } from "react";
 
-import { LanguageSwitcher } from "@/shared/ui"
-import { FilledButton } from "@/shared/ui/buttons"
 
-import LoginModal from "../auth/login-modal"
-import RegisterModal from "../auth/register-modal"
-import s from "./navbar.module.scss"
+
+import { LanguageSwitcher } from "@/shared/ui";
+import { FilledButton } from "@/shared/ui/buttons";
+
+
+
+// import { ConfirmCodeModal } from '../auth/confirmation-modal';
+import ForgotPasswordModal from "../auth/forgot-password-modal";
+import LoginModal from "../auth/login-modal";
+import RegisterModal from "../auth/register-modal";
+// import { RegistrationDetail } from "../auth/registration-detail-modal";
+import s from "./navbar.module.scss";
+
+
+
+
+
+// import { ResetPasswordModal } from '../auth/reset-password-modal'
 
 export const Navbar = () => {
 	// const { t } = useTranslation("common")
@@ -23,6 +36,9 @@ export const Navbar = () => {
 	const path = usePathname()
 	const [loginModalOpened, setLoginModalOpened] = useState(false)
 	const [registerModalOpened, setRegisterModalOpened] = useState(false)
+	const [forgotPasswordModalOpened, setForgotPasswordModalOpened] =
+		useState(false)
+	// const [email, setEmail] = useState("madiyarovfaxriddin@gmail.com")
 
 	const handleLoginClick = () => {
 		setLoginModalOpened(true)
@@ -39,7 +55,12 @@ export const Navbar = () => {
 
 	const handleForgotPasswordClick = () => {
 		setLoginModalOpened(false)
-		console.log("Switch to forgot password modal")
+		setForgotPasswordModalOpened(true) // Login modal ni yopib, forgot password modal ni ochish
+	}
+
+	const handleReturnToSignIn = () => {
+		setForgotPasswordModalOpened(false)
+		setLoginModalOpened(true) // Forgot password dan login modal ga qaytish
 	}
 
 	// const handleRegisterClick = () => {
@@ -119,10 +140,32 @@ export const Navbar = () => {
 							onRegisterClick={handleRegisterClickFromLogin}
 							onForgotPasswordClick={handleForgotPasswordClick}
 						/>
+						{/* <ConfirmCodeModal
+							opened={loginModalOpened}
+							onClose={handleLoginClose}
+							email={email}
+							onSubmit={() => {}}
+						/> */}
+						{/* <ResetPasswordModal
+							opened={loginModalOpened}
+							onClose={handleLoginClose}
+							onSubmit={() => {}}
+							isRegistration={true}
+						/> */}
+						{/* <RegistrationDetail
+							opened={loginModalOpened}
+							onClose={handleLoginClose}
+							onSubmit={() => {}}
+						/> */}
 						<RegisterModal
 							opened={registerModalOpened}
 							onClose={handleRegisterClose}
 							onSignInClick={handleSignInClickFromRegister}
+						/>
+						<ForgotPasswordModal
+							opened={forgotPasswordModalOpened}
+							onClose={() => setForgotPasswordModalOpened(false)}
+							onReturnToSignIn={handleReturnToSignIn}
 						/>
 					</Flex>
 					<Box className={s.navbarMenuBurger} onClick={() => setOpened(true)}>

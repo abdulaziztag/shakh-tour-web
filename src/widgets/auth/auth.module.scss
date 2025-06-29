@@ -82,7 +82,7 @@
 .textInput {
   .mantine-TextInput-input,
   .mantine-PasswordInput-input {
-    border-radius: 12px !important;
+    border-radius: 8px !important;
     background-color: #f9fafb !important;
     border: 1px solid #e5e7eb !important;
     font-family: 'Inter', sans-serif !important;
@@ -99,12 +99,6 @@
     &:hover {
       border-color: #d1d5db !important;
     }
-
-    &:focus {
-      border-color: #047857 !important;
-      border-width: 2px !important;
-      box-shadow: none !important;
-    }
   }
 
   .mantine-PasswordInput-visibilityToggle {
@@ -113,7 +107,7 @@
 }
 
 .input {
-  border-radius: 12px !important;
+  border-radius: 8px !important;
   background-color: #f9fafb !important;
   border: 1px solid #e5e7eb !important;
   font-family: 'Inter', sans-serif !important;
@@ -122,19 +116,12 @@
   color: #1f2937 !important;
   padding: 12px 16px !important;
   height: 48px !important;
-
   &::placeholder {
     color: #9ca3af !important;
   }
 
   &:hover {
     border-color: #d1d5db !important;
-  }
-
-  &:focus {
-    border-color: #047857 !important;
-    border-width: 2px !important;
-    box-shadow: none !important;
   }
 }
 
@@ -224,7 +211,7 @@
   font-weight: 500 !important;
   font-size: 14px !important;
   line-height: 20px !important;
-  color: #047857 !important;
+  color: #044949 !important;
   text-decoration: none !important;
 
   &:hover {
@@ -282,7 +269,6 @@
   border-radius: 24px !important;
   background-color: #ffffff !important;
   box-shadow: 0px 24px 48px rgba(0, 0, 0, 0.15) !important;
-  border-radius: 24px !important;
 }
 
 .registerContent {
@@ -292,7 +278,9 @@
 
 .registerBody {
   padding: 0 !important;
-  height: 400px;
+  height: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
 }
 
 .registerContainer {
@@ -302,6 +290,11 @@
   flex-direction: column;
   gap: 32px;
   box-sizing: border-box;
+
+  @media (max-width: 480px) {
+    padding: 24px 20px;
+    gap: 24px;
+  }
 }
 
 .registerHeader {
@@ -318,6 +311,11 @@
   line-height: 38px !important;
   color: #1a1a1a !important;
   margin: 0 !important;
+
+  @media (max-width: 480px) {
+    font-size: 24px !important;
+    line-height: 30px !important;
+  }
 }
 
 .registerCloseButton {
@@ -334,7 +332,7 @@
   align-items: center;
   justify-content: center;
   transition: background-color 0.2s ease;
-  
+
   &:hover {
     background-color: none;
   }
@@ -350,6 +348,10 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
+
+  @media (max-width: 480px) {
+    gap: 16px;
+  }
 }
 
 .registerLabel {
@@ -380,43 +382,11 @@
     &:hover {
       border-color: #d1d5db !important;
     }
-
-    &:focus {
-      border-color: #047857 !important;
-      border-width: 2px !important;
-      box-shadow: none !important;
-    }
-  }
-}
-
-.registerInput {
-  border-radius: 12px !important;
-  background-color: #f9fafb !important;
-  border: 1px solid #e5e7eb !important;
-  font-family: 'Inter', sans-serif !important;
-  font-size: 16px !important;
-  line-height: 24px !important;
-  color: #1f2937 !important;
-  padding: 12px 16px !important;
-  height: 48px !important;
-
-  &::placeholder {
-    color: #9ca3af !important;
-  }
-
-  &:hover {
-    border-color: #d1d5db !important;
-  }
-
-  &:focus {
-    border-color: #047857 !important;
-    border-width: 2px !important;
-    box-shadow: none !important;
   }
 }
 
 .registerContinueButton {
-  background-color: #047857 !important;
+  background-color: #044949 !important;
   color: #ffffff !important;
   font-family: 'Inter', sans-serif !important;
   font-weight: 600 !important;
@@ -427,12 +397,14 @@
   height: 48px !important;
   border: none !important;
 
-  &:hover {
-    background-color: #065f46 !important;
+  &:hover,
+  &:active {
+    background-color: #044949 !important;
   }
 
-  &:active {
-    background-color: #064e3b !important;
+  @media (max-width: 480px) {
+    font-size: 14px !important;
+    padding: 12px 20px !important;
   }
 }
 
@@ -452,10 +424,16 @@
     background-color: #f9fafb !important;
     border-color: #d1d5db !important;
   }
+
+  @media (max-width: 480px) {
+    font-size: 14px !important;
+    padding: 12px 20px !important;
+  }
 }
 
 .registerSignInSection {
   margin-top: auto;
+  text-align: center;
 }
 
 .registerSignInText {
@@ -471,7 +449,7 @@
   font-weight: 500 !important;
   font-size: 14px !important;
   line-height: 20px !important;
-  color: #047857 !important;
+  color: #044949 !important;
   text-decoration: none !important;
 
   &:hover {
@@ -480,51 +458,552 @@
 }
 
 
+
 ///// confirmation modal styles /////
 .confirmation {
   text-align: center;
-  padding: 24px;
+  padding: 32px;
+  width: 100%;
+  height: 100%;
 
   &__title {
-    font-size: 24px;
-    font-weight: 700;
-    margin-bottom: 8px;
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 38px;
+    text-align: center;
+    color: #101828;
+    @media (max-width: 480px) {
+      font-size: 24px;
+      line-height: 32px;
+    }
+  
+    @media (max-width: 360px) {
+      font-size: 16px;
+      line-height: 28px;
+      margin-top: 70px;
+    }
+  
+    @media (max-width: 325px) {
+      font-size: 18px;
+      line-height: 26px;
+      word-break: break-word;
+    }
   }
 
   &__subtitle {
-    margin-bottom: 16px;
-    color: #4b5563;
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    color: #000000;
+    margin-top: 12px;
+  }
+
+  &__email {
+    color: #044949;
+    font-weight: 500;
   }
 
   &__inputs {
     display: flex;
     justify-content: center;
-    gap: 12px;
-    margin: 20px 0;
+    gap: 10px;
+    margin-top: 32px;
   }
 
   &__input {
-    width: 48px;
-    height: 60px;
+    width: 60px;
+    height: 72px;
     font-size: 24px;
+    font-weight: 600;
     text-align: center;
     border: 1px solid #e5e7eb;
-    border-radius: 8px;
-    outline: none;
+    border-radius: 12px;
+    background: #ffffff;
+    color: #1f2937;
+    transition: all 0.2s ease;
 
     &:focus {
-      border-color: #2563eb;
+      border-color: #044949;
+      box-shadow: 0 0 0 3px rgba(8, 145, 178, 0.1);
+    }
+
+    &--filled {
+      border-color: #044949;
     }
   }
 
   &__retry-text {
     font-size: 14px;
-    color: #6b7280;
-    margin-top: 8px;
+    color: #9ca3af;
+    margin-top: 16px;
+  }
+
+  &__resend-button {
+    background: none;
+    border: none;
+    color: #044949;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 24px;
   }
 
   &__button {
-    margin-top: 16px;
     width: 100%;
+    height: 48px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    border: none;
+    background: #d1d5db;
+    color: #9ca3af;
+    cursor: not-allowed;
+    margin-top: 24px;
+
+    &--active {
+      background: #0891b2;
+      color: #ffffff;
+      cursor: pointer;
+
+      &:hover {
+        background: #0e7490;
+      }
+    }
+  }
+  @media (max-width: 480px) {
+    padding: 16px;
+
+    &__title {
+      font-size: 24px;
+      line-height: 32px;
+    }
+
+    &__subtitle {
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    &__input {
+      width: 48px;
+      height: 60px;
+      font-size: 20px;
+    }
+
+    &__resend-button {
+      font-size: 14px;
+    }
+
+    &__button {
+      font-size: 14px;
+    }
+  }
+}
+
+
+
+/// forget password modal styles /////
+.forgotPasswordModal {
+  border-radius: 24px !important;
+  background-color: #ffffff !important;
+  box-shadow: 0px 24px 48px rgba(0, 0, 0, 0.15) !important;
+  border-radius: 24px !important;
+}
+
+.forgotPasswordHeader {
+  display: none;
+}
+
+.forgotPasswordBody {
+  padding: 0;
+}
+
+.forgotPasswordContainer {
+  padding: 32px 48px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  box-sizing: border-box;
+}
+
+.forgotPasswordTitleSection {
+  text-align: center;
+}
+
+.forgotPasswordTitle {
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 32px !important;
+  line-height: 38px !important;
+  color: #1a1a1a !important;
+  margin: 0 !important;
+}
+
+.forgotPasswordSubtitle {
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0%;
+  text-align: center;
+  color: #475467;
+  margin-top: 12px;
+}
+
+.forgotPasswordLabel {
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 500 !important;
+  font-size: 14px !important;
+  line-height: 20px !important;
+  color: #374151 !important;
+  margin: 0 !important;
+}
+
+.forgotPasswordEmailInput {
+  border-radius: 8px !important;
+  background-color: #f9fafb !important;
+  border: 1px solid #e5e7eb !important;
+  font-family: 'Inter', sans-serif !important;
+  font-size: 16px !important;
+  line-height: 24px !important;
+  color: #1f2937 !important;
+  padding: 12px 16px !important;
+  height: 48px !important;
+  &::placeholder {
+    color: #9ca3af !important;
+  }
+
+  &:hover {
+    border-color: #d1d5db !important;
+  }
+}
+
+.forgotPasswordResetButton {
+  background-color: #044949 !important;
+  color: #ffffff !important;
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 16px !important;
+  line-height: 24px !important;
+  border-radius: 12px !important;
+  padding: 12px 24px !important;
+  height: 48px !important;
+  border: none !important;
+
+  &:hover {
+    background-color: #044949 !important;
+  }
+
+  &:active {
+    background-color: #044949 !important;
+  }
+}
+
+.forgotPasswordReturnSection {
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  user-select: none;
+
+  &:hover {
+    background: #f5f5f5;
+  }
+}
+
+.forgotPasswordReturnText {
+  font-family: Inter;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  color: #044949;
+
+  .forgotPasswordReturnSection:hover & {
+    color: #2d7d7d;
+  }
+}
+
+// Responsive design
+@media (max-width: 480px) {
+  .forgotPasswordContainer {
+    padding: 24px 20px;
+  }
+
+  .forgotPasswordTitle {
+    font-size: 20px;
+  }
+
+  .forgotPasswordSubtitle {
+    font-size: 13px;
+  }
+}
+
+
+
+/// reset password modal styles ////
+
+.resetPasswordModal {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  border: none;
+  width: 100%;
+  margin: 0 auto;
+
+  @media (max-width: 768px) {
+    margin: 0 1rem;
+    max-width: calc(100vw - 2rem);
+    border-radius: 12px;
+  }
+}
+
+.resetPasswordModalContent {
+  padding: 16px 32px;
+
+  @media (max-width: 768px) {
+    padding: 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 8px 16px;
+  }
+}
+
+.resetPasswordModalHeader {
+  margin-bottom: 1.5rem;
+
+  @media (max-width: 768px) {
+    margin-bottom: 1.25rem;
+  }
+}
+
+.resetPasswordModalTitle {
+  font-family: Inter;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 38px;
+  letter-spacing: 0%;
+  text-align: center;
+  color: #101828;
+
+  @media (max-width: 768px) {
+    font-size: 24px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 18px;
+  }
+}
+
+.resetPasswordModalCloseButton {
+  color: #666;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: #f5f5f5;
+    color: #333;
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+.resetPasswordModalForm {
+  width: 100%;
+}
+
+.resetPasswordModalInputGroup {
+  width: 100%;
+}
+
+.resetPasswordModalLabel {
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 500 !important;
+  font-size: 14px !important;
+  line-height: 20px !important;
+  color: #374151 !important;
+  margin: 0 !important;
+
+  @media (max-width: 480px) {
+    font-size: 0.875rem;
+  }
+}
+
+.resetPasswordModalInput {
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 1rem;
+  padding: 0.75rem 1rem;
+  color: #374151;
+  transition: all 0.2s ease;
+
+  &::placeholder {
+    color: #9ca3af;
+  }
+
+  &:hover {
+    border-color: #d1d5db;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 0.9rem;
+    padding: 0.625rem 0.875rem;
+  }
+}
+
+.resetPasswordModalEyeButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #6b7280;
+  padding: 0.25rem;
+  border-radius: 4px;
+  transition: color 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    color: #374151;
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+.resetPasswordModalContinueButton {
+  background: linear-gradient(135deg, #0f766e 0%, #0d9488 100%);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.875rem 1.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 0.5rem;
+
+  &:hover {
+    background: linear-gradient(135deg, #0d6efd 0%, #0dcaf0 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(15, 118, 110, 0.3);
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 6px rgba(15, 118, 110, 0.3);
+  }
+
+  &:disabled {
+    background: #d1d5db;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+
+    &:hover {
+      background: #d1d5db;
+      transform: none;
+      box-shadow: none;
+    }
+  }
+
+  @media (max-width: 480px) {
+    font-size: 0.9rem;
+    padding: 0.75rem 1.25rem;
+  }
+}
+
+
+
+///// registration detail modal styles ///
+.registrationDetail {
+  background: white;
+  border-radius: 20px;
+  border: none;
+  width: 100%;
+  margin: 0 auto;
+
+  @media (max-width: 768px) {
+    margin: 0 1rem;
+    max-width: calc(100vw - 2rem);
+    border-radius: 16px;
+  }
+}
+
+.registrationDetailContent {
+  padding: 24px 32px;
+
+  @media (max-width: 768px) {
+    padding: 1.5rem;
+  }
+}
+
+.registrationDetailHeader {
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.registrationDetailTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.registrationDetailCloseButton {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #6b7280;
+  font-size: 1.2rem;
+  padding: 4px;
+  border-radius: 6px;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: #f3f4f6;
+  }
+}
+
+.registrationDetailLabel {
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+.registrationDetailInput {
+  border-radius: 8px;
+  background-color: #f9fafb;
+  transition: border 0.2s;
+
+  &:focus-within {
+    border-color: #0f766e;
+  }
+}
+
+.registrationDetailButton {
+  background-color: #014737;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.875rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: #01614f;
   }
 }

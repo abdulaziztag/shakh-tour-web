@@ -11,9 +11,10 @@ import {
 } from "@mantine/core"
 import { FC, useState } from "react"
 
+import IconChevronLeft from "@/shared/assets/images/chevron_right.svg"
 import IconX from "@/shared/assets/images/close.svg"
 import IconBrandGoogle from "@/shared/assets/images/google-icon.svg"
-import IconChevronLeft from '@/shared/assets/images/chevron_right.svg'
+
 import styles from "./auth.module.scss"
 
 interface LoginModalProps {
@@ -23,7 +24,7 @@ interface LoginModalProps {
 	onForgotPasswordClick: () => void
 }
 
-const LoginModal:FC <LoginModalProps> = ({
+const LoginModal: FC<LoginModalProps> = ({
 	opened,
 	onClose,
 	onRegisterClick,
@@ -40,7 +41,7 @@ const LoginModal:FC <LoginModalProps> = ({
 	const handleGoogleSignIn = () => {
 		console.log("Google sign in")
 	}
-  
+
 	return (
 		<Modal
 			opened={opened}
@@ -61,7 +62,7 @@ const LoginModal:FC <LoginModalProps> = ({
 			}}
 		>
 			<Box className={styles.container}>
-				<Group  className={styles.header}>
+				<Group className={styles.header}>
 					<button onClick={onClose} className={styles.backButton}>
 						<IconChevronLeft size={20} />
 					</button>
@@ -73,7 +74,7 @@ const LoginModal:FC <LoginModalProps> = ({
 
 				<form onSubmit={handleSubmit}>
 					<Stack gap={24} className={styles.form}>
-						<Stack gap={8}>
+						<Stack gap={6}>
 							<Text className={styles.label}>Email</Text>
 							<TextInput
 								value={email}
@@ -86,7 +87,7 @@ const LoginModal:FC <LoginModalProps> = ({
 							/>
 						</Stack>
 
-						<Stack gap={8}>
+						<Stack gap={6}>
 							<Text className={styles.label}>Password</Text>
 							<PasswordInput
 								value={password}

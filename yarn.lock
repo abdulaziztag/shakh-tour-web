@@ -1117,6 +1117,11 @@
   resolved "https://registry.npmjs.org/@floating-ui/utils/-/utils-0.2.8.tgz"
   integrity sha512-kym7SodPp8/wloecOpcmSnWJsK7M0E5Wg8UcFA+uO4B9s5d0ywXOEro/8HM9x0rW+TljRzul/14UYz3TleT3ig==
 
+"@fontsource/roboto-flex@^5.2.6":
+  version "5.2.6"
+  resolved "https://registry.npmjs.org/@fontsource/roboto-flex/-/roboto-flex-5.2.6.tgz"
+  integrity sha512-opB+JmXsYifpvnIgxyPEsyPfqBdNCXPwNtQXeHeorwVJFYvXn5m2mZxm0FpdbMlo3lp8YZSbmyxq/TRSE1zEgA==
+
 "@hookform/resolvers@3.10.0":
   version "3.10.0"
   resolved "https://registry.npmjs.org/@hookform/resolvers/-/resolvers-3.10.0.tgz"
@@ -1216,6 +1221,13 @@
     react-remove-scroll "^2.6.0"
     react-textarea-autosize "8.5.6"
     type-fest "^4.27.0"
+
+"@mantine/dates@^8.1.1":
+  version "8.1.1"
+  resolved "https://registry.npmjs.org/@mantine/dates/-/dates-8.1.1.tgz"
+  integrity sha512-ewFtUQNMvvdVgsITx8QSeptS17/Ygy5K9YMkdV8AwMHuB9S2UZBmBpn0TTfFtEEwsBf8nBtSbYGY/dQFZDP+AA==
+  dependencies:
+    clsx "^2.1.1"
 
 "@mantine/hooks@^7.15.2":
   version "7.15.2"

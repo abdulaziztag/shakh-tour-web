@@ -1,0 +1,19 @@
+.tourGrid {
+  padding: 20px 0 !important;
+}
+
+.emptyState {
+  padding: 80px 20px;
+  min-height: 300px;
+}
+
+@media (max-width: 768px) {
+  .tourGrid {
+    padding: 16px 0;
+  }
+  
+  .emptyState {
+    padding: 60px 20px;
+    min-height: 200px;
+  }
+}
