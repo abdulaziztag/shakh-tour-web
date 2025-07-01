@@ -1,0 +1,245 @@
+
+.tableContainer {
+  background-color: white;
+  border-radius: 15px;
+  overflow: hidden;
+  border: 1px solid #EAECF0;
+}
+
+.mantineTable {
+  background-color: white;
+  padding: 12px;
+
+  .tableHead {
+    background-color: #f8f9fa;
+
+    .headerCell {
+      font-family: Inter;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 18px;
+      color:#475467; 
+      padding: 13px 0px 13px 24px;     
+    }
+  }
+
+  .tableBody {
+    .tableRow {
+      border-bottom: 1px solid #f1f3f4 !important;
+      transition: background-color 0.2s ease;
+
+      &:last-child {
+        border-bottom: none !important;
+      }
+
+      &:hover {
+        background-color: #f8f9fa !important;
+      }
+
+      .tableCell {
+        padding: 26px 0px 26px 24px;
+        vertical-align: middle;
+        border: none !important;
+        font-family: Inter;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 20px;
+        color: #101828;
+      }
+    }
+  }
+}
+
+.dateText {
+  color: #333 !important;
+  font-weight: 500 !important;
+}
+
+.deadlineText {
+  color: #D93623 !important;
+}
+
+.costText {
+  font-family: Inter;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #101828;
+}
+
+.availableBadge {
+  background-color: #ECFDF3 !important;
+  border: 1px solid #ABEFC6 !important;
+  color: #067647;
+  padding: 12px 14px;
+  border-radius: 16px;
+  font-family: Inter;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  text-transform: none;
+}
+
+.soldOutBadge {
+  background-color: #D936231A !important;
+  border: 1px solid #D93623 !important;
+  color: #D93623;
+  padding: 12px 14px;
+  border-radius: 16px;
+  font-family: Inter;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  text-transform: none;
+}
+
+.enquiryButton {
+  padding: 10px 24px;
+  background-color: #044949 !important;
+  border-radius: 8px;
+  color: white !important;
+  border: none !important;
+  font-family: Inter;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  box-shadow: 0px 1px 2px 0px #1018280D;
+  margin-right: 10px;
+}
+
+@media (max-width: 768px) {
+  .tableContainer {
+    overflow-x: auto;
+    .table {
+      min-width: 600px;
+      
+      .tableHead .headerRow .headerCell,
+      .tableBody .tableRow .tableCell {
+        padding: 8px 12px;
+        font-size: 12px;
+      }
+
+      .tableBody .tableRow .tableCell .cellText {
+        font-size: 12px;
+      }
+    }
+  }
+
+  .enquiryButton {
+    padding: 6px 12px;
+    font-size: 12px;
+    min-height: 32px;
+  }
+
+  .statusBadge {
+    font-size: 11px;
+    padding: 3px 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tableContainer {
+    .table {
+      .tableHead .headerRow .headerCell,
+      .tableBody .tableRow .tableCell {
+        padding: 6px 8px;
+      }
+    }
+  }
+
+  .enquiryButton {
+    padding: 4px 8px;
+    font-size: 11px;
+    min-height: 28px;
+  }
+}
+
+.loadingRow {
+  .tableCell {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .tableContainer {
+    background-color: #1a1b1e;
+    
+    .table {
+      background-color: #1a1b1e;
+      color: #c1c2c5;
+
+      .tableHead {
+        background-color: #25262b;
+
+        .headerRow .headerCell {
+          background-color: #25262b;
+          color: #909296;
+        }
+      }
+
+      .tableBody .tableRow {
+        border-bottom-color: #373a40;
+
+        &:hover {
+          background-color: #25262b;
+        }
+
+        .tableCell .cellText {
+          &.dateText,
+          &.costText {
+            color: #c1c2c5;
+          }
+
+          &.deadlineText {
+            color: #ff6b6b;
+          }
+        }
+      }
+    }
+  }
+
+  .statusBadge {
+    &.available {
+      background-color: rgba(18, 184, 134, 0.2);
+      color: #12b886;
+    }
+
+    &.soldOut {
+      background-color: transparent;
+      color: #ff6b6b;
+      border-color: #ff6b6b;
+    }
+  }
+
+  .enquiryButton {
+    background-color: #37b24d;
+
+    &:hover {
+      background-color: #2f9e44;
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 2px rgba(55, 178, 77, 0.2);
+    }
+  }
+}
+
+@media print {
+  .tableContainer {
+    box-shadow: none;
+    
+    .enquiryButton {
+      display: none;
+    }
+    
+    .table {
+      .tableBody .tableRow:hover {
+        background-color: transparent;
+      }
+    }
+  }
+}
