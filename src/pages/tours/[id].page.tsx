@@ -1,16 +1,22 @@
-import { Box, Container, Group, Tabs, Text, Title } from "@mantine/core"
+import { Box, Container, Group, Stack, Tabs, Text, Title } from "@mantine/core"
 import { FC, useState } from "react"
 
 import { Layout } from "@/widgets"
+import { TourAccordion } from "@/widgets/accordion"
+import { TourDatesTable } from "@/widgets/tour-dates-table"
 
+import IconChevron from "@/shared/assets/images/Check icon.svg"
+import AccordionDetailImage from "@/shared/assets/images/Frame 2087330294.jpg"
 import hiltonImage from "@/shared/assets/images/hotel-detail/image (3).png"
 import spaCenterImage from "@/shared/assets/images/hotel-detail/image (4).png"
 import hotelImage from "@/shared/assets/images/hotel-detail/image (5).png"
-import { TourAccordion } from "@/shared/ui/accordion"
+import RedCancel from "@/shared/assets/images/red-cancel.svg"
+import { FilledButton } from "@/shared/ui/buttons"
 import Gallery from "@/shared/ui/gallery"
+import { ReviewCard } from "@/shared/ui/review-card"
 
 import s from "./tours.module.scss"
-import { TourDatesTable } from '@/widgets/tour-dates-table'
+import { TourAccordionAcc } from '@/widgets/accommodation-accordion'
 
 const TourDetail: FC = () => {
 	const [activeTab, setActiveTab] = useState("tour-program")
@@ -48,58 +54,49 @@ const TourDetail: FC = () => {
 			alt: "Spa center",
 		},
 	]
-	const tourData: any[] = [
+	const tourItems: any[] = [
 		{
-			id: "1-day",
-			title: "1 day",
+			id: "1",
+			title: "1 days",
+			subtitle: "Ulugbek Observatory",
 			description:
-				"The Samarkand Ayni House Museum in Samarkand is a hidden gem that perfectly combines historical, cultural, and Silk Road interests to pique your curiosity. This museum is a hidden treasure that provides a unique insight into life and creativity. The Samarkand Ayni House Museum in Samarkand is a hidden gem that perfectly combines historical, cultural, and Silk Road interests to pique your curiosity.",
+				"The Sadriddin Ayni House Museum in Samarkand is a hidden gem that perfectly combines historical, cultural, and Silk Road interests to pique your curiosity. This museum is a hidden treasure that provides a unique insight into life and creativity. The Sadriddin Ayni House Museum in Samarkand is a hidden gem that perfectly combines historical, cultural, and Silk Road interests to pique your curiosity.",
+			image: AccordionDetailImage,
 			hasAttentionGrabbing: true,
 			hasAncientMonuments: true,
 			hasFavouriteSpots: true,
 		},
 		{
-			id: "registan-square",
-			title: "Registan Square",
-			description:
-				"The Samarkand Ayni House Museum in Samarkand is a hidden gem that perfectly combines historical, cultural, and Silk Road interests to pique your curiosity. This museum is a hidden treasure that provides a unique insight into life and creativity. The Samarkand Ayni House Museum in Samarkand is a hidden gem that perfectly combines historical, cultural, and Silk Road interests to pique your curiosity.",
-			hasAttentionGrabbing: true,
-			hasAncientMonuments: true,
-			hasFavouriteSpots: true,
-		},
-		{
-			id: "ulugbek-observatory",
-			title: "Ulugbek Observatory",
-			description:
-				"The Samarkand Ayni House Museum in Samarkand is a hidden gem that perfectly combines historical, cultural, and Silk Road interests to pique your curiosity. This museum is a hidden treasure that provides a unique insight into life and creativity. The Samarkand Ayni House Museum in Samarkand is a hidden gem that perfectly combines historical, cultural, and Silk Road interests to pique your curiosity.",
-			image:
-				"https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop",
-			hasAttentionGrabbing: true,
-			hasAncientMonuments: true,
-			hasFavouriteSpots: true,
-		},
-		{
-			id: "2-days",
+			id: "2",
 			title: "2 days",
+			subtitle: "Ulugbek Observatory",
 			description:
-				"Extended tour program for 2 days exploring more historical sites and cultural experiences.",
-			hasAttentionGrabbing: true,
+				"Explore the magnificent architectural wonders of Samarkand in a comprehensive 2-day tour. Visit the iconic Registan Square, the breathtaking Bibi-Khanym Mosque, and the mystical Shah-i-Zinda necropolis. Experience the rich history and cultural heritage of this ancient Silk Road city.",
+			image: AccordionDetailImage,
+			hasAttentionGrabbing: false,
 			hasAncientMonuments: true,
-		},
-		{
-			id: "3-days",
-			title: "3 days",
-			description:
-				"Comprehensive 3-day tour covering all major attractions and local experiences.",
-			hasAttentionGrabbing: true,
 			hasFavouriteSpots: true,
 		},
 		{
-			id: "4-days",
-			title: "4 days",
+			id: "3",
+			title: "3 days",
+			subtitle: "Ulugbek Observatory",
 			description:
-				"Complete 4-day journey through historical and cultural landmarks.",
+				"Immerse yourself in the complete Samarkand experience with our 3-day comprehensive tour. Beyond the classic sites, discover hidden gems, local bazaars, traditional crafts workshops, and enjoy authentic Uzbek cuisine. Perfect for those who want to truly understand the soul of this historic city.",
+			image: AccordionDetailImage,
+			hasAttentionGrabbing: true,
 			hasAncientMonuments: true,
+			hasFavouriteSpots: false,
+		},
+		{
+			id: "4",
+			title: "4 days",
+			subtitle: "Ulugbek Observatory",
+			description:
+				"The ultimate Samarkand adventure awaits with our 4-day extended tour. Experience everything the city has to offer, including day trips to nearby historical sites, in-depth cultural experiences, traditional music and dance performances, and exclusive access to private collections and museums.",
+			image: AccordionDetailImage,
+			hasAttentionGrabbing: true,
+			hasAncientMonuments: false,
 			hasFavouriteSpots: true,
 		},
 	]
@@ -161,6 +158,112 @@ const TourDetail: FC = () => {
 			cost: "£350",
 		},
 	]
+	const includes = [
+		"All transfers: 1-2 pax by Sedan type car, 8-16 pax by 20 seat bus",
+		"Accommodation based on double/twin room sharing, breakfasts included",
+		"English-speaking local guides in each country",
+		"Entrance fees to sights as per itinerary",
+		"Economy class tickets for flights: Bishkek-Tashkent, Mary-Ashgabat, Urgench-Tashkent",
+	]
+
+	const notIncludes = [
+		"Surcharge for staying in a single room",
+		"Full board (lunches and dinners)",
+		"Hotel charges for additional services",
+		"Personal travel insurance",
+		"Tips to local guides and drivers",
+	]
+
+	const mockReviews = [
+		{
+			name: "Olivia Rhye",
+			title: "The highest dam in the hotel",
+			content:
+				"I express my gratitude to Shakh Tours for assisting me during my trip to Samarqand for a week. Through this tour company, I visited the most beautiful and unique places in Uzbekistan and gained a memorable and enjoyable experience for myself. I recommend it to everyone.",
+			shares: 2,
+			rating: 4,
+			avatarUrl: "https://randomuser.me/api/portraits/women/44.jpg",
+		},
+		{
+			name: "John Doe",
+			title: "The best tour ever",
+			content:
+				"I express my gratitude to Shakh Tours for assisting me during my trip to Samarqand for a week. Through this tour company, I visited the most beautiful and unique places in Uzbekistan and gained a memorable and enjoyable experience for myself. I recommend it to everyone.",
+			shares: 3,
+			rating: 5,
+			avatarUrl: "https://randomuser.me/api/portraits/men/32.jpg",
+		},
+		{
+			name: "Aliya Khan",
+			title: "The highest dam in the hotel",
+			content:
+				"I express my gratitude to Shakh Tours for assisting me during my trip to Samarqand for a week. Through this tour company, I visited the most beautiful and unique places in Uzbekistan and gained a memorable and enjoyable experience for myself. I recommend it to everyone.",
+			shares: 1,
+			rating: 4.5,
+			avatarUrl: "https://randomuser.me/api/portraits/women/65.jpg",
+		},
+		{
+			name: "Michael Smith",
+			title: "Amazing service",
+			content:
+				"I express my gratitude to Shakh Tours for assisting me during my trip to Samarqand for a week. Through this tour company, I visited the most beautiful and unique places in Uzbekistan and gained a memorable and enjoyable experience for myself. I recommend it to everyone.",
+			shares: 3,
+			rating: 4.8,
+			avatarUrl: "https://randomuser.me/api/portraits/men/55.jpg",
+		},
+		{
+			name: "Sofia Loren",
+			title: "Memorable journey",
+			content:
+				"I express my gratitude to Shakh Tours for assisting me during my trip to Samarqand for a week. Through this tour company, I visited the most beautiful and unique places in Uzbekistan and gained a memorable and enjoyable experience for myself. I recommend it to everyone.",
+			shares: 4,
+			rating: 5,
+			avatarUrl: "https://randomuser.me/api/portraits/women/88.jpg",
+		},
+	]
+	
+	const tourAccItems = [
+		{
+			id: "tashkent-2-days",
+			title: "Tashkent 2 days",
+			subtitle: "Explore the capital city",
+			description: "Experience the best of Tashkent with guided tours",
+			image: "/images/tashkent.jpg",
+			hasAttentionGrabbing: true,
+			hasAncientMonuments: true,
+			hasFavouriteSpots: true,
+		},
+		{
+			id: "samarkand-3-days", 
+			title: "Samarkand 3 days",
+			subtitle: "Historical city tour",
+			description: "Discover the ancient Silk Road city",
+			image: "/images/samarkand.jpg",
+			hasAttentionGrabbing: true,
+			hasAncientMonuments: true,
+			hasFavouriteSpots: true,
+		},
+		{
+			id: "bukhara-2-days",
+			title: "Bukhara 2 days", 
+			subtitle: "Medieval city exploration",
+			description: "Walk through centuries of history",
+			image: "/images/bukhara.jpg",
+			hasAttentionGrabbing: true,
+			hasAncientMonuments: true,
+			hasFavouriteSpots: true,
+		},
+		{
+			id: "khorezm-1-day",
+			title: "Khorezm 1 day",
+			subtitle: "Ancient oasis civilization",
+			description: "Explore the historical region",
+			image: "/images/khorezm.jpg",
+			hasAttentionGrabbing: true,
+			hasAncientMonuments: true,
+			hasFavouriteSpots: true,
+		}
+	]
 	const handleTabChange = (value: string | null) => {
 		if (value) {
 			setActiveTab(value)
@@ -187,8 +290,13 @@ const TourDetail: FC = () => {
 						sports activities.
 					</Text>
 				</Group>
-				<Box mt="78px">
-					<Tabs value={activeTab} className={s.tabs} onChange={handleTabChange}>
+				<Box mt="78px" mb="48px">
+					<Tabs
+						variant="unstyled"
+						value={activeTab}
+						className={s.tabs}
+						onChange={handleTabChange}
+					>
 						<Tabs.List>
 							<Tabs.Tab
 								className={s.tab}
@@ -216,13 +324,85 @@ const TourDetail: FC = () => {
 						</Tabs.List>
 
 						<Tabs.Panel value="tour-program" mt="32px" mb="48px">
-							<TourAccordion items={tourData} />
+							<TourAccordion items={tourItems} />
 						</Tabs.Panel>
 
 						<Tabs.Panel value="date-prices" mt="32px" mb="48px">
 							<TourDatesTable data={tourDates} />
 						</Tabs.Panel>
 					</Tabs>
+				</Box>
+				<Box mt="24px">
+					<Title className={s.heading}>
+						Our tour package includes things that can be of interest
+					</Title>
+
+					<Group align="flex-start" grow mt="24px" mb="48px">
+						<Box className={s.includingCard}>
+							<Text className={s.priceTitle} pl={12}>
+								Price includes
+							</Text>
+							<Stack gap={16}>
+								{includes.map((item) => (
+									<Group
+										key={item}
+										gap={12}
+										className={s.cardWrapper}
+										align="center"
+										wrap="nowrap"
+									>
+										<IconChevron />
+										<Text className={s.priceCardDescription}>{item}</Text>
+									</Group>
+								))}
+							</Stack>
+						</Box>
+
+						<Box className={s.includingCard}>
+							<Text className={s.priceTitle} pl={12}>
+								Price doesn’t include:
+							</Text>
+							<Stack gap={16}>
+								{notIncludes.map((item) => (
+									<Group
+										key={item}
+										gap={12}
+										className={s.cardWrapper}
+										align="center"
+										wrap="nowrap"
+									>
+										<RedCancel />
+										<Text className={s.priceCardDescription}>{item}</Text>
+									</Group>
+								))}
+							</Stack>
+						</Box>
+					</Group>
+				</Box>
+				<Box mb="48px">
+					<div className={s.reviewWrap}>
+						<Title className={s.reviewSubtitle}>Tour Reviews</Title>
+						<FilledButton fullWidth className={s.addReview}>
+							Add review
+						</FilledButton>
+					</div>
+					<div className={s.cardContainer}>
+						{mockReviews.map((review, index) => (
+							<div key={index} className={s.reviewCard}>
+								<ReviewCard
+									name={review.name}
+									title={review.title}
+									content={review.content}
+									shares={review.shares}
+									rating={review.rating}
+								/>
+							</div>
+						))}
+					</div>
+				</Box>
+				<Box mb="48px">
+					<Title mb="32px" className={s.reviewSubtitle}>Accommodation</Title>
+					<TourAccordionAcc items={tourAccItems as any}/>
 				</Box>
 			</Container>
 		</Layout>

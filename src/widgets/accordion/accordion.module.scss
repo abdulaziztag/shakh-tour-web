@@ -13,10 +13,12 @@
 }
 
 .accordionControl {
-  padding: 16px 20px;
-  font-size: 16px;
+  font-family: Inter;
   font-weight: 600;
-  color: #333;
+  font-size: 22px;
+  line-height: 100%;
+  color: #1E1E1E;
+  padding: 24px 16px 24px 18px;
 }
 
 .accordionContent {
@@ -24,7 +26,7 @@
 }
 
 .accordionChevron {
-  color: #666;
+  color: #044949;
 }
 
 .tourImage {
