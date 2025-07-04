@@ -1,0 +1,54 @@
+.accordionRoot {
+  background-color: transparent;
+}
+
+.accordionItem {
+  background-color: white;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+
+  &[data-active] {
+    border-color: #e9ecef;
+  }
+}
+
+.accordionControl {
+  font-family: Inter;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 100%;
+  color: #1E1E1E;
+  padding: 24px 16px 24px 18px;
+}
+
+.accordionContent {
+  padding: 0 20px 20px 20px;
+}
+
+.accordionChevron {
+  color: #044949;
+}
+
+.tourImage {
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.placeholderBox {
+  width: 120px;
+  height: 80px;
+  background-color: #f1f3f4;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.tourDescription {
+  line-height: 1.5;
+}
+
+.badge {
+  font-size: 11px;
+}

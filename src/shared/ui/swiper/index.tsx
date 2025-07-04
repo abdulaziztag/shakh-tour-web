@@ -21,6 +21,7 @@ import { Swiper, SwiperSlide, useSwiper } from "swiper/react"
 import { FilledButton } from "@/shared/ui/buttons"
 
 import s from "./swiper.module.scss"
+import { useRouter } from 'next/navigation'
 
 interface SwiperCustomProps {
 	tourSlides: {
@@ -38,7 +39,12 @@ interface SwiperCustomProps {
 export const SwiperCustom: FC<SwiperCustomProps> = ({ tourSlides }) => {
 	const [mounted, setMounted] = useState(false)
 	const [activeIndex, setActiveIndex] = useState(0) // Состояние для активного слайда
-	const swiper = useSwiper() // Хук для доступа к Swiper
+	const swiper = useSwiper()
+	const router = useRouter()
+
+	const handleViewDetail = (hotelId: number) => {
+		router.push(`/tours/${hotelId}`)
+	} // Хук для доступа к Swiper
 
 	useEffect(() => {
 		setMounted(true)
@@ -131,7 +137,7 @@ export const SwiperCustom: FC<SwiperCustomProps> = ({ tourSlides }) => {
 									<Text component={"p"} className={s.slideOverlayDescription}>
 										{description}
 									</Text>
-									<FilledButton className={s.detailsButton}>
+									<FilledButton className={s.detailsButton} onClick={() => handleViewDetail(1)}>
 										Details
 									</FilledButton>
 								</div>

@@ -1,0 +1,173 @@
+
+.tourDetailTitle{
+  font-family: Inter;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 44px;
+  letter-spacing: -2%;
+  color: #111126;
+}
+
+.galleryTitle{
+  font-family: Inter;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #000;  
+}
+
+.gallerySubtitle{
+  font-family: Inter;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 160%;
+  letter-spacing: 0%;
+  color: #5A6472;  
+}
+
+.tabs{
+  border-bottom: none !important;
+}
+
+.tab{
+  font-family: Outfit;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 28px;
+  letter-spacing: 0px;
+  text-align: center;
+  // box-shadow: 0px 0px 5px 0px #00000012;
+  border-radius: 50px;
+  padding: 9px 49px;
+  border: none !important;
+}
+
+.mantine-Tabs-list {
+  border-bottom: none !important;
+}
+
+.mantine-Tabs-list::after {
+  display: none !important;
+}
+
+.heading{
+  font-family: Inter;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 44px;
+  letter-spacing: -2%;
+  color: #101828;
+}
+
+.includingCard{
+  border: 1px solid #EAECF0;
+  box-shadow: 0px 2px 50px 0px #0000000F;
+  border-radius: 16px;
+  border-width: 1px;
+  padding: 24px;
+  background-color: #fff;
+}
+
+.priceTitle{
+  font-family: Inter;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: 0%;
+  color: #101828;
+  margin-bottom: 24px;
+}
+
+.priceCardDescription{
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0%;
+  color: #475467;
+}
+
+.cardWrapper{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: nowrap;
+}
+
+.reviewCard {
+  flex: 0 0 auto;
+  width: 320px;
+  scroll-snap-align: start;
+}
+
+// .cardContainer {
+//   scroll-snap-type: x mandatory;
+// }
+
+.reviewWrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 72px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+}
+
+.reviewSubtitle {
+  font-family: Inter;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 44px;
+  letter-spacing: -2%;
+  color: #101828;
+
+  @media (max-width: 768px) {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 20px;
+    line-height: 28px;
+  }
+}
+
+.addReview {
+  height: 3.25rem;
+  padding: 0.75rem 3rem;
+  width: 220px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 0.75rem 1.5rem;
+  }
+}
+
+.cardContainer {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding-bottom: 24px;
+  margin-top: 24px;
+
+  &::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #044949;
+    border-radius: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #f0f0f0;
+  }
+
+  flex-wrap: nowrap;
+}

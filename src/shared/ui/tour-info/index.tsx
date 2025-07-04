@@ -14,6 +14,10 @@ import s from "./tour-info.module.scss"
 
 export const TourInfo = () => {
 	const router = useRouter()
+	
+		const handleViewDetail = (hotelId: number) => {
+			router.push(`/tours/${hotelId}`)
+		}
 	return (
 		<>
 			<Flex className={s.tourInfoMobileTopBox}>
@@ -74,7 +78,7 @@ export const TourInfo = () => {
 								s.groupToursBoxBodyInfoItemMobile,
 							)}
 						>
-							<FilledButton className={s.groupToursBoxBodyButton} onClick={()=>  router.push('/hotels')}>
+							<FilledButton className={s.groupToursBoxBodyButton} onClick={() => handleViewDetail(1)}>
 								See details
 							</FilledButton>
 						</Flex>
