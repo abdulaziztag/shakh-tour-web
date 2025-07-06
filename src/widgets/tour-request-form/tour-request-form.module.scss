@@ -1,0 +1,69 @@
+.container {
+  width: 100%;
+  margin: 0 auto;
+  background: #f9f9f9;
+  border-radius: 8px;
+}
+
+.title {
+  font-family: Inter;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 44px;
+  letter-spacing: -2%;
+  color: #101828;
+}
+
+.sectionTitle {
+  font-size: 18px;
+  font-family: Inter;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 100%;
+  color: #1E1E1E;  
+  margin-top: 32px;
+  margin-bottom: 16px;
+}
+
+.row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+
+  > * {
+    flex: 1;
+  }
+}
+
+.footer {
+  margin-top: 1.5rem;
+  text-align: right;
+}
+
+.comments {
+	margin: 0 0 8px 0;
+	font-family: Inter;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 20px;
+	letter-spacing: 0%;
+	color: #344054;
+}
+
+.commentWrap :global(.mantine-Textarea-label) {
+	display: none !important;
+}
+
+.commentWrap :global([data-mantine-label]) {
+	display: none !important;
+}
+
+.commentWrap :global(.mantine-Textarea-wrapper) {
+	margin-top: 0 !important;
+}
+
+.submitBtn {
+ padding: 12px 42px;
+ height: 48px;
+ margin-top: 32px;
+}
