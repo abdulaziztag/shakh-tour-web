@@ -412,7 +412,7 @@ const TourDetail: FC = () => {
 					<TourRequestForm />
 				</Box>
 				<Box mt={72} mb={48}>
-					<Title>More similar tours</Title>
+					<Title className={s.reviewSubtitle}>More similar tours</Title>
 					<SimilerTourGroup />
 				</Box>
 			</Container>
