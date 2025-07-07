@@ -1,6 +1,11 @@
 import { Box, Button, Card, Group, Stack, Text } from "@mantine/core"
 import Image, { StaticImageData } from "next/image"
 
+import Icon1 from "@/shared/assets/images/recommended-hotels/1.svg"
+import Icon2 from "@/shared/assets/images/recommended-hotels/2.svg"
+import Icon3 from "@/shared/assets/images/recommended-hotels/3.svg"
+
+import { FilledButton } from "../buttons"
 import styles from "./accommodation-card.module.scss"
 
 interface GuestHouseCardProps {
@@ -24,75 +29,55 @@ const GuestHouseCard: React.FC<GuestHouseCardProps> = ({
 }) => {
 	return (
 		<Card radius={24} className={styles.guestHouseCard} p={0}>
-			<Group align="stretch" gap="32px" className={styles.cardContent}>
+			<Group align="stretch" gap="16px" className={styles.cardContent}>
 				<Box className={styles.imageSection}>
 					<Image src={image} alt={title} fill className={styles.image} />
 				</Box>
-				<Box className={styles.contentSection} p={32} w={373}>
+				<Box className={styles.contentSection} p={16} w={420}>
 					<Stack className={styles.contentStack}>
 						<Box className={styles.titleSection}>
-							<Text
-								size="xl"
-								// weight={600}
-								color="dark"
-								className={styles.title}
-							>
-								{title}
-							</Text>
-							<Group align="center" className={styles.addressGroup}>
-								<Text size="sm" color="dimmed" className={styles.address}>
-									{address}
-								</Text>
+							<Text className={styles.title}>{title}</Text>
+							<Group align="center" className={styles.addressGroup} mt="8px">
+								<Text className={styles.address}>{address}</Text>
 							</Group>
 						</Box>
 
-						<Group className={styles.amenitiesRow}>
+						<div className={styles.amenitiesContainer}>
 							{hasAirConditioning && (
 								<Group align="center" className={styles.amenityItem}>
-									{/* <IconSnowflake size={16} className={styles.amenityIcon} /> */}
-									<Text size="sm" color="dark">
-										Air Conditioning
-									</Text>
+									<Icon1 />
+									<Text size="sm">Air Conditioning</Text>
 								</Group>
 							)}
+
 							{hasFreeWifi && (
 								<Group align="center" className={styles.amenityItem}>
-									{/* <IconWifi size={16} className={styles.amenityIcon} /> */}
-									<Text size="sm" color="dark">
-										Free Wi-Fi
-									</Text>
+									<Icon2 />
+									<Text size="sm">Free Wi-Fi</Text>
 								</Group>
 							)}
-						</Group>
 
-						<Group className={styles.amenitiesRow}>
 							{hasPrivateParking && (
 								<Group align="center" className={styles.amenityItem}>
-									{/* <IconInfoCircle size={16} className={styles.amenityIcon} /> */}
-									<Text size="sm" color="dark">
-										Private Parking Area
-									</Text>
+									<Icon3 />
+									<Text size="sm">Private Parking Area</Text>
 								</Group>
 							)}
+
 							{hasTransfer && (
 								<Group align="center" className={styles.amenityItem}>
-									{/* <IconCar size={16} className={styles.amenityIcon} /> */}
-									<Text size="sm" color="dark">
-										Transfer
-									</Text>
+									<Icon3 />
+									<Text size="sm">Transfer</Text>
 								</Group>
 							)}
-						</Group>
-
-						<Box className={styles.buttonSection}>
-							<Button
-								variant="filled"
-								size="md"
-								radius="md"
-								className={styles.detailsButton}
-							>
+						</div>
+						<Box
+							w="100%"
+							style={{ display: "flex", justifyContent: "flex-end" }}
+						>
+							<FilledButton className={styles.detailsButton} mt="32px">
 								See Details
-							</Button>
+							</FilledButton>
 						</Box>
 					</Stack>
 				</Box>

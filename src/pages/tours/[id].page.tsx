@@ -2,21 +2,23 @@ import { Box, Container, Group, Stack, Tabs, Text, Title } from "@mantine/core"
 import { FC, useState } from "react"
 
 import { Layout } from "@/widgets"
+import { TourAccordionAcc } from "@/widgets/accommodation-accordion"
 import { TourAccordion } from "@/widgets/accordion"
 import { TourDatesTable } from "@/widgets/tour-dates-table"
 
 import IconChevron from "@/shared/assets/images/Check icon.svg"
 import AccordionDetailImage from "@/shared/assets/images/Frame 2087330294.jpg"
-import hiltonImage from "@/shared/assets/images/hotel-detail/image (3).png"
-import spaCenterImage from "@/shared/assets/images/hotel-detail/image (4).png"
-import hotelImage from "@/shared/assets/images/hotel-detail/image (5).png"
+import hiltonImage from "@/shared/assets/images/all-tours/image (6).png"
+import spaCenterImage from "@/shared/assets/images/all-tours/image (7).png"
+import hotelImage from "@/shared/assets/images/all-tours/Frame 1948757896 (1).jpg"
 import RedCancel from "@/shared/assets/images/red-cancel.svg"
 import { FilledButton } from "@/shared/ui/buttons"
 import Gallery from "@/shared/ui/gallery"
 import { ReviewCard } from "@/shared/ui/review-card"
 
 import s from "./tours.module.scss"
-import { TourAccordionAcc } from '@/widgets/accommodation-accordion'
+import TourRequestForm from '@/widgets/tour-request-form'
+import SimilerTourGroup from '@/widgets/similer-tour-group'
 
 const TourDetail: FC = () => {
 	const [activeTab, setActiveTab] = useState("tour-program")
@@ -221,7 +223,7 @@ const TourDetail: FC = () => {
 			avatarUrl: "https://randomuser.me/api/portraits/women/88.jpg",
 		},
 	]
-	
+
 	const tourAccItems = [
 		{
 			id: "tashkent-2-days",
@@ -234,7 +236,7 @@ const TourDetail: FC = () => {
 			hasFavouriteSpots: true,
 		},
 		{
-			id: "samarkand-3-days", 
+			id: "samarkand-3-days",
 			title: "Samarkand 3 days",
 			subtitle: "Historical city tour",
 			description: "Discover the ancient Silk Road city",
@@ -245,7 +247,7 @@ const TourDetail: FC = () => {
 		},
 		{
 			id: "bukhara-2-days",
-			title: "Bukhara 2 days", 
+			title: "Bukhara 2 days",
 			subtitle: "Medieval city exploration",
 			description: "Walk through centuries of history",
 			image: "/images/bukhara.jpg",
@@ -262,7 +264,7 @@ const TourDetail: FC = () => {
 			hasAttentionGrabbing: true,
 			hasAncientMonuments: true,
 			hasFavouriteSpots: true,
-		}
+		},
 	]
 	const handleTabChange = (value: string | null) => {
 		if (value) {
@@ -401,8 +403,17 @@ const TourDetail: FC = () => {
 					</div>
 				</Box>
 				<Box mb="48px">
-					<Title mb="32px" className={s.reviewSubtitle}>Accommodation</Title>
-					<TourAccordionAcc items={tourAccItems as any}/>
+					<Title mb="32px" className={s.reviewSubtitle}>
+						Accommodation
+					</Title>
+					<TourAccordionAcc items={tourAccItems as any} />
+				</Box>
+				<Box mt={96} >
+					<TourRequestForm />
+				</Box>
+				<Box mt={72} mb={48}>
+					<Title className={s.reviewSubtitle}>More similar tours</Title>
+					<SimilerTourGroup />
 				</Box>
 			</Container>
 		</Layout>

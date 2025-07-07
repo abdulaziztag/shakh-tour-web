@@ -30,11 +30,11 @@
 }
 
 .title {
-  font-size: 24px;
+  font-family: Inter;
   font-weight: 600;
-  color: #2c2e33;
-  margin-bottom: 8px;
-  line-height: 1.2;
+  font-size: 28px;
+  line-height: 100%;
+  color: #111126;
 }
 
 .addressGroup {
@@ -47,51 +47,44 @@
 }
 
 .address {
+  font-family: Inter;
+  font-weight: 400;
   font-size: 14px;
-  color: #868e96;
-  line-height: 1.4;
+  line-height: 100%;
+  color: #475467;  
 }
 
-.amenitiesRow {
-  margin: 8px 0;
+
+.amenitiesContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px 30px;
 }
 
 .amenityItem {
+  display: flex;
   align-items: center;
-  
-  &:not(:last-child) {
-    margin-right: 24px;
-  }
+  gap: 8px;
 }
 
-.amenityIcon {
-  color: #2c7da0;
-  flex-shrink: 0;
+.amenityItem svg {
+  width: 20px;
+  height: 20px;
+  color: #666;
 }
 
-.buttonSection {
-  margin-top: auto;
-  padding-top: 16px;
+.amenityItem text {
+  font-size: 14px;
+  color: #333;
 }
 
 .detailsButton {
-  background-color: #2c7da0;
-  color: white;
-  font-weight: 500;
-  padding: 12px 32px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  
-  &:hover {
-    background-color: #1e5a73;
-    transform: translateY(-1px);
-  }
-  
-  &:active {
-    transform: translateY(0);
-  }
+    height: 48px;
+    width: 220px;
+    @media (max-width: 768px) {
+      width: 100%;
+      padding: 0.75rem 1.5rem;
+    }
 }
 
 // Responsive design
