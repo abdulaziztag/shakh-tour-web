@@ -1,4 +1,4 @@
-import { Box, Button, Card, Group, Stack, Text } from "@mantine/core"
+import { Box, Card, Group, Stack, Text } from "@mantine/core"
 import Image, { StaticImageData } from "next/image"
 
 import Icon1 from "@/shared/assets/images/recommended-hotels/1.svg"
