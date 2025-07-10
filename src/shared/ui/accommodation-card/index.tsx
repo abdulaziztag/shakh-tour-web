@@ -1,4 +1,5 @@
 import { Box, Button, Card, Group, Stack, Text } from "@mantine/core"
+import { useMediaQuery } from "@mantine/hooks"
 import Image, { StaticImageData } from "next/image"
 
 import Icon1 from "@/shared/assets/images/recommended-hotels/1.svg"
@@ -27,17 +28,19 @@ const GuestHouseCard: React.FC<GuestHouseCardProps> = ({
 	hasPrivateParking = true,
 	hasTransfer = true,
 }) => {
+	const isMobile = useMediaQuery("(max-width: 768px)")
+
 	return (
 		<Card radius={24} className={styles.guestHouseCard} p={0}>
-			<Group align="stretch" gap="16px" className={styles.cardContent}>
+			<Group align="stretch" gap={0} className={styles.cardContent}>
 				<Box className={styles.imageSection}>
 					<Image src={image} alt={title} fill className={styles.image} />
 				</Box>
-				<Box className={styles.contentSection} p={16} w={420}>
-					<Stack className={styles.contentStack}>
+				<Box className={styles.contentSection} w={isMobile ? "100%" : 420}>
+					<Stack className={styles.contentStack} gap={0}>
 						<Box className={styles.titleSection}>
 							<Text className={styles.title}>{title}</Text>
-							<Group align="center" className={styles.addressGroup} mt="8px">
+							<Group align="center" className={styles.addressGroup}>
 								<Text className={styles.address}>{address}</Text>
 							</Group>
 						</Box>
@@ -73,9 +76,13 @@ const GuestHouseCard: React.FC<GuestHouseCardProps> = ({
 						</div>
 						<Box
 							w="100%"
-							style={{ display: "flex", justifyContent: "flex-end" }}
+							style={{
+								display: "flex",
+								justifyContent: isMobile ? "center" : "flex-end",
+								marginTop: "auto",
+							}}
 						>
-							<FilledButton className={styles.detailsButton} mt="32px">
+							<FilledButton className={styles.detailsButton}>
 								See Details
 							</FilledButton>
 						</Box>

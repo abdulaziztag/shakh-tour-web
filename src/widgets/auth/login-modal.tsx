@@ -16,6 +16,7 @@ import IconX from "@/shared/assets/images/close.svg"
 import IconBrandGoogle from "@/shared/assets/images/google-icon.svg"
 
 import styles from "./auth.module.scss"
+import { ConfirmCodeModal } from "./confirmation-modal"
 
 interface LoginModalProps {
 	opened: boolean
@@ -32,7 +33,7 @@ const LoginModal: FC<LoginModalProps> = ({
 }) => {
 	const [email, setEmail] = useState("")
 	const [password, setPassword] = useState("")
-
+	const [open, setOpen] = useState(false)
 	const handleSubmit = (e: React.FormEvent) => {
 		e.preventDefault()
 		console.log("Login:", { email, password })
@@ -115,6 +116,7 @@ const LoginModal: FC<LoginModalProps> = ({
 							fullWidth
 							className={styles.signInButton}
 							size="md"
+							onClick={() => setOpen(true)}
 						>
 							Sign in
 						</Button>
@@ -143,6 +145,12 @@ const LoginModal: FC<LoginModalProps> = ({
 						</Group>
 					</Stack>
 				</form>
+				<ConfirmCodeModal
+					opened={open}
+					onClose={() => setOpen(false)}
+					email={email}
+					onSubmit={() => {}}
+				/>
 			</Box>
 		</Modal>
 	)

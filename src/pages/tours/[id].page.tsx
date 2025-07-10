@@ -1,27 +1,42 @@
-import { Box, Container, Group, Stack, Tabs, Text, Title } from "@mantine/core"
+import { AboutForm } from "@/feature"
+import {
+	Box,
+	Container,
+	Flex,
+	Group,
+	Stack,
+	Tabs,
+	Text,
+	Title,
+} from "@mantine/core"
+import { useMediaQuery } from "@mantine/hooks"
 import { FC, useState } from "react"
 
 import { Layout } from "@/widgets"
 import { TourAccordionAcc } from "@/widgets/accommodation-accordion"
 import { TourAccordion } from "@/widgets/accordion"
+import AddReview from "@/widgets/add-review"
+import SimilerTourGroup from "@/widgets/similer-tour-group"
 import { TourDatesTable } from "@/widgets/tour-dates-table"
 
-import IconChevron from "@/shared/assets/images/Check icon.svg"
-import AccordionDetailImage from "@/shared/assets/images/Frame 2087330294.jpg"
+// import TourRequestForm from "@/widgets/tour-request-form"
+
+import hotelImage from "@/shared/assets/images/all-tours/Frame 1948757896 (1).jpg"
 import hiltonImage from "@/shared/assets/images/all-tours/image (6).png"
 import spaCenterImage from "@/shared/assets/images/all-tours/image (7).png"
-import hotelImage from "@/shared/assets/images/all-tours/Frame 1948757896 (1).jpg"
+import IconChevron from "@/shared/assets/images/Check icon.svg"
+import AccordionDetailImage from "@/shared/assets/images/Frame 2087330294.jpg"
 import RedCancel from "@/shared/assets/images/red-cancel.svg"
 import { FilledButton } from "@/shared/ui/buttons"
 import Gallery from "@/shared/ui/gallery"
 import { ReviewCard } from "@/shared/ui/review-card"
 
 import s from "./tours.module.scss"
-import TourRequestForm from '@/widgets/tour-request-form'
-import SimilerTourGroup from '@/widgets/similer-tour-group'
 
 const TourDetail: FC = () => {
+	const isMobile = useMediaQuery("(max-width: 480px)")
 	const [activeTab, setActiveTab] = useState("tour-program")
+	const [modalOpened, setModalOpened] = useState(false)
 	const hotelImages = [
 		{
 			src: hiltonImage,
@@ -299,7 +314,7 @@ const TourDetail: FC = () => {
 						className={s.tabs}
 						onChange={handleTabChange}
 					>
-						<Tabs.List>
+						<Tabs.List  style={{ flexWrap: "nowrap" }}>
 							<Tabs.Tab
 								className={s.tab}
 								value="tour-program"
@@ -307,6 +322,7 @@ const TourDetail: FC = () => {
 									backgroundColor:
 										activeTab === "tour-program" ? "#044949" : "transparent",
 									color: activeTab === "tour-program" ? "white" : "#97A0AD",
+									fontSize: isMobile ? "12px" : "16px", 
 								}}
 							>
 								Tour program
@@ -319,6 +335,7 @@ const TourDetail: FC = () => {
 									backgroundColor:
 										activeTab === "date-prices" ? "#044949" : "transparent",
 									color: activeTab === "date-prices" ? "white" : "#97A0AD",
+									fontSize: isMobile ? "12px" : "16px", 
 								}}
 							>
 								Date and prices
@@ -338,8 +355,7 @@ const TourDetail: FC = () => {
 					<Title className={s.heading}>
 						Our tour package includes things that can be of interest
 					</Title>
-
-					<Group align="flex-start" grow mt="24px" mb="48px">
+					<Flex className={s.wrapper}>
 						<Box className={s.includingCard}>
 							<Text className={s.priceTitle} pl={12}>
 								Price includes
@@ -353,7 +369,7 @@ const TourDetail: FC = () => {
 										align="center"
 										wrap="nowrap"
 									>
-										<IconChevron />
+										<IconChevron className={s.icon} />
 										<Text className={s.priceCardDescription}>{item}</Text>
 									</Group>
 								))}
@@ -373,20 +389,28 @@ const TourDetail: FC = () => {
 										align="center"
 										wrap="nowrap"
 									>
-										<RedCancel />
+										<RedCancel className={s.icon} />
 										<Text className={s.priceCardDescription}>{item}</Text>
 									</Group>
 								))}
 							</Stack>
 						</Box>
-					</Group>
+					</Flex>
 				</Box>
 				<Box mb="48px">
 					<div className={s.reviewWrap}>
 						<Title className={s.reviewSubtitle}>Tour Reviews</Title>
-						<FilledButton fullWidth className={s.addReview}>
+						<FilledButton
+							fullWidth
+							className={s.addReview}
+							onClick={() => setModalOpened(true)}
+						>
 							Add review
 						</FilledButton>
+						<AddReview
+							opened={modalOpened}
+							onClose={() => setModalOpened(false)}
+						/>
 					</div>
 					<div className={s.cardContainer}>
 						{mockReviews.map((review, index) => (
@@ -408,8 +432,8 @@ const TourDetail: FC = () => {
 					</Title>
 					<TourAccordionAcc items={tourAccItems as any} />
 				</Box>
-				<Box mt={96} >
-					<TourRequestForm />
+				<Box mt={96}>
+					<AboutForm />
 				</Box>
 				<Box mt={72} mb={48}>
 					<Title className={s.reviewSubtitle}>More similar tours</Title>

@@ -91,7 +91,7 @@ export const ConfirmCodeModal: FC<ConfirmCodeModalProps> = ({
 			opened={opened}
 			onClose={onClose}
 			centered
-			withCloseButton={hasAnyInput}
+			withCloseButton={false}
 			radius={24}
 			size={500}
 			styles={{
