@@ -1,4 +1,4 @@
-import { Box, Button, Card, Group, Stack, Text } from "@mantine/core"
+import { Box, Card, Group, Stack, Text } from "@mantine/core"
 import { useMediaQuery } from "@mantine/hooks"
 import Image, { StaticImageData } from "next/image"
 

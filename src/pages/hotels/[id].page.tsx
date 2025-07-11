@@ -1,43 +1,33 @@
-import { Container, Grid, Text, Title } from "@mantine/core";
-import dynamic from "next/dynamic";
-import { useRouter } from "next/navigation";
-import React, { FC, useState } from "react";
+import { Container, Grid, Text, Title } from "@mantine/core"
+import dynamic from "next/dynamic"
+import { useRouter } from "next/navigation"
+import React, { FC, useState } from "react"
 
+import { Layout } from "@/widgets"
+import AddReview from "@/widgets/add-review"
 
+import IconLeft from "@/shared/assets/images/chevron-left.svg"
+import RoomServiceIcon from "@/shared/assets/images/hotel-detail/concierge.svg"
+import FamilyIcon from "@/shared/assets/images/hotel-detail/family_restroom.svg"
+import hiltonImage from "@/shared/assets/images/hotel-detail/image (3).png"
+import spaCenterImage from "@/shared/assets/images/hotel-detail/image (4).png"
+import hotelImage from "@/shared/assets/images/hotel-detail/image (5).png"
+import KingBadIcon from "@/shared/assets/images/hotel-detail/king_bed.svg"
+import BellIcon from "@/shared/assets/images/hotel-detail/personal_injury.svg"
+import BathroomIcon from "@/shared/assets/images/hotel-detail/shower.svg"
+import AirConditionIcon from "@/shared/assets/images/recommended-hotels/1.svg"
+import WifiIcon from "@/shared/assets/images/recommended-hotels/2.svg"
+import ParkingIcon from "@/shared/assets/images/recommended-hotels/3.svg"
+import { RecommendedHotels } from "@/shared/ui"
+import { FilledButton } from "@/shared/ui/buttons"
+import DateRangePicker from "@/shared/ui/date-range-picker"
+import FacilityItem from "@/shared/ui/facilities"
+import Gallery from "@/shared/ui/gallery/index"
+import HotelInfo from "@/shared/ui/hotel-info"
+import { ReviewCard } from "@/shared/ui/review-card"
+import { RoomCard } from "@/shared/ui/room-card"
 
-import { Layout } from "@/widgets";
-import AddReview from '@/widgets/add-review';
-
-
-
-import IconLeft from "@/shared/assets/images/chevron-left.svg";
-import RoomServiceIcon from "@/shared/assets/images/hotel-detail/concierge.svg";
-import FamilyIcon from "@/shared/assets/images/hotel-detail/family_restroom.svg";
-import hiltonImage from "@/shared/assets/images/hotel-detail/image (3).png";
-import spaCenterImage from "@/shared/assets/images/hotel-detail/image (4).png";
-import hotelImage from "@/shared/assets/images/hotel-detail/image (5).png";
-import KingBadIcon from "@/shared/assets/images/hotel-detail/king_bed.svg";
-import BellIcon from "@/shared/assets/images/hotel-detail/personal_injury.svg";
-import BathroomIcon from "@/shared/assets/images/hotel-detail/shower.svg";
-import AirConditionIcon from "@/shared/assets/images/recommended-hotels/1.svg";
-import WifiIcon from "@/shared/assets/images/recommended-hotels/2.svg";
-import ParkingIcon from "@/shared/assets/images/recommended-hotels/3.svg";
-import { RecommendedHotels } from "@/shared/ui";
-import { FilledButton } from "@/shared/ui/buttons";
-import DateRangePicker from "@/shared/ui/date-range-picker";
-import FacilityItem from "@/shared/ui/facilities";
-import Gallery from "@/shared/ui/gallery/index";
-import HotelInfo from "@/shared/ui/hotel-info";
-import { ReviewCard } from "@/shared/ui/review-card";
-import { RoomCard } from "@/shared/ui/room-card";
-
-
-
-import styles from "./hotels.module.scss";
-
-
-
-
+import styles from "./hotels.module.scss"
 
 const hotelImages = [
 	{
@@ -238,13 +228,11 @@ const sampleHotels = [
 	},
 ]
 
-const LocationMap = dynamic(() => import('@/widgets/location-map'), {
+const LocationMap = dynamic(() => import("@/widgets/location-map"), {
 	ssr: false,
-});
+})
 
 const HotelDetail: FC = () => {
-
-	const router = useRouter()
 	const [modalOpened, setModalOpened] = useState(false)
 
 	const [selectedDates, setSelectedDates] = useState({
@@ -349,7 +337,11 @@ const HotelDetail: FC = () => {
 						<Title className={styles.reviewSubtitle}>
 							Pricing Public opinion about the hotel
 						</Title>
-						<FilledButton fullWidth className={styles.addReview} onClick={() => setModalOpened(true)}>
+						<FilledButton
+							fullWidth
+							className={styles.addReview}
+							onClick={() => setModalOpened(true)}
+						>
 							Add review
 						</FilledButton>
 						<AddReview
