@@ -101,6 +101,10 @@ export const Navbar = () => {
 			name: "About us",
 			path: "/about",
 		},
+		// {
+		// 	name: "Contact us",
+		// 	path: "/contact-us",
+		// },
 	]
 
 	return (

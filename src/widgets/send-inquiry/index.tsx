@@ -2,7 +2,7 @@ import { Box, Flex, Grid, Text } from "@mantine/core"
 import { useMediaQuery } from "@mantine/hooks"
 import cx from "clsx"
 import Image from "next/image"
-import React from "react"
+import React, { useState } from "react"
 
 import Image1 from "@/shared/assets/images/send-inquiry/1.png"
 import Image2 from "@/shared/assets/images/send-inquiry/2.png"
@@ -13,9 +13,11 @@ import Image6 from "@/shared/assets/images/send-inquiry/6.png"
 import IconArrow from "@/shared/assets/images/send-inquiry/arrow-narrow-right.svg"
 import { FilledButton } from "@/shared/ui/buttons"
 
+import ContactUsModal from "../contact-us-modal"
 import s from "./send-inquiry.module.scss"
 
 export const SendInquiry = () => {
+	const [modalOpened, setModalOpened] = useState(false)
 	const matches = useMediaQuery("(max-width: 1024px)")
 	return (
 		<Box className={s.sendInquiry}>
@@ -32,9 +34,14 @@ export const SendInquiry = () => {
 						<FilledButton
 							rightSection={<IconArrow />}
 							className={s.sendInquiryButton}
+							onClick={() => setModalOpened(true)}
 						>
 							Send your Inquiry
 						</FilledButton>
+						<ContactUsModal
+							opened={modalOpened}
+							onClose={() => setModalOpened(false)}
+						/>
 					</Flex>
 				</Grid.Col>
 				{!matches ? (

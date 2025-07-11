@@ -1,5 +1,5 @@
-import { Card, Group, Text } from "@mantine/core"
 import L from "leaflet"
+import { Card, Group, Text } from "@mantine/core"
 import React from "react"
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet"
 
@@ -15,6 +15,7 @@ const customIcon = new L.Icon({
 })
 
 interface LocationMapProps {
+	title: string;
 	address: string
 	coordinates: [number, number]
 	hotels?: Array<{
@@ -25,17 +26,18 @@ interface LocationMapProps {
 	}>
 }
 
-export const LocationMap: React.FC<LocationMapProps> = ({
+const LocationMap: React.FC<LocationMapProps> = ({
+	title,
 	address,
 	coordinates,
 	hotels = [],
 }) => {
 	return (
-		<Card className={styles.locationCard} padding="lg">
+		<Card className={styles.locationCard} p={0}>
 			<Group className={styles.header} justify="space-between" mb="md">
 				<div>
 					<Text className={styles.title} size="lg" fw={600}>
-						Location on map
+						{title}
 					</Text>
 					<Group className={styles.addressGroup} gap="xs">
 						<LocationIcon className={styles.pinIcon} />
@@ -87,3 +89,5 @@ export const LocationMap: React.FC<LocationMapProps> = ({
 		</Card>
 	)
 }
+
+export default LocationMap

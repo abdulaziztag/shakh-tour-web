@@ -1,9 +1,15 @@
 import IconLocation from "@//shared/assets/images/location-white.svg"
 import IconPhone from "@//shared/assets/images/phone.svg"
-import { Box, Flex, Text } from "@mantine/core"
+import { ActionIcon, Box, Flex, Group, Text } from "@mantine/core"
 import { useMediaQuery } from "@mantine/hooks"
 import Link from "next/link"
 import React from "react"
+
+import Facebook from "@/shared/assets/images/facbook.svg"
+import Twitter from "@/shared/assets/images/twitter.svg"
+import Linkedin from "@/shared/assets/images/linkedin.svg"
+import Youtube from "@/shared/assets/images/youtube.svg"
+import Social from "@/shared/assets/images/Internet.svg"
 
 import s from "./about-address.module.scss"
 
@@ -65,6 +71,33 @@ export const AboutAddress = () => {
 						</Flex>
 					</Flex>
 				</Flex>
+				<Group mt={"2rem"} gap={"md"}>
+					<Link href="https://facebook.com" target="_blank">
+						<ActionIcon variant="transparent" color="gray" size="lg">
+							<Facebook size={24} />
+						</ActionIcon>
+					</Link>
+					<Link href="https://twitter.com" target="_blank">
+						<ActionIcon variant="transparent" color="gray" size="lg">
+							<Twitter size={24} />
+						</ActionIcon>
+					</Link>
+					<Link href="https://linkedin.com" target="_blank">
+						<ActionIcon variant="transparent" color="gray" size="lg">
+							<Linkedin size={24} />
+						</ActionIcon>
+					</Link>
+					<Link href="https://youtube.com" target="_blank">
+						<ActionIcon variant="transparent" color="gray" size="lg">
+							<Youtube size={24} />
+						</ActionIcon>
+					</Link>
+					<Link href="https://telegram.org" target="_blank">
+						<ActionIcon variant="transparent" color="gray" size="lg">
+							<Social size={24} />
+						</ActionIcon>
+					</Link>
+				</Group>
 			</Box>
 		</>
 	)

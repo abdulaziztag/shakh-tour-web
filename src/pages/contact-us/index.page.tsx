@@ -1,16 +1,17 @@
-import { Container } from "@mantine/core"
-// import { LocationMap } from "@/widgets/location-map"
+import { Box, Container, Flex } from "@mantine/core"
+import { useMediaQuery } from "@mantine/hooks"
 import dynamic from "next/dynamic"
 import Head from "next/head"
 import React from "react"
 
-import { AboutAddress, AboutInfo, AboutServices, Layout } from "@/widgets"
+import { AboutAddress, Layout } from "@/widgets"
+import ContactForm from "@/widgets/contact-form"
 
 const LocationMap = dynamic(() => import("@/widgets/location-map"), {
 	ssr: false,
 })
-
-const About = () => {
+const ContactUs = () => {
+	const isMobile = useMediaQuery("(max-width: 1400px)")
 	const sampleHotels = [
 		{
 			id: "1",
@@ -37,11 +38,10 @@ const About = () => {
 			type: "apartment" as const,
 		},
 	]
-
 	return (
 		<>
 			<Head>
-				<title>Shakh tours - About</title>
+				<title>Contact us</title>
 				<meta name="description" content="" />
 				<meta
 					name="keywords"
@@ -67,23 +67,49 @@ const About = () => {
 			</Head>
 			<Layout>
 				<Container size={"1440px"}>
-					<AboutInfo />
-				</Container>
-				<Container size={"1440px"}>
-					<LocationMap
-						title="Pricing We are on the map"
-						address="1 Ulčni Street, 100027 Tashkent, Uzbekistan"
-						coordinates={[41.2995, 69.2401]}
-						hotels={sampleHotels}
-					/>
-				</Container>
-				<AboutServices />
-				<Container size={"1440px"}>
-					<AboutAddress />
+					<Box mb={155} mt={100}>
+						<Flex
+							direction={isMobile ? "column" : "row"}
+							gap={isMobile ? 40 : 100}
+							align="stretch"
+							style={{
+								minHeight: isMobile ? "auto" : "100%",
+							}}
+						>
+							<Box
+								flex={1}
+								w={isMobile ? "100%" : "auto"}
+								style={{
+									display: "flex",
+									flexDirection: "column",
+								}}
+							>
+								<AboutAddress />
+							</Box>
+							<Box
+								flex={1}
+								w={isMobile ? "100%" : "auto"}
+								style={{
+									display: "flex",
+									justifyContent: isMobile ? "center" : "flex-start",
+									alignItems: "flex-start",
+									flexDirection: "column",
+								}}
+							>
+								<ContactForm />
+							</Box>
+						</Flex>
+						<LocationMap
+							title="We are on the map"
+							address="1 Ulčni Street, 100027 Tashkent, Uzbekistan"
+							coordinates={[41.2995, 69.2401]}
+							hotels={sampleHotels}
+						/>
+					</Box>
 				</Container>
 			</Layout>
 		</>
 	)
 }
 
-export default About
+export default ContactUs
