@@ -1,4 +1,5 @@
 import { Card, Group, Rating, Text, Title } from "@mantine/core"
+import { FC, useEffect } from "react"
 
 import styles from "./review-card.module.scss"
 
@@ -10,13 +11,17 @@ export interface ReviewCardProps {
 	rating: number
 }
 
-export const ReviewCard: React.FC<ReviewCardProps> = ({
+export const ReviewCard: FC<ReviewCardProps> = ({
 	name,
 	title,
 	content,
 	shares,
 	rating,
 }) => {
+	useEffect(() => {
+		console.log(shares)
+	}, [])
+
 	return (
 		<Card className={styles.reviewCard} shadow="sm" radius="md" withBorder>
 			<Group justify="space-between" align="flex-start" mb="md">

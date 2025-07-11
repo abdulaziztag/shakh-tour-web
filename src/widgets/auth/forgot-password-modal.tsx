@@ -17,17 +17,17 @@ const ForgotPasswordModal: FC<ForgotPasswordModalProps> = ({
 	onReturnToSignIn,
 }) => {
 	const [email, setEmail] = useState("")
-	const [loading, setLoading] = useState(false)
-
-	const handleResetPassword = async () => {
-		if (!email) return
-
-		setLoading(true)
-		setTimeout(() => {
-			setLoading(false)
-			console.log("Password reset sent to:", email)
-		}, 2000)
-	}
+	// const [loading, setLoading] = useState(false)
+	//
+	// const handleResetPassword = async () => {
+	// 	if (!email) return
+	//
+	// 	setLoading(true)
+	// 	setTimeout(() => {
+	// 		setLoading(false)
+	// 		console.log("Password reset sent to:", email)
+	// 	}, 2000)
+	// }
 
 	return (
 		<Modal

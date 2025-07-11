@@ -58,10 +58,6 @@ export const Navbar = () => {
 		setForgotPasswordModalOpened(true) // Login modal ni yopib, forgot password modal ni ochish
 	}
 
-	// const handleForgotPasswordClose = () => {
-	// 	setForgotPasswordModalOpened(false)
-	// }
-
 	const handleReturnToSignIn = () => {
 		setForgotPasswordModalOpened(false)
 		setLoginModalOpened(true) // Forgot password dan login modal ga qaytish

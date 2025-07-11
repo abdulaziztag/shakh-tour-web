@@ -243,12 +243,15 @@ const LocationMap = dynamic(() => import('@/widgets/location-map'), {
 });
 
 const HotelDetail: FC = () => {
+
 	const router = useRouter()
 	const [modalOpened, setModalOpened] = useState(false)
+
 	const [selectedDates, setSelectedDates] = useState({
 		checkIn: "2024-04-14",
 		checkOut: "2024-04-17",
 	})
+	const router = useRouter()
 
 	const handleDateChange = (checkIn: string, checkOut: string) => {
 		setSelectedDates({ checkIn, checkOut })
@@ -270,9 +273,10 @@ const HotelDetail: FC = () => {
 		console.log(`Room ${roomId} favorited: ${isFavorited}`)
 	}
 
-	const handleViewDetail = (hotelId: number) => {
-		router.push(`/hotels/${hotelId}`)
-	}
+	// const handleViewDetail = (hotelId: number) => {
+	// 	router.push(`/hotels/${hotelId}`)
+	// }
+
 	return (
 		<Layout>
 			<div className={styles.hotelPage}>
@@ -404,7 +408,7 @@ const HotelDetail: FC = () => {
 					<div className={styles.recommenedHotel}>
 						<h5 className={styles.recomendedHotelTitle}>Other hotels also</h5>
 						<RecommendedHotels
-							onViewDetail={handleViewDetail}
+							// onViewDetail={handleViewDetail}
 							titleButton={"See details"}
 							viewButton
 							m={"0"}

@@ -1,29 +1,22 @@
-import { ActionIcon, Box, Flex, Text } from "@mantine/core";
-import cx from "clsx";
-import Image from "next/image";
-import React, { FC } from "react";
+import { ActionIcon, Box, Flex, Text } from "@mantine/core"
+import cx from "clsx"
+import Image from "next/image"
+import { useRouter } from "next/navigation"
+import React, { FC } from "react"
 
+import IconArrow from "@/shared/assets/images/group-tours/chevron-right.svg"
+import Icon1 from "@/shared/assets/images/recommended-hotels/1.svg"
+import Icon2 from "@/shared/assets/images/recommended-hotels/2.svg"
+import Icon3 from "@/shared/assets/images/recommended-hotels/3.svg"
+import Icon4 from "@/shared/assets/images/recommended-hotels/4.svg"
+import IconLike from "@/shared/assets/images/recommended-hotels/heart-fill.svg"
+import Image1 from "@/shared/assets/images/recommended-hotels/image.png"
+import { FilledButton, OutlineButton } from "@/shared/ui/buttons"
 
-
-import IconArrow from "@/shared/assets/images/group-tours/chevron-right.svg";
-import Icon1 from "@/shared/assets/images/recommended-hotels/1.svg";
-import Icon2 from "@/shared/assets/images/recommended-hotels/2.svg";
-import Icon3 from "@/shared/assets/images/recommended-hotels/3.svg";
-import Icon4 from "@/shared/assets/images/recommended-hotels/4.svg";
-import IconLike from "@/shared/assets/images/recommended-hotels/heart-fill.svg";
-import Image1 from "@/shared/assets/images/recommended-hotels/image.png";
-import { FilledButton, OutlineButton } from "@/shared/ui/buttons";
-
-
-
-import s from "./recommended-hotels.module.scss";
-import { useRouter } from 'next/navigation';
-
-
-
+import s from "./recommended-hotels.module.scss"
 
 interface IRecommendedHotelsIProps {
-	onViewDetail: (hotelId: number) => void;
+	// onViewDetail?: (hotelId: number) => void
 	seeButton?: boolean
 	title?: boolean
 	like?: boolean
@@ -34,7 +27,7 @@ interface IRecommendedHotelsIProps {
 }
 
 export const RecommendedHotels: FC<IRecommendedHotelsIProps> = ({
-	onViewDetail,
+	// onViewDetail,
 	seeButton,
 	title,
 	like,
@@ -44,7 +37,6 @@ export const RecommendedHotels: FC<IRecommendedHotelsIProps> = ({
 	p,
 }) => {
 	const router = useRouter()
-
 	return (
 		<Box className={s.recommendedHotels} p={p}>
 			{title && (
