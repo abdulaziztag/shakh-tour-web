@@ -134,7 +134,7 @@
   font-weight: 500 !important;
   font-size: 14px !important;
   line-height: 20px !important;
-  color: #044949 !important;
+  color: #002774 !important;
   text-decoration: none !important;
 
   &:hover {
@@ -143,7 +143,7 @@
 }
 
 .signInButton {
-  background-color: #044949 !important;
+  background-color: #002774 !important;
   color: #ffffff !important;
   font-family: 'Inter', sans-serif !important;
   font-weight: 600 !important;
@@ -155,11 +155,11 @@
   border: none !important;
 
   &:hover {
-    background-color: #044949 !important;
+    background-color: #002774 !important;
   }
 
   &:active {
-    background-color: #044949 !important;
+    background-color: #002774 !important;
   }
 }
 
@@ -211,7 +211,7 @@
   font-weight: 500 !important;
   font-size: 14px !important;
   line-height: 20px !important;
-  color: #044949 !important;
+  color: #002774 !important;
   text-decoration: none !important;
 
   &:hover {
@@ -386,7 +386,7 @@
 }
 
 .registerContinueButton {
-  background-color: #044949 !important;
+  background-color: #002774 !important;
   color: #ffffff !important;
   font-family: 'Inter', sans-serif !important;
   font-weight: 600 !important;
@@ -399,7 +399,7 @@
 
   &:hover,
   &:active {
-    background-color: #044949 !important;
+    background-color: #002774 !important;
   }
 
   @media (max-width: 480px) {
@@ -449,7 +449,7 @@
   font-weight: 500 !important;
   font-size: 14px !important;
   line-height: 20px !important;
-  color: #044949 !important;
+  color: #002774 !important;
   text-decoration: none !important;
 
   &:hover {
@@ -502,7 +502,7 @@
   }
 
   &__email {
-    color: #044949;
+    color: #002774;
     font-weight: 500;
   }
 
@@ -526,12 +526,12 @@
     transition: all 0.2s ease;
 
     &:focus {
-      border-color: #044949;
+      border-color: #002774;
       box-shadow: 0 0 0 3px rgba(8, 145, 178, 0.1);
     }
 
     &--filled {
-      border-color: #044949;
+      border-color: #002774;
     }
   }
 
@@ -544,7 +544,7 @@
   &__resend-button {
     background: none;
     border: none;
-    color: #044949;
+    color: #002774;
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
@@ -682,7 +682,7 @@
 }
 
 .forgotPasswordResetButton {
-  background-color: #044949 !important;
+  background-color: #002774 !important;
   color: #ffffff !important;
   font-family: 'Inter', sans-serif !important;
   font-weight: 600 !important;
@@ -694,11 +694,11 @@
   border: none !important;
 
   &:hover {
-    background-color: #044949 !important;
+    background-color: #002774 !important;
   }
 
   &:active {
-    background-color: #044949 !important;
+    background-color: #002774 !important;
   }
 }
 
@@ -719,7 +719,7 @@
   font-weight: 600;
   font-size: 14px;
   line-height: 20px;
-  color: #044949;
+  color: #002774;
 
   .forgotPasswordReturnSection:hover & {
     color: #2d7d7d;

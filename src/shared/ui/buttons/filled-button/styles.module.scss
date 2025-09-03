@@ -5,7 +5,7 @@
 	font-weight: 500;
 	line-height: normal;
 	border-radius: 8px;
-	background-color: #044949;
+	background-color: #002774;
 	transition:
 		background 0.3s ease-in,
 		transform 0.3s ease-in;
@@ -13,7 +13,7 @@
 	&:hover {
 		//background: linear-gradient(87deg, #59a5ec 0%, #59a5ec 48%, #7974ea 100%);
 		//transform: scale(1.05);
-		background-color: #044949;
+		background-color: #002774;
 	}
 
 	&:disabled {

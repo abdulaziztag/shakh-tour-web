@@ -5,17 +5,17 @@
 		background-color: transparent;
 		border: 2px solid rgba(176, 186, 191, 0.5);
 		&:active {
-			border: 2px solid #044949;
+			border: 2px solid #002774;
 		}
 		&:checked:not(:disabled) {
-			border-color: #044949;
+			border-color: #002774;
 		}
 	}
 }
 
 .radioIcon {
 	circle {
-		fill: #044949;
+		fill: #002774;
 	}
 }
 

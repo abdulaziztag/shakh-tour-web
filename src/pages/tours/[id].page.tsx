@@ -314,15 +314,15 @@ const TourDetail: FC = () => {
 						className={s.tabs}
 						onChange={handleTabChange}
 					>
-						<Tabs.List  style={{ flexWrap: "nowrap" }}>
+						<Tabs.List style={{ flexWrap: "nowrap" }}>
 							<Tabs.Tab
 								className={s.tab}
 								value="tour-program"
 								style={{
 									backgroundColor:
-										activeTab === "tour-program" ? "#044949" : "transparent",
+										activeTab === "tour-program" ? "#002774" : "transparent",
 									color: activeTab === "tour-program" ? "white" : "#97A0AD",
-									fontSize: isMobile ? "12px" : "16px", 
+									fontSize: isMobile ? "12px" : "16px",
 								}}
 							>
 								Tour program
@@ -333,9 +333,9 @@ const TourDetail: FC = () => {
 								value="date-prices"
 								style={{
 									backgroundColor:
-										activeTab === "date-prices" ? "#044949" : "transparent",
+										activeTab === "date-prices" ? "#002774" : "transparent",
 									color: activeTab === "date-prices" ? "white" : "#97A0AD",
-									fontSize: isMobile ? "12px" : "16px", 
+									fontSize: isMobile ? "12px" : "16px",
 								}}
 							>
 								Date and prices
