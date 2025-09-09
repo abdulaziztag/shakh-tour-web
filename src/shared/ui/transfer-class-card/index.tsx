@@ -111,7 +111,7 @@ export const TransferClassCard: React.FC<Props> = ({
 
 	const btn: React.CSSProperties = {
 		padding: "10px 18px",
-		background: "#FFD34D",
+		background: "#002773",
 		borderRadius: 12,
 		border: "none",
 		fontWeight: 700,
