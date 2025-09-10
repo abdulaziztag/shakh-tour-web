@@ -1,5 +1,4 @@
 @import "font-inter/stylesheet.css";
-@import "outfit/style.css";
 @import "roboto-flex/style.css";
 // Import Swiper styles
 @import "swiper/css";
@@ -28,7 +27,7 @@ a {
 
 p, a, li, h1, h2, h3, h4, h5, h6 {
   color: #002774;
-  font-family: "Outfit Regular", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 1rem;
   font-weight: 400;
   line-height: normal;
